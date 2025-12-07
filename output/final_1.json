@@ -1,0 +1,294 @@
+{
+    "turns": [
+        {
+            "speaker": "SPEAKER_00",
+            "start": 3.559999999999997,
+            "end": 158.4,
+            "text": "All right, here we are. Welcome everyone to the Editor Extension Group Meeting for October 19th. I have missed the past two ones, I'm very happy to be back. And I added, okay, so I've made some changes to the agenda. There is now a read only announcement section, which is the first item in this section describes that we now have this section. So the purpose is to share any announcements, things that don't actually require discussion, but you want to make sure people have seen. So yeah, so that's the thing now. Second point here, I added a group processes section to the handbook page, you can check it out. It's pretty light on content, this is intentional. I want to make sure that whatever process we have is because we need it, just because we like process. So make sure to read it, especially the part about evolving the process, which is the meta section about how to actually make this whole thing work. I also listed all the projects that we use recently in there, so that we align where to create issues, because there was some confusion also on my behalf recently. So it turns out we have like eight projects at least that we kind of often use. So that's, you know, confusion may arise easily. And yeah, just generally about processes, I just encourage everyone here to like just step up and proactively shape how we work. Like if you see like, I don't know, the way we're doing something is really inefficient, or just should be documented, but isn't just like go for it. I don't want to be a gatekeeper here. Cool. I have a couple more announcements to run through. The next one is remember you can sign up to be able to host an unconference section at the next GitLab Summit. So there's a link there for that. Next one, we, yeah, we just FYI, we've now at this point canceled all the project specific sync meetings. So this is a great step for async humanity. When I joined the team, I think that we had like five or six meetings basically in a week. So now it's just the one. Obviously, I think, yeah, pretty much all of you still will also see me in months. But so you're not getting away with that just yet. But yeah, so and then this is too short. Now that is the only one we have, we can of course extend it in the future. Lastly, please make sure to lodge any PTU that you already know, like you have planned for the rest of the year in PTU by deal. That just helps me and other folks with like capacity planning and things like that. And also please link your PTU by deal to our team calendar. If you don't know how to do that, I have it written down somewhere. And I can share it later. I just don't remember where I wrote it. I think it's some issue somewhere."
+        },
+        {
+            "speaker": "SPEAKER_05",
+            "start": 159.78,
+            "end": 162.28,
+            "text": "Should we add that to the editor exemptions handbook page?"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 162.76,
+            "end": 185.86,
+            "text": "100 % we should. Yes, absolutely. Cool. Amy, I'm very, I would still be very happy if you could link your PTU to our calendar as well. I think you can make multiple ones there. So that should not be a problem. Yeah. Cool. All right, we can move on to the discussion now. The first item was or is from Aaron."
+        },
+        {
+            "speaker": "SPEAKER_05",
+            "start": 188.78,
+            "end": 256.06,
+            "text": "Yeah, absolutely. So yeah, this is just confirming that my borough request is sort of coming to an end. Hopefully I can finish up everything by tomorrow afternoon. But yeah, still obviously going to be on board and involved as a VS code maintainer for the web ID and for VS code extension, as well as the maintainer for the new of them extension. And hopefully I can involve the language over to because I'm still super interested there. So but yeah, for sort of integration test stuff, I expect to have that all wrapped up today, where I actually have sort of like the positive and negative path tests where I'm using the token to go and get code suggestions within the of them grab it, etc. All this sort of standard stuff and then testing out telemetry using snowplow micro as a service instead of you love CI. And what I would like to do as an extension of that is replace my language server MR that I had sort of standing for a while using the integration testing and have the language server in booked the new of them test suite whenever there's language server changes. So hopefully get that wrapped up tomorrow as well."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 257.66,
+            "end": 303.7,
+            "text": "Yeah, thank you and so if anyone's curious about the details some more the the issue I linked here is the sort of metatracker issue. Just because I didn't want to create an epic for that didn't make much sense. So it's just an issue that kind of lifts everything that we've agreed would make sense to finish up before Aaron will go back to his original team. Yeah, so I mean, maybe it's a good moment save that Aaron, thank you so much for everything you've done for the team. I think you are still the you will be for a while the new guy here. So I think we will easily although I know that Thomas kind of has his eyes on the extension a little bit as a new user himself maybe. But also pretty busy with something else currently. So yeah, it's been really cool to have you work on this stuff. So thank you so much for that."
+        },
+        {
+            "speaker": "SPEAKER_05",
+            "start": 304.56,
+            "end": 308.58,
+            "text": "Thanks. It's been a great work on the failure as well. I will be in touch."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 309.52,
+            "end": 387.7,
+            "text": "For sure. A related note, I bumped this next item up because it's kind of a similar topic. So just confirming that Mike's borough will also end soon now that John is in good shape to contribute to the team. So we were discussing this on Slack as well. There are a couple issues that he's still assigned to that he will wrap up. I can't remember from the top of my head something about proxy support, something about also kind of or testing. So yeah, but that means shortly it will be yet another person that isn't a longer part of the team, unfortunately. I don't remember if it has been communicated in this team meeting or not, but might as well say now. So Ali, on the other hand, we have extended his contract with us for until the end of February next year, which is pretty an eternity. I might as well just call you a permanent. I feel like I'm just calling you our permanent borough at this stage, Ali. The team much longer than I have, certainly. So yeah, yeah. Just a quick heads up. And Lena, we also discussed Lena's borough this morning. Right now, the target end date for her is the end of the current milestone, which is in four -ish, I guess, three, four -ish weeks from now. Yeah."
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 388.88,
+            "end": 389.98,
+            "text": "All right."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 391.94,
+            "end": 394.74,
+            "text": "Yeah. Next point, Thomas, is yours, I think."
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 396.12,
+            "end": 425.6,
+            "text": "Yeah. Just on Aaron's point still. First there, it's amazing that the test that you're creating, you were showing it to me on a call and I love it. I wanted to ask you if you would be so kind. We have a generic issue for creating end -to -end tests for the language server and the issue description is just very brief. If you would put there your ideas before you go. So we have some scaffolding for what we need to do."
+        },
+        {
+            "speaker": "SPEAKER_05",
+            "start": 426.88,
+            "end": 461.64,
+            "text": "Yeah, absolutely. And I'll definitely be sure to like CC Mike as well, because there's some integration testing that gets a lot of far away into it. I think I even seen John mentioned in a comment recently around that area as well, where we can we should be able to do a lot of the same stuff and sort of end -to -end rather than just integrating testing the telemetry on the VS code side as well. But yeah, certainly there's a bunch of issues. Francois and I went ahead on Monday when we had our sync and created some issues around. So I think I'll just link those issues to look out for documentation."
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 463.06,
+            "end": 624.72,
+            "text": "All right. Thank you. My update is very short. It's about integrating a language server into workflow, which is how I call the VS code extension. I'm not sure whether like you would prefer to always put the platform and then extension when we are as a team talking about extensions. I just find workflow shorter, but I don't want to be like elitist and say like, oh, my extension is going to be called different than everyone else's extension. I meant not mine, but the one that I work on. And so if you would prefer VS code extension, just let me know. So where am I at? Now there is the prototype that Marshall created and it now with three merge requests or two merge requests that are linked in the status update, it works okay with the suggestion showing in the normal completion menu, where you would, I don't know, you write some JavaScript and you press dot and see the suggestion there, but there is another hundred other options that you could choose. So that's not still usable. The next thing that I'm going to work on is use the new API to provide it as an inline suggestion. That's again, something that Marshall created a prototype of, and I'll need to do a few changes and refactorings to the language server project. Today I was looking at testing it, but it might be a little bit too big of a bite for me to do as a part of this sprinting towards having inline completion at least somehow available in the VS code. So I'll try to write some unit tests, but like my ideal scenario would be end to end tests or at least integration tests that are testing that we are firing the right events for telemetry, which is important, but I won't be able to do that problem. So few refactorings for a language server, one additional comment for the VS code extension, and that will be it for the inline completion showing. After that, there is going to be a few more issues, about three to make it work that we can remove the feature flag and make the language server experience the default experience. So that's going to take longer than, but by the end of next week, I think we'll have working version behind feature flag. After that, I'll work on the rest and that's for my update. And the next question I was just asking now Francois, since Kai's not here, if you could walk us through very quickly what we are going to work on because I'm still a little bit focusing. I have a tunnel vision on the VS code extension and I would like to know what's happening elsewhere as well."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 625.2,
+            "end": 938.48,
+            "text": "Yeah, that's fair. Yeah, I'll do that. I don't know if it'll be very quick, but we'll see. So I initially, so there's also a question here about whether the priority board is up today. So it should be, yes. But instead of walking through the board, I figured it would be better to walk you through the planning issue, which I made some more edits to it. I think Kai will also potentially edit it a little bit more today, such tomorrow. So, but by the end of the week should be pretty stable. But let me just share my screen here for a sec. I did this one. I think so. Yeah. Okay. Cool. So yeah, this is our 16 .6 planning issue. Yeah. I just started saying the thing, the only thing we're really doing these days is code suggestions within the extensions. This is probably obvious to everyone, but it's worth just saying it out loud. And then in terms of goals, how I group this is like by extension slash or, you know, language server. I still need, by the way, if someone has a name that we could use that includes the four extensions and the language server would be nice. I don't know, projects, components, they're all bad. So I don't know. Anyway, the five things. So for VS code integrating the language server in VS code is the main goal. Right. So the first one here is this is the effect that Thomas is working on. Second one is thing that Tristan is working on, which is like porting over logic changes that were made in VS code that are not in the language server. Then in terms of language server itself, we have some telemetry improvements still listed up here. This is what Lena is working on. For JetBrains, there are a couple of things here. So there's some of the events and important ones actually are not available yet in JetBrains because we need to wait for a future version of the IDE that would support them. But there's some work we could do ahead of that. I potentially should validate that test the compatibility because there are these are now in early access review or whatever the P stands for. And also telemetry fixes there. I listed one here, but there might be some more. I'm not sure anymore. Telemetry is kind of like a recurring topic everywhere, to be honest. Neovim, we just discussed it. So essentially wrapping up the three themes here, like testing, documentation, telemetry. So I just think the tracker issue there. For Visual Studio, we have a couple of issues that are around addressing user feedback or adding some functionality that was missing before. And telemetry fixes also. We have this weird, for instance, discussing this with John before that, the ratio of some of the events is really off actually, which could point to either an issue in the Visual Studio extension itself or worse slash best. It kind of depends on your mood. The issue could be in the language server also. This would be a good thing because that means if we fix it there, then we fix it everywhere. Could also be a bad thing because means once we integrate the language server in VS Code, telemetry would be broadly off and that would be also a bigger deal. So anyway, telemetry, telemetry, telemetry, telemetry, telemetry, more telemetry, and then also other things that are not telemetry is what we're doing. And then I listed some, I put this down as stretch goals here. So this is the kind of stuff that we would be doing if we weren't doing so much telemetry stuff. So basically improving the acceptance rate can be done in many ways. Some of it is, this came up recently, improving the quote -unquote fit of the suggested code. For example, when you get code returned, just make sure to format it in the extension before you present it. Or, I don't know, there are a couple other things in there. Some other things about reducing the number of requests we make, the onboarding flow, and then something that's specific to VS Code is about the auth flow and some of the problems that we have there. So yeah, and I put this as stretch because I feel like what we have on top here is actually keeping us busy quite a bit already. So it's kind of, those would be the next thing we'll be doing, one we have, when we see that, what's on top there starts to be less, keeping us less busy, essentially. Yeah, so that's the overall idea. And by the way, it's very much the case right now. I think that probably everyone on the team is kind of experiencing tunnel vision where people are working on one extension or maybe on the language server or something. And it's like that. And I don't want it to remain like this in the future for too long either, because I think as a team, it'll be much better for us as a team to work more collaboratively across these. But just because of the current sort of rush or sprint, I guess, to get to code suggestions, GA, this is sort of what is most efficient essentially, but definitely not the way I would want us to operate forever. Yeah, any questions on this stuff, the goals? Does some of this stuff make no sense? Does it make sense?"
+        },
+        {
+            "speaker": "SPEAKER_02",
+            "start": 941.22,
+            "end": 969.2,
+            "text": "I have a quick question about Jeff Reins. I think there's a trade -off we need to make where we're putting a certain amount of effort into the extension, but we know that the language server integration is coming, so we kind of need to decide when we want to try and squeeze in that spike to figure out how feasible it is, especially since we recently have this project that we can reference from, I think it's hugging face."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 970.84,
+            "end": 1008.0,
+            "text": "Yeah, that's a good point. Actually, I just noticed that issue, I can't remember if it was today or yesterday, but I think spiking the language server integration, I would actually put that also pretty high on the list there. Maybe that's something we need to discuss, which of those, maybe we'd rather spike that rather than spiking the 2023 .3 thing some more. I'm not sure, honestly. Because I mean, as far as I understand, it's still the case though that like, or is it that if we were to use the language server in JetBrains, we'd be only targeting premium JetBrains customers?"
+        },
+        {
+            "speaker": "SPEAKER_02",
+            "start": 1008.62,
+            "end": 1012.6,
+            "text": "I'm not actually sure. I think that'll be part of the spike."
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1013.7,
+            "end": 1022.28,
+            "text": "Gotcha. Okay, interesting. Okay, then I"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1022.28,
+            "end": 1028.98,
+            "text": "would actually include that spike in the current milestone, to be honest. If it isn't yet, I'm not sure anymore. I have to look"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1028.98,
+            "end": 1029.6,
+            "text": "at the board again,"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1030.24,
+            "end": 1030.24,
+            "text": "but"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1030.24,
+            "end": 1037.68,
+            "text": "yeah. Anyway, yeah, let's follow up on that. Maybe"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1037.68,
+            "end": 1045.58,
+            "text": "we can ask, we can ping Kyle as well on his thought there in the JetBrains channel,"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1046.78,
+            "end": 1056.84,
+            "text": "maybe. Sure, sounds good. Amy, you had a next one, I think. Yeah, so"
+        },
+        {
+            "speaker": "SPEAKER_04",
+            "start": 1056.84,
+            "end": 1057.66,
+            "text": "step one - Amy,"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1057.78,
+            "end": 1092.02,
+            "text": "before you go, I just wanted to thank Francois for the, that was exactly what I was looking for, the telemetry, telemetry, telemetry explained it well. You were asking about the timing for five projects. I was asking 3GPD for it. And so the options are Power Rangers, because the original Mighty Morphing Power Rangers had red, black, blue, yellow and pink ranges. Then the Spice Girls are famous five as well. And Jackson five, that's pretty much all that 3GPD could come up with."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1093.12,
+            "end": 1100.54,
+            "text": "I want to know what it would look like if all the extensions were combined in a giant Power Ranger MechaBot thing. What would it look like? The server"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1100.54,
+            "end": 1100.86,
+            "text": "as"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1100.86,
+            "end": 1115.04,
+            "text": "a head on top, yeah. I bet AI will generate you a story about it. I need this visualized also, or is it mid -journey or"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1115.04,
+            "end": 1116.86,
+            "text": "whatever the individual -"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1116.86,
+            "end": 1117.72,
+            "text": "I can ask"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1117.72,
+            "end": 1118.1,
+            "text": "Dolly"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1118.1,
+            "end": 1122.52,
+            "text": "three for it, but I'm not sure I'll be able to explain that well."
+        },
+        {
+            "speaker": "SPEAKER_04",
+            "start": 1123.24,
+            "end": 1127.66,
+            "text": "That's okay. It won't be able to draw it that well. So you're good."
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1132.36,
+            "end": 1135.82,
+            "text": "You good Tomas? Sorry,"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1135.98,
+            "end": 1136.6,
+            "text": "yes, I'm good."
+        },
+        {
+            "speaker": "SPEAKER_04",
+            "start": 1137.18,
+            "end": 1186.98,
+            "text": "Okay. So for me, I am determining the nature of the chaos. So I've got to read all the docs that you've all written so far and figure out what is the baseline for an extension for the docs? What do they need? And do they all have them? So trying to achieve parity first. And I won't know what my next step is until I've read through all of it and figure out what to do next. But as Tomas can attest, I'll eventually learn everything that's there. It'll just take me a few hours."
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 1188.44,
+            "end": 1194.0,
+            "text": "I can attest that Amy is an amazing technical writer. Thank you. Your bride is in the mail."
+        },
+        {
+            "speaker": "SPEAKER_04",
+            "start": 1197.3,
+            "end": 1230.0,
+            "text": "I've missed working with you. It's good to be back. In the meantime, especially for those of you who are looking to break free and go back to your previous teams, think about brain dumps. Just get it down into a file. Doesn't have to be clean or perfect, just English. And I can help you get it published from there. Let's try to"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1230.0,
+            "end": 1238.1,
+            "text": "extricate you for real. That's all I've got."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1238.74,
+            "end": 1240.7,
+            "text": "Thanks, Amy. And good luck with all the reading."
+        },
+        {
+            "speaker": "SPEAKER_04",
+            "start": 1245.7999999999997,
+            "end": 1247.08,
+            "text": "Yeah, I'm ready."
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1248.74,
+            "end": 1259.0,
+            "text": "Awesome. All right. We've arrived at the end of the written agenda. Is there a nonwritten or several nonwritten agenda points that people would"
+        },
+        {
+            "speaker": "SPEAKER_03",
+            "start": 1259.0,
+            "end": 1270.46,
+            "text": "like to bring up for discussion? Embracing silence a little bit. No?"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1271.4,
+            "end": 1289.6,
+            "text": "Cool. So we definitely didn't need all these weekly things, multiple ones per week. I knew it. I just knew it. Awesome. Cool. Well, thank you, everyone, for your time, as always. And yeah, let's have a nice rest of your day and have a good weekend. Talk to you all later. Ciao."
+        }
+    ],
+    "analytics": {
+        "total_durations": {
+            "SPEAKER_00": 710.0399999999996,
+            "SPEAKER_05": 108.55999999999997,
+            "SPEAKER_03": 64.99999999999989,
+            "SPEAKER_01": 237.16000000000003,
+            "SPEAKER_02": 31.960000000000036,
+            "SPEAKER_04": 89.02000000000044
+        },
+        "word_counts": {
+            "SPEAKER_00": 2166,
+            "SPEAKER_05": 350,
+            "SPEAKER_03": 85,
+            "SPEAKER_01": 674,
+            "SPEAKER_02": 92,
+            "SPEAKER_04": 181
+        },
+        "turn_counts": {
+            "SPEAKER_00": 16,
+            "SPEAKER_05": 4,
+            "SPEAKER_03": 9,
+            "SPEAKER_01": 8,
+            "SPEAKER_02": 2,
+            "SPEAKER_04": 5
+        }
+    }
+}
