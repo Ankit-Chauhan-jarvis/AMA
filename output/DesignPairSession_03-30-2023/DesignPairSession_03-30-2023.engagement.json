@@ -1,0 +1,64 @@
+{
+  "meeting_file": "DesignPairSession_03-30-2023.json",
+  "definition": {
+    "active": "High participation: substantial speaking time and/or frequent turns and/or multiple questions.",
+    "passive": "Low participation: limited speaking time, few turns, rarely asks questions."
+  },
+  "overall": {
+    "total_speakers": 5,
+    "total_segments": 55,
+    "total_time_seconds": 1400.3
+  },
+  "speakers": [
+    {
+      "speaker": "SPEAKER_00",
+      "engagement": "passive",
+      "turns": 3,
+      "questions_asked": 0,
+      "total_seconds_spoken": 145.76,
+      "time_share": 0.1041,
+      "words": 376,
+      "words_per_minute": 154.8
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "engagement": "active",
+      "turns": 17,
+      "questions_asked": 4,
+      "total_seconds_spoken": 304.16,
+      "time_share": 0.2172,
+      "words": 886,
+      "words_per_minute": 174.8
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "engagement": "active",
+      "turns": 7,
+      "questions_asked": 2,
+      "total_seconds_spoken": 180.68,
+      "time_share": 0.129,
+      "words": 357,
+      "words_per_minute": 118.6
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "engagement": "passive",
+      "turns": 3,
+      "questions_asked": 0,
+      "total_seconds_spoken": 23.42,
+      "time_share": 0.0167,
+      "words": 60,
+      "words_per_minute": 153.7
+    },
+    {
+      "speaker": "SPEAKER_04",
+      "engagement": "active",
+      "turns": 25,
+      "questions_asked": 2,
+      "total_seconds_spoken": 746.28,
+      "time_share": 0.5329,
+      "words": 1944,
+      "words_per_minute": 156.3
+    }
+  ]
+}

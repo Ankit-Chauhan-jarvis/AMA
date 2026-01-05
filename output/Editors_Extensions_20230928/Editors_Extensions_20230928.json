@@ -1,0 +1,482 @@
+[
+    {
+        "speaker": "SPEAKER_06",
+        "start": 4.460000000000003,
+        "end": 95.52,
+        "text": "All right, awesome. We are live. Welcome everyone to the Editor Extension Group Team Weekly Sync. We need a longer name for this call. Today is September 28th, and we have a couple things on the agenda. The first one is from Lena, who is not on the call, but is asking, how should we automate the language server upgrades in the extensions? I'm just going to bump letter B up here, just because that's like the current proposal, which was my proposal. Just like, let's create an epic that says, here, there's a new version everyone should upgrade. And this way, at least we can track. So we went ahead and did that for now, and have issues for like, NeoVim for Visual Studio and for VS Code. But there is, so Tristan put a point here as well, that we could use RenovateBot to create MRs with each new release. And was asking if the language server is part of the extension repository, which I'm not sure what that means actually, reading it. I'm going to read what Tristan says here. He was thinking that the GitLab UI model could work for us. They have a, they generate change log and releases from commits using semantic release, and the commit message body may optionally signify a breaking change, and therefore a major version bump. And there are more details in the link. So we need to lint our commits, but it will automate a lot of the process for us. Okay. And then Renovate could automatically open and assign MRs in the other projects on the specific schedule. Yeah. So I think this is a really good idea and we should do it. I don't think we should do it right now, but I think we should just open an issue to"
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 95.52,
+        "end": 104.92,
+        "text": "remember to do that and track it. I think for now, maybe that the boring solution of creating issues manually is okay."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 105.74,
+        "end": 106.76,
+        "text": "Do you have a question, John?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 107.44,
+        "end": 116.82,
+        "text": "Do you, are you - Yeah, it's actually, yes, one. And then I was actually going to ask, are we doing this? Are we doing any kind of like semantic commits right now or like semantic versioning?"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 120.18,
+        "end": 132.58,
+        "text": "The doc should be in the invite. We're definitely not enforcing semantic. Okay. But I think we've been loosely following semantic versioning."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 132.66,
+        "end": 132.82,
+        "text": "Okay."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 133.16,
+        "end": 171.32,
+        "text": "Okay. Because I know, I know, I, the only reason I'm asking is I know that I was talking with Mike and he was, he was mentioning this specific issue. And was concerned about doing automated, you know, automated linking of a new version of the LSP to a project just because sometimes things that look like they're not breaking changes were actually breaking changes to, to something in the VS world or something like that. So it could easily quickly break us without us knowing it's supposed to break."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 174.68,
+        "end": 184.56,
+        "text": "Yeah. And I think that that's the advantage of using something like Renovate. But I think it makes sense to like automate the creation of the, of the NR to update it, but not to just. But"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 184.56,
+        "end": 186.78,
+        "text": "not to go ahead and automatically do it. Yeah. I like that too."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 187.02,
+        "end": 209.92,
+        "text": "Yeah. I like the idea of if we have like the, in our GitLab, like CI CD pipeline, if we have an acceptance tests running, whenever Renovate triggers NMR, that should give us some level of confidence. Of course, there's gonna be outliers. But if we have, if we're like forcing major version bumps for breaking changes and we have acceptance tests and it says that we're green, then the basic user"
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 209.92,
+        "end": 220.76,
+        "text": "scenario should be covered then. Cool. Sounds good. I"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 220.76,
+        "end": 240.1,
+        "text": "think like a step that we, like a first step that we could take would be getting. Yeah. All the extensions to install based on the NPM package. Cause I assume that's what's gonna be the most seamless with, with the Renovate bot set up."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 242.76,
+        "end": 261.16,
+        "text": "Yeah. And I think the only one right now, both NuVim and Visuals, yes, code are doing that, I think. But not Visual Studio. As far as I can tell, Visual Studio just had like the built -in binary, like the prebuilt binary just versioned in the, in the repository. So that was, yeah. So I think that's gonna be something to change there."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 269.20000000000005,
+        "end": 278.88,
+        "text": "Cool. Does anyone want to volunteer to create that issue? Does anyone want me to name a volunteer?"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 279.38,
+        "end": 279.86,
+        "text": "Thank you."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 280.92,
+        "end": 296.22,
+        "text": "Cool. John. John, just so you can like unmute and just talk. Or like right in the doc. You don't have to like raise a hand or ask. This will be like all new meeting stuff, but feel free to just like interrupt and say whatever you want."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 296.38,
+        "end": 303.3,
+        "text": "Okay, cool. Until I know my way around, I don't want to just go, hey, I've got things to say. Cause."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 306.04,
+        "end": 312.68,
+        "text": "That's fair. But we do like to interrupt each other. No, it's not that we like to interrupt each other. It's just, we think it's an important way to communicate"
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 312.68,
+        "end": 313.9,
+        "text": "effectively"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 313.9,
+        "end": 371.1,
+        "text": "remotely. Otherwise it's just, it gets difficult. So feel free to interrupt always. Cool. All right. I think we can move on to the next point then. Which is what I wrote there. Okay. I created an issue board for the team. This is prompted by Amy. Thank you, Amy. Cause actually it's well overdue. And. I don't know. Eventually. So right now the board is just like all the, all the issues that are like tagged with our team's label and with a column for each of the like extension slash language server. I've also kind of roughly shoved at the top of each column, the current issues that are kind of being worked on or are important. I think eventually we would be nice that for us to use this or some version of this to keep track of our priorities at the issue level. I just wanted to see if people had thoughts on that. But before that, I guess Amy, you have your next point."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 372.94,
+        "end": 416.7,
+        "text": "Sure. So you can tell whether or not I've been poking my nose in the right direction. Okay, good. You'll see on the paper. That I first see on the slide ,畫 -wise I'm probably going to see画, which is the part that I find really super interesting because it has the color little colors in it, but if something so I was diamond. Kai can attest that once you get stuck with me, you're stuck with me. Sorry, Kai."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 418.32,
+        "end": 422.02,
+        "text": "She's the best. If you've ever worked with another tech writer, she's the best."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 424.56,
+        "end": 427.24,
+        "text": "Your bribe will be in the mail shortly. Thank you."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 431.56,
+        "end": 438.94,
+        "text": "Kai had a read -only here about a link about how we could do that. Cool. Yeah, so"
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 438.94,
+        "end": 440.6,
+        "text": "I can... Ah,"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 440.6,
+        "end": 441.32,
+        "text": "yeah, yeah, yeah. I"
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 441.32,
+        "end": 465.9,
+        "text": "think how we end up... Now I'll voice it. I think how we end up framing issues on the board is likely informed by how we decide we want to use Milestone across four projects that don't actually have anything to do with the Milestone because we need some sort of work time period grouping and then some other thing to tell us when it was actually released."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 466.96000000000004,
+        "end": 527.3,
+        "text": "Yes. Correct. So let me do something here where I'm going to jump to number four by removing number three and therefore number four is now number three. So let's move to the next item in the agenda, which is number three, which is about our use of Milestones. So yeah, FYI, Kai created this issue. I want to propose to just use dedicated Milestones for each project, like just not use the, you know, the, I don't know what to call it, canonical domain like GitLab or GitLab Milestones because they just actually are meaningless. They're just for the extensions. All they mean is, you know, from, well, you know what they mean. Anyway, so my question, I want to just try this out to see what breaks, basically. I don't want to just make a list of what could break and be worried about it. So my question is, but before I do that, as engineers, as developers, is there something that you know would immediately break in your workflow with your MRs, your issues, if we were to not use those Milestones anymore? Like the main GitLab ones, I mean."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 527.88,
+        "end": 610.48,
+        "text": "The biggest issue I see is alignment with features that are inevitably going to be released on like a fixed Milestone cadence. So I think about like aligning with the web IDE on OAuth authentication, right? Or like aligning with the changes to the code suggestions API, right? Those are going to be shipped in Milestones. So we're going to have to interface with that to some degree. I'm wondering if like, like I found the way that the language server like protocol itself is versioned to be convenient, where like they just ship out like whatever's on main as like a pre -release, right? And then, they just cut it whenever they're ready to cut a release. So like maybe we could just like be always shipping a pre -release version of the language server and maybe the extensions also. But then we actually cut the release along with everybody else on the fixed cadence. It's just a thought."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 613.78,
+        "end": 622.08,
+        "text": "I will also need to check with Diana, my manager, to find out if we've got any reporting in the tech writing team that is Milestone dependent."
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 625.54,
+        "end": 626.36,
+        "text": "Yeah, that's fair."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 628.92,
+        "end": 630.8,
+        "text": "Yeah. Go ahead."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 631.9,
+        "end": 657.36,
+        "text": "Yeah, I know you said you don't want to know, like try and make the exhaustive list of what we'll break. Accounting is one that comes to mind that like, there might be unhappy people if we inadvertently break it, because I think we do some accounting based on time periods, based on the labels that are assigned to work. And so if they can't correlate those to like the correct quarters and months that might mess up some stuff on there."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 657.88,
+        "end": 660.7,
+        "text": "Yeah, my secret hope, or it's not secret, my hope is that"
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 660.7,
+        "end": 661.98,
+        "text": "these"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 661.98,
+        "end": 670.8,
+        "text": "kinds of reporting use months and not milestones. It's just, of course, we know that a milestone is more or less a month here, but that's kind of,"
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 670.8,
+        "end": 683.12,
+        "text": "you know, coincidence. I suspect they all use months. I suspect they all use the milestone, because that's how we pull data in Sisense, right? Like that's how all the engineering metric tables are done. Are you"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 683.12,
+        "end": 692.5,
+        "text": "sure about that? Like when I look at these KPIs, like they're per month. Like at least last time I did look at them. Anyway, so maybe I'll need to have a closer look again. Or, yeah."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 693.0,
+        "end": 708.26,
+        "text": "Okay. Is it maybe worth reaching out to Lily? Yeah. Yeah. I'm just ping her and just be like, hey, here's, if we didn't have a milestone label on the whole group of work, like what would break?"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 708.88,
+        "end": 711.22,
+        "text": "Yeah. Who would hate us? Okay. I"
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 711.22,
+        "end": 712.04,
+        "text": "will ask her."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 714.08,
+        "end": 719.06,
+        "text": "Cool. All right. Let's move on"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 719.06,
+        "end": 780.26,
+        "text": "to the next point. Also mine. FYI, I added this section to our team handbook. I called it knowledge sharing. I didn't know what to call it. Forgive me. We have a tech writer now. Maybe you can help me with my struggles. The goal of this basically was like, I kept finding, like I kept looking for knowledge, like about, how do we do X in this extension? How do we do the same thing in this other extension? What about this one? What about this one? And I don't want to store this in my head. And I don't want to store this in the extensions themselves because it literally it's meta information. It's more about this applies to all of them. And like what, so I didn't know where to put this. I just put it in the team handbook. I was like, whatever, I'll put it there. So I'm happy for any improvements, additions, suggestions of alternative locations as well. And I would just also use this to encourage everyone to always like take advice from me. I think it's really important to have a lot of interaction when you like, especially about documentation. Like a lot of us are onboarding to this. Even the people who have been working on this for a long time, I've actually only been working on this for a couple of months. So like there's plenty of things that have not been written down and we should make sure to do"
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 780.26,
+        "end": 788.98,
+        "text": "more of that. And any kind of wordsmithing I'm"
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 788.98,
+        "end": 812.78,
+        "text": "happy to help with. I'm working on handbook stuff is a little more of a gray area for the docs team. More often than not, whatever's going in the handbook has something to do with a feature or something we're working on. I would rather just say, if you want your words edited, hi, send it over."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 813.8,
+        "end": 818.22,
+        "text": "Cool. Thank you. Awesome. And"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 818.22,
+        "end": 831.86,
+        "text": "yeah, this is by the one thing that I'm strongly all sometimes like, well, should this go into docs? But it doesn't feel very useful for like kind of the docs or documentation thing, like which versions of the language there are being like, who cares? Like only I care maybe about this. I don't know. Throw it over the wall."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 831.96,
+        "end": 832.66,
+        "text": "We'll figure it out."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 832.82,
+        "end": 837.12,
+        "text": "Yeah. Cool. Awesome. Marsha, you have the next point."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 838.3000000000001,
+        "end": 876.26,
+        "text": "Yeah, we got the VS Code integration merged yesterday and I was working on typing out the... I should have the inline completion stuff is working. I have like some dependency bumps on the language server side. And then it necessarily involves updating the VS Code extension to the latest version of the language server and all that. So we should get a couple of those issues knocked out as a result. And yeah, point being, I should have the follow up stuff, follow up MR stuff today."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 876.44,
+        "end": 886.2,
+        "text": "Well, Fiona, you can feel free to tag me in the... I'm a maintainer on the web ID now as well. So I'll accelerate that since I've had to do it. Lots of language server stuff in the OVM."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 887.28,
+        "end": 890.88,
+        "text": "You mean the... Are you a maintainer on the VS Code extension too?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 891.44,
+        "end": 895.4,
+        "text": "Not on the VS Code extension. I need to finish. I'm still like in the progress for that now."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 895.86,
+        "end": 899.12,
+        "text": "You've got to get that one too. It's the one I need for today."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 905.76,
+        "end": 922.7,
+        "text": "Yeah, I was just going to ask, is there... I know like VS Code has this like... We merge things and then someone has to actually cut a release. Do you know if they've cut a release? And then also, is it a... I assume it's like a setting. Like in settings .json, we have something we can hit true on and like... It's"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 922.7,
+        "end": 943.44,
+        "text": "what that team has been calling like a feature flag. Flag, yeah. Yeah, settings .json, but it's not like exposed as an extension setting. Okay. But yeah, if you enable that, it should be working. And yeah. I don't know if it's been cut into a release. I don't know if that's all automated or not."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 944.76,
+        "end": 954.44,
+        "text": "It's not. Can you find out when it is? And then it would be good to get... I'd like to give it to Tim Zalman to test."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 956.5,
+        "end": 963.2,
+        "text": "Yeah, let me get the inline completion working real quick. It's fine. Because it's probably better to test. But yeah, we'll do."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 964.28,
+        "end": 981.5,
+        "text": "Okay, cool. I think the reasons are definitely not automated. I think last time we... And I ended up asking Shakar to cut a release. So either you... Become familiar with the process and try to do it yourself or find a maintainer or someone like Shakar who can trigger the release when needed."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 982.14,
+        "end": 982.58,
+        "text": "Okay."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 988.3,
+        "end": 993.44,
+        "text": "Awesome. Thank you. That's great. John, you have the next one. Oh, yeah, go ahead. Sorry."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 993.96,
+        "end": 1023.1,
+        "text": "There's one... I'll ping Aaron on the MR, but the inline completion stuff I'm working on for VS Code introduces like a new protocol. So I'm going to try to get the protocol message that's part of like the upcoming like 3 .18 protocol for inline completion. So we can coordinate on that, but you'll have the option to listen for the inline completion event separate from the like dropdown completion event."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1023.74,
+        "end": 1031.98,
+        "text": "Oh, this makes... Marshall, would it be then better to... Would you need to upgrade to the latest version of the language server then before you can do that? Or..."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1032.56,
+        "end": 1036.8,
+        "text": "Yeah, I mentioned that... That will... Okay, sorry, I missed that. That went out at the same time. Okay, okay."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1036.86,
+        "end": 1038.28,
+        "text": "Gotcha. Yeah. Cool. I"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1038.28,
+        "end": 1040.3,
+        "text": "just assigned myself that other issue, so..."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1040.7800000000002,
+        "end": 1047.08,
+        "text": "Great. All right, we can go to number six"
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1047.08,
+        "end": 1047.7,
+        "text": "now, John. Yeah."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1048.48,
+        "end": 1104.58,
+        "text": "Cool. Yeah, I just had a quick question around. So I know that LSP was originally written in Golang, and now we've moved over to TypeScript. And as those versions and, you know, as we add more features of TypeScript and as we had breaking changes, those are very different paths. And most likely Go is never going to be used again. Should the goal be that we're removing Go references or references to that Golang LSP in our extensions? And I'm almost asking this because in the Visual Studio one, we've tried to have some common interface and implement both paths, but we're already at a point where that common interface is no longer going to work. So my suggestion... My suggestion for the Visual Studio side of things would be just to... We're going to stick with the TypeScript LSP and remove all references to Go."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1108.12,
+        "end": 1113.98,
+        "text": "Yeah, I have no idea that the Visual Studio one was still referenced to Go. Okay. Surprising."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1114.26,
+        "end": 1126.48,
+        "text": "Yeah. Last week, I had the same experience with NeoVM. I just had to rip all the, like, support for both. I just had to rip all of it out because of the token check just changed, and just the paradigm for how authentication worked so much."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1126.66,
+        "end": 1134.52,
+        "text": "Yep. Cool. Okay. So general consensus is let's go ahead and remove references to Golang."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1134.7,
+        "end": 1142.0,
+        "text": "Yes, we have consensus. And based on this consensus, Kai has archived the project definitely after consensus was reached. So all is good."
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 1143.44,
+        "end": 1144.0,
+        "text": "Yay!"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1147.46,
+        "end": 1151.64,
+        "text": "Super fast. Kai's executive decision came through. Okay."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1153.94,
+        "end": 1180.38,
+        "text": "So I was the last project holding up the experiments group. So I was happy to finally just be like, all right, well, I'm done with this. It was also in my browser's autocomplete history. Every time I typed language server, it would take me to that project. And so that was really my secret reason for wanting to archive it. You'll learn to navigate GitLab through your browser history, not through GitLab at some point. And so, like, it's really important that those links are correct."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1181.42,
+        "end": 1182.76,
+        "text": "Yes. Cool."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1185.3200000000002,
+        "end": 1219.98,
+        "text": "I have the same problem, by the way. Or similar problem. Every time I navigate to the language server, I just end up on the Q &A, like, onboarding issue that I created. I'm like, I don't care about this issue anymore. I want to see something else. So anyway. Cool. All right. We have nothing else in the written agenda. Anything people wanted to bring up or discuss? Ali, we didn't get to sync this week, but it looks like everything was going well and we're getting back to the main topic. So we're getting very close to being able to fit the telemetry on the JetBrains. Anything that we should discuss on this regard?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1220.84,
+        "end": 1226.98,
+        "text": "No, nothing new. Hopefully we'll have a release tomorrow with telemetry enabled."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1230.08,
+        "end": 1272.78,
+        "text": "Nice. Awesome. Cool. Oh, and by the way, for everyone who might not be aware, so we now officially consider Visual Studio and NeoVim to have, well, functional and working telemetry. Which is kind of what's our criteria for internal GA, but we're not calling them GA just yet, like publicly and widely because they, these two extensions only support code suggestions. The code suggestions itself in the future isn't GA. So it just confused a hell of a lot of users if we did that. So, but internally we're very proud of ourselves and the work that we accomplished because we managed to hit that. So thank you everyone. This is awesome. Cool. Yeah. Well, if there's nothing else, we can wrap it up."
+    }
+]
