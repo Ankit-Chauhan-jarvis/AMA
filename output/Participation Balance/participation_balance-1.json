@@ -1,0 +1,262 @@
+{
+  "summary": {
+    "SPEAKER_03": {
+      "full_participation": 7,
+      "non_participation": 0,
+      "pretend_participation": 2,
+      "total_utterances": 9,
+      "utterances": [
+        {
+          "text": "Okay, we're live. Hello, everyone. Welcome to the Editor Extensions group meeting. It's December 7th. The first part here is an announcement from my side. So I've been asked what I think about hosting",
+          "participation": "full_participation"
+        },
+        {
+          "text": "I mean, I'm not sure if you're familiar with that. Awesome. Yeah, there was a time. I remember a job where I had at some point, I had three interns in parallel assigned to me and they were in. Hello. ",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Awesome. Yes. Very happy about this. Yeah. And the process for becoming language server maintainer is extremely lean. So we were able to quick turn around there as well. Yeah. Nothing like the monolit",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Um, yeah. So again, thank you everyone who's, who's been contributing to this, um, so far, and it looks like we have also made really good progress today on the cash. So kind of looking forward to thi",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah. So that was my question. I was like, I was actually surprised to learn that we have local copy. I didn't realize that was the case. And so it is the case then that we, there could be like, we do",
+          "participation": "full_participation"
+        },
+        {
+          "text": "this is a moment also to broadcast. By introducing the cache, the telemetry model has not changed, but we have basically two different, we're introducing two different sources of suggestions. One sour",
+          "participation": "full_participation"
+        },
+        {
+          "text": "don't know, Aaron having an epiphany, maybe?",
+          "participation": "pretend_participation"
+        },
+        {
+          "text": "Yeah. Cause like initially when I, it took me a while to find time to actually think this through. And then when I tried to think, it's through, I was like, I can't, I can't figure this out. I feel li",
+          "participation": "full_participation"
+        },
+        {
+          "text": "And I also felt like, I felt like there must be a good solution to this, but couldn't find it. So I was happy that others were good. Yeah. All right. Yeah. There's nothing else in the notes doc, any o",
+          "participation": "pretend_participation"
+        }
+      ]
+    },
+    "SPEAKER_01": {
+      "full_participation": 7,
+      "non_participation": 0,
+      "pretend_participation": 0,
+      "total_utterances": 7,
+      "utterances": [
+        {
+          "text": "Yeah, for sure. Well, in a previous role, I got to mentor like like half the interns sort of yearly, like all those sort of back under front end interns that you get to sort of speak with. There's loa",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah, for sure. And so I've first become a language server maintainer, I guess, over the weekend and sort of with some of the pushes to code. And then I've been able to get a lot of suggestions. There",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Awesome. Cool. Yeah. And so, yeah, John, John and I had a pretty productive discussion around like automation. We could potentially do for visitor studio as well. Because right now, the diversity is p",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah, for sure. Uh, so essentially one, one of the things that came up this morning is we, we, uh, got through a review. We merged in changes for a language server caching. And so, uh, some after cach",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Well, I know how to get points on a different thread that I've just thought of, uh, where right now we're doing an import to the file and it's committed into get, but instead of doing that, what we co",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah. So it's easy. So, yeah, I guess we can improve the way we're doing the poll. But right now it was a manual process to do the polling. I've got, I've, I'm going to add an MR job, which will fail ",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah. You joked about having renovates for Snowplow, but we could actually, that could literally solve the problem. Because what we would do is we just have, we just have a module that's available, an",
+          "participation": "full_participation"
+        }
+      ]
+    },
+    "SPEAKER_02": {
+      "full_participation": 2,
+      "non_participation": 0,
+      "pretend_participation": 0,
+      "total_utterances": 2,
+      "utterances": [
+        {
+          "text": "Yeah. So bear, I have, I have pulled in the latest language or version and have tested. So we're, we're good on visual studio as well.",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Aaron, I'll, I'll reach out to you. I'd love to have a little sync call with you. I'll call real quick to make sure that we're on the same, same, same page.",
+          "participation": "full_participation"
+        }
+      ]
+    },
+    "SPEAKER_04": {
+      "full_participation": 1,
+      "non_participation": 3,
+      "pretend_participation": 0,
+      "total_utterances": 4,
+      "utterances": [
+        {
+          "text": "Yeah. Sounds good. All right. Awesome.",
+          "participation": "non_participation"
+        },
+        {
+          "text": "So we need to renovate for Snowblow, basically, right? Cool. Maybe",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah. All right, there's some more activity in the doc now, but I",
+          "participation": "non_participation"
+        },
+        {
+          "text": "All right.",
+          "participation": "non_participation"
+        }
+      ]
+    },
+    "SPEAKER_00": {
+      "full_participation": 2,
+      "non_participation": 0,
+      "pretend_participation": 0,
+      "total_utterances": 2,
+      "utterances": [
+        {
+          "text": "Is, uh, I was thinking like, is there a way to know that there is new schema published because, uh, I mean, like we, uh, we've done it manually, but we do not know, do not know when the new schema is ",
+          "participation": "full_participation"
+        },
+        {
+          "text": "Yeah. Because like say, we had now like say, um, we had a, we had a, we had a, we had a, we Uh, this schema was updated, but it didn't get the version change. That's why we get this like difference, l",
+          "participation": "full_participation"
+        }
+      ]
+    }
+  },
+  "detailed_results": [
+    {
+      "speaker": "SPEAKER_03",
+      "text": "Okay, we're live. Hello, everyone. Welcome to the Editor Extensions group meeting. It's December 7th. The first part here is an announcement from my side. So I've been asked what I think about hosting an intern in our team next summer, intern or interns. I personally, when I was in IC, I really enjoyed mentoring interns back then. So I am excited by the idea. But in my experience, a big key to success for this is to make sure that there is like a clear and dedicated support for interns from like",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, for sure. Well, in a previous role, I got to mentor like like half the interns sort of yearly, like all those sort of back under front end interns that you get to sort of speak with. There's loads of UX interns and stuff in the previous role as well and product management interns. I love that. So in the Belfast office, we sort of had like up to like 12 interns sort of initially. And then I was 12. I'm not going to say a bunch of interns. You know, like, you know, I was like, you know, I wa",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "I mean, I'm not sure if you're familiar with that. Awesome. Yeah, there was a time. I remember a job where I had at some point, I had three interns in parallel assigned to me and they were in. Hello. Hey, Kai. The other guy. Hi. And we, one of them was in second year, one in third year and one fourth year of college. And the one in second year was actually the most, the most productive one that kind of blew it out of the water. So that was kind of an interesting experience as well. Anyway. All r",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, for sure. And so I've first become a language server maintainer, I guess, over the weekend and sort of with some of the pushes to code. And then I've been able to get a lot of suggestions. There was sort of a lack of maintainers available and because I was already in the area anyways, I got moved from a reviewer to maintainer. So yeah, if anybody needs reviews, I'm happy to help now.",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "Awesome. Yes. Very happy about this. Yeah. And the process for becoming language server maintainer is extremely lean. So we were able to quick turn around there as well. Yeah. Nothing like the monoliths really. All right. Sweet. Next one. Yeah. Discussion. So yeah, I wanted to touch a little bit about, you know, talk a bit about the latency or I guess it's not really just latency at this point, but the whole kind of sprint crunch stuff that's going on this week on code suggestions. So I think th",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "text": "Yeah. So bear, I have, I have pulled in the latest language or version and have tested. So we're, we're good on visual studio as well.",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Awesome. Cool. Yeah. And so, yeah, John, John and I had a pretty productive discussion around like automation. We could potentially do for visitor studio as well. Because right now, the diversity is pulling in the, like the windows binary. So I think we got a package, Jason, so we can get renovated to automate the merge requests. That would be really quick. So that way John doesn't have to go and manually do all the steps. John can just sort of sign off after doing sort of some manual testing an",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_02",
+      "text": "Aaron, I'll, I'll reach out to you. I'd love to have a little sync call with you. I'll call real quick to make sure that we're on the same, same, same page.",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_04",
+      "text": "Yeah. Sounds good. All right. Awesome.",
+      "participation": "non_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "Um, yeah. So again, thank you everyone who's, who's been contributing to this, um, so far, and it looks like we have also made really good progress today on the cash. So kind of looking forward to this one as well. Um, all right. The next, next point here. So, okay. The next one, I didn't write much here. I just wrote language server in jet brains. Um, because with this week, basically we've also kind of been adding. So, so I feel like this week has also stolen the thunder a bit about, you know,",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, for sure. Uh, so essentially one, one of the things that came up this morning is we, we, uh, got through a review. We merged in changes for a language server caching. And so, uh, some after caching, there was some sort of, uh, we weren't doing telemetry quite yet. So we had disabled it and then we enabled it with a new field for tracking. And that field that we added was a breaking change. Um, and there's like a local copy of the schema file. And so we, uh, we, uh, a contributor came in, a",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "Yeah. So that was my question. I was like, I was actually surprised to learn that we have local copy. I didn't realize that was the case. And so it is the case then that we, there could be like, we don't have a local copy. We don't have to have it. It's just, that's how it is right now. But we can, you mentioned using micro, which I don't know what that is, but it sounds like a snowplow thing. So we can sort of just pull, uh, we could pull the latest, like we don't, we wouldn't have to version t",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Well, I know how to get points on a different thread that I've just thought of, uh, where right now we're doing an import to the file and it's committed into get, but instead of doing that, what we could do is we could keep the import the same way and the import with ES bundle. We can actually download the file during build time to pull in the, the Jason schema. And so that could pull it from the actual registry. And that way you had to be a build time failure if the file didn't exist in, and th",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "text": "Is, uh, I was thinking like, is there a way to know that there is new schema published because, uh, I mean, like we, uh, we've done it manually, but we do not know, do not know when the new schema is published in this like equal repository. I'm not sure how it's called.",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Yeah. So it's easy. So, yeah, I guess we can improve the way we're doing the poll. But right now it was a manual process to do the polling. I've got, I've, I'm going to add an MR job, which will fail your MR. If there's been a change since the last time it's been merged to main, but the, yeah, we need, we need some way to push, like if a new glue thing is there, get like do something we can maybe do a nightly job even where we run the lint job nightly. And if it fails on main, then we got to lik",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "text": "Yeah. Because like say, we had now like say, um, we had a, we had a, we had a, we had a, we Uh, this schema was updated, but it didn't get the version change. That's why we get this like difference, like our local schema was the same version. That's like equal sigma, but it was like, had different, like, I don't know, defined. Uh, so ideally this wouldn't happen. Uh, she shouldn't happen because they update those schema with meaning and use schema files. Right. And like, this is probably somethi",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_04",
+      "text": "So we need to renovate for Snowblow, basically, right? Cool. Maybe",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "this is a moment also to broadcast. By introducing the cache, the telemetry model has not changed, but we have basically two different, we're introducing two different sources of suggestions. One source is the network, like the usual one, basically, like the AI gateway, and the other one is the cache. So as far as the clients are concerned, it's like they request a suggestion, and then the language server decides whether it'll serve it from the cache or it'll serve it from, you know, fetching it",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_04",
+      "text": "Yeah. All right, there's some more activity in the doc now, but I",
+      "participation": "non_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "don't know, Aaron having an epiphany, maybe?",
+      "participation": "pretend_participation"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "text": "Yeah. You joked about having renovates for Snowplow, but we could actually, that could literally solve the problem. Because what we would do is we just have, we just have a module that's available, and that module would just build, we can have it where it like builds often or something like that, or it even like is a fork of the existing Snowplow project. And essentially if there's an update there, it rebuilds a node module, which has the JSONs available. And if that node module is updated, then",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "Yeah. Cause like initially when I, it took me a while to find time to actually think this through. And then when I tried to think, it's through, I was like, I can't, I can't figure this out. I feel like we need to change the model. And then I talked with Shakur and he was like, yeah, I think we need to change the model or we need to just not have to limit you. Or we, we talked about a few options and then busty is basically kind of cracked that he was like, wait, defer like the model is fine. Li",
+      "participation": "full_participation"
+    },
+    {
+      "speaker": "SPEAKER_04",
+      "text": "All right.",
+      "participation": "non_participation"
+    },
+    {
+      "speaker": "SPEAKER_03",
+      "text": "And I also felt like, I felt like there must be a good solution to this, but couldn't find it. So I was happy that others were good. Yeah. All right. Yeah. There's nothing else in the notes doc, any other topics that people want to bring up and discuss.",
+      "participation": "pretend_participation"
+    }
+  ]
+}
