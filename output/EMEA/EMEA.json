@@ -1,0 +1,464 @@
+[
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1.162,
+        "end": 13.057,
+        "text": "And we're live. Welcome to yet another weekly call for EMEA and America's time zones of the new diffs architecture workflow effort."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 13.898,
+        "end": 14.539,
+        "text": "That's a mouthful."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 15.44,
+        "end": 42.403,
+        "text": "I'll go straight to the agenda. We have a point from Patrick who's not attending. I'll be out starting this Thursday, October 12, and we'll be back on October 17. So I won't be able to host slash attend the APAC call. We'll catch up on recording and issues. He also says, related to the APAC call, no one attended the last one. So I wonder if we should make it earlier in case someone from America can join. What do you think about 1 a.m. UTC?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 45.447,
+        "end": 46.447,
+        "text": "Thoughts?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 51.193,
+        "end": 52.735,
+        "text": "Would anyone here be affected by that?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 53.525,
+        "end": 58.132,
+        "text": "Like, I can't go to that. Well, I mean, I could go to that, but that would be, no thank you."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 58.152,
+        "end": 61.257,
+        "text": "What would be your time if it was 1 a.m.?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 61.277,
+        "end": 75.478,
+        "text": "1 a.m. UGC would be... 6 p.m., I think. I think I'm minus 7. Which, I mean, I suppose I could go to that."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 75.758,
+        "end": 77.541,
+        "text": "It wouldn't be my most favorite time, but..."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 81.352,
+        "end": 104.274,
+        "text": "This is what it would look like. Where are these locations? Oh, here on the right-hand side. So London would be 2 AM. Sorry, what was his proposal? 1 AM? Yeah, 1 AM UTC, but with Daylight Savings Time, it's 2 AM London, 1 AM UTC, right? So these would be the times. What's your central? Is it Central Mountain? Oh, yeah. It's already on the verge of being late."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 106.736,
+        "end": 107.477,
+        "text": "It's tough."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 109.634,
+        "end": 115.04,
+        "text": "If you want to make it to include Singapore, that area."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 117.523,
+        "end": 131.418,
+        "text": "Yeah. Since, since this is late, like later in my evening, I wouldn't, I don't have a ton of opinion about this. So I don't know if anybody else here does, if that helps them, that's good."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 131.878,
+        "end": 134.241,
+        "text": "If more people show up. Yeah."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 137.782,
+        "end": 148.012,
+        "text": "It would make it so that these two meetings are exactly 12 hours apart and I could theoretically make either one of them, which I suppose is good. I could come to both, but..."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 148.653,
+        "end": 175.914,
+        "text": "So since we haven't had a lot of experience with that, I would suggest just trying a new time and broadcast it and let people know and go from there. And we can tweak it every week as we go. It seems like 1am would be still too late for Americas. So I'm probably going to be counter-proposing midnight UTC, which is like one hour less. And we'll see from there."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 177.858,
+        "end": 178.739,
+        "text": "Why can't I change?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 181.985,
+        "end": 182.346,
+        "text": "Sorry."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 186.113,
+        "end": 271.683,
+        "text": "Right. 1 a.m. UTC. Seems like it would still be too late for America, but what is it, zero AM? Is that how you write it? Zero, 12, no, 12 AM? 12 AM, right? 12 AM or zero, zero hours. Midnight. Good to see. Good. Eventually work. I'll update the invite. He also says, we should likely market the APAC call more as people may not know that it exists and they can join. I can do this when I get back. I'll broadcast the change of the events time in Slack channels. Yeah, I'll go through the, it'd be nice to go to the map. Sorry, apologies, but we don't have that anymore. But I know at least two people that are in Australia. Ash McKenzie and David Kim. So that would be the two people that I'll be pinging. Is there anyone else that we should be pinging?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 275.266,
+        "end": 276.367,
+        "text": "On top of my head, those are it."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 276.547,
+        "end": 278.409,
+        "text": "So I'll ping them."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 278.429,
+        "end": 282.841,
+        "text": "So that's that. Any more thoughts on the APAC call?"
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 285.905,
+        "end": 297.937,
+        "text": "All right. Moving on to the next point, Patrick as well, not attending. He left a comment about a random thought related to order of priorities. Then Igor, you also left a comment."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 301.12,
+        "end": 309.589,
+        "text": "Yeah, we had a bit of a discussion there. Should we cover that now or should we keep it asynchronous? Igor, do you want to share your views?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 310.514,
+        "end": 376.077,
+        "text": "Keeping it synchronous is fine with me. Yeah, just mentioned that probably we need to define our priority. What do we mean? Again, like behind the word priority and whether we should be firm about whether we want to sacrifice some performance or maintainability or coverage for the sake of other criteria or not. So yeah, I suggested two points. Either be firm about that we don't want to decrease any of the criteria of the metrics, only improve them. Or, for example, we could define the flexibility, how flexible we are about sacrificing some of the metrics. For example, I can imagine a scenario of removing some feature for the sake of maintainability or performance, but it's sure it's like a protocol. Got it."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 376.107,
+        "end": 470.605,
+        "text": "No, that's great. And I definitely encourage everybody to read that thread, because I feel like it's the kind of things that we'll face in the future. So it's definitely worth giving you some thoughts. What I propose, Igor, is for the sake of moving this along, I'll get an MR started for the documentation that's in the works. Phil already has an MR up, should be merged soon. I'll add a little section about priorities. And we'll just collaborate there. I'll grab some of your examples there. I think we're leaning more towards the flexible part. Because remember, we're always going to be here to make the best call for each scenario. But we don't want to be imprisoned by a theoretical restriction that we created out of thin air. This is more like to guide us than to restrain us. So we'll always have the ability to have a conversation around it. And in the particular part of the coverage, accept less coverage if it means that it's more performance. But UX and product being OK with that will be part of the conversation. For now, we just have to write something in the documentation. We can iterate later if we feel like it's still not But I feel like moving to an MR is probably the best way to start talking about the actual wording, tweaking the text there."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 470.625,
+        "end": 472.205,
+        "text": "Sure, makes sense."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 476.892,
+        "end": 480.416,
+        "text": "The cough came in as I was asking, does that make sense? And you answered, so thanks."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 482.598,
+        "end": 495.881,
+        "text": "I'll move on to create an MR. Start. Putting this to stone and iterating and collaborating."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 504.349,
+        "end": 506.611,
+        "text": "Cool, cool, cool, cool."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 508.474,
+        "end": 519.565,
+        "text": "All right. Let's keep on discussing, I guess, synchronously in the issue. If you have more thoughts, I'll, in the meantime, should be moving on to the MR in the next day or two. Igor, you have your next point."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 521.468,
+        "end": 570.173,
+        "text": "Yeah, unfortunately it's some specific example, rather than something related to on the, how we organize our initiative but yeah it's about this example that we already worked on the performance of deeps previously, and there's currently some functionality on the back end behind the future flag. But at the same time, it's disabled for a while now, just because we had issues with view, syntax highlight, maybe with some other formats as well. So yeah, it's just as an example of prioritizing courage and correctness over performance in this case. But we will probably come back to this example later and see what we can improve."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 575.35,
+        "end": 576.311,
+        "text": "Thanks for sharing that."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 576.331,
+        "end": 596.62,
+        "text": "I think this is definitely useful to understand. Given what we learned with the front-end highlighting, it definitely tracks because partial highlighting is always going to be challenging in certain contexts. So this came up in a previous discussion earlier today in my one-on-one with Phil."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 600.987,
+        "end": 625.759,
+        "text": "Have we ever looked into Not highlighting all of the files in the diff and just doing that for a certain set of like the initial ones. Have we looked into that at all, ever? And to save the work of highlighting the file for when it's actually requested. Have we ever looked at that?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 626.195,
+        "end": 631.043,
+        "text": "So highlighting the part of the file instead of the whole file."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 631.343,
+        "end": 697.771,
+        "text": "No, no. So the idea is that, so imagine you have a diff with 12 files changed. Sorry, let's say that we change one line in 12 files. The process as far as I understand right now, we'll have to highlight all of the 12 files first and then grab this chunk thing that we need to put in the diffs. What if we didn't do the highlighting for the whole 12 files? We just did the highlight on three or four, which will be the first ones that will be in the batch diffs being thrown into the browser. And then from that moment on, we would only be highlighting on demand and caching it. The idea there is to alleviate the work that backend has to do to start giving the results, I guess. not doing work up ahead until it's needed. That's the whole overall thought, I think. Have we ever looked into that? Is that even meaningful?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 700.075,
+        "end": 818.573,
+        "text": "Probably we had a look at it, but to me it sounds like more like front-end dreaming, because It's everything comes down to fetching the files. We just fetch four files and display them. If we scroll further, we fetch more files. Regarding the backend, probably it's not feasible not to. not to highlight. I mean, yeah, so it all comes down to front-end, yeah, and fetching the smaller set of files. I don't know whether we considered it before, but yeah, it's possible. But to be honest, I would look at them. Currently, for example, if we're talking about 12 files, currently we fetch the whole content of those 12 files. And maybe we should consider first, avoid at least fetching the whole content of 12 files, but only fetching some limited set of data. Because for example, if those files are one megabyte or 10 megabyte each, so we will still fetch the whole file, which is not so performant. But as we discussed before, it's done in order to provide the context for the whole file. For example, as for the view files currently that we have an issue, the script tag is somewhere higher in the beginning of the file. And so our highlighter doesn't understand whether it's HTML or JavaScript that it needs to highlight. something to have a look and definitely there's room for improvement, but yeah, it should be discussed and investigated. Okay."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 819.936,
+        "end": 829.465,
+        "text": "So you're saying that all of this work is triggered by the front-end call. So essentially we do the highlights and all that stuff if it's not cached when the front-end asks for it."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 830.385,
+        "end": 862.937,
+        "text": "Your suggestion is driven by a front-end call. Regarding my Improvement, I mean, regarding not fetching the blobs, it's backend driven because everything happens on backend. On backend, we fetch the whole content of the files because currently we highlight the files, the divs, we highlight the divs on backend and then return it to frontend. And yeah, like fetching those files is backend driven. Your idea is frontend driven."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 865.533,
+        "end": 865.974,
+        "text": "Okay."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 865.994,
+        "end": 884.254,
+        "text": "We're probably going to have a, I know that we have some documentation already and I'm looking at it, uh, right now for like the, um, I'm looking at the documentation that has been updated recently that has all the details there. So front-end calls dispatch, it payloads the diffs and all that stuff."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 884.295,
+        "end": 888.199,
+        "text": "And that's where it does a lot of like calculating unfoldable diff lines and all that stuff."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 888.533,
+        "end": 939.301,
+        "text": "In specific here, we see that GitLab diff highlight cache kind of thing is over here once we run into the cache. But part of this conversation is probably because we would like to speed up the delivery of diffs and potentially postpone the workload of doing the highlight, which could be done with the diffs already on the page. We could first display them not highlighted and then highlight them at a later stage when the user scrolls to it. So we're probably going to be, it's going to be useful to have one particular discussion exclusively about what changes we could do about the highlighting, but I'm not sure we're ready for it yet."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 942.926,
+        "end": 946.7,
+        "text": "Okay. Anybody has any more thoughts or questions about that?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 953.528,
+        "end": 954.528,
+        "text": "Okay."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 955.37,
+        "end": 1003.091,
+        "text": "Let's keep tracking that or at least keep discussing this because I feel like while the line-by-lines next highlighting might not be the way to go, there might be some lessons there. Igor, for your... For your context, it's still not very clear how much of a server-side rendered approach we'll be employing. And that will change a lot of these decisions, right? If we end up deciding to do the server-side rendering, we'll definitely need to prioritize a lot of these processes to be back-end run, running the back-end and not leveraging the front-end. But we'll discuss that. Cool, Thomas, do you wanna take your point?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1004.233,
+        "end": 1054.3,
+        "text": "I'll be right back. Yeah, I just wanted to, I wasn't sure exactly what we needed to output from these meetings in this quarter or whatever, in terms of the actual workflow document. So I was just asking that. I see there that Phil has created an MR for that, which I believe is, I think it's the full output that we need to do. So I don't know, I don't know, Like I said, in my note, I'm still trying to parse the, the workflow like page. Um, but I'm not sure what all we need to include in this. Cause like I'm focusing sort of, we actually, a lot of our conversations are around technical stuff. Like, how are we going to do this or what can we do? And I don't know, like, do we need to document this in that workflow document? Or is this, is this something that's higher level? I just don't really know exactly what the guidelines are here."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1058.363,
+        "end": 1073.62,
+        "text": "Right. So, um, Phil has already started the, the actual document, which is a Markdown file that we'll be putting, putting there. Uh, and then I guess everything that's useful to implement it needs to be linked there at least. Anybody has any other thoughts?"
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1075.863,
+        "end": 1092.236,
+        "text": "Yeah, I think that's right. So if we decided on. They've said random, we would talk about that in that document, I presume. I guess that should have everything the whole implementing implementation details inside of it."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1092.296,
+        "end": 1095.205,
+        "text": "We link to issues I don't know why that's easy."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1100.281,
+        "end": 1108.476,
+        "text": "But yeah, there's a lot to read about that whole workflow thing. Yeah. I kind of skipped most of it and had a call with Stan and hoped that he could tell me all."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1108.496,
+        "end": 1180.44,
+        "text": "Okay. That sounds good. The document is like, it's not too long. It's just like, it's hard for me to pull action items out of it. Like I understand the concept. I just don't really get like what it's trying to tell me. Um, okay. That sounds good. Um, my other point is I created a new issue, which is one of those things where I'm like, I don't know if this is going to be part of the architecture workflow or not. Um, but as we were talking about metrics and, uh, like accessibility and that kind of stuff, it seemed like what our definition of done is, is going to be slightly different than like metrics. And so I created an issue for that, for us to like define what our definition of done is. Um, Because we have metrics we can track, we have like the desire to do accessibility, like as a guaranteed Boolean like yes or no, but then like, how do we define when work is done, does it meet metrics 100% of the time is it 70 p 75 or whatever that kind of stuff so feel free to contribute there. I put two things in the description I think they're. they're guaranteed things, and then we have to define what they are. Because I said meets our technical metrics, but we haven't really defined those yet. So feel free to contribute wherever."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1183.643,
+        "end": 1219.297,
+        "text": "Cool, thanks Thomas. I added a note here just because the way I see it, a lot of these discussions about the meaningful metrics, the defining maintainability, all of the outcome of those discussions will basically be sections in that document that Phil is creating right now. And in the end, what we'll have is exactly a guiding document for this project. What will be the benchmark? Sorry, what will be the budgets that we'll have to abide to? And all that stuff will be in the document there. to guide the implementation. And hopefully by the end of it, everything will be cleared up and not be like a TBD."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1220.178,
+        "end": 1220.699,
+        "text": "Hopefully, yeah."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1222.862,
+        "end": 1236.278,
+        "text": "Yeah, thanks for starting this. It's definitely something that could be a little bit more specific to us as we want to be a little bit more strict than the overall GitLab project. I feel like this is definitely going to be useful in the end. So thanks for that."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1242.125,
+        "end": 1242.405,
+        "text": "Cool. Igor?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1244.815,
+        "end": 1256.635,
+        "text": "Oh yeah, I have noticed that Patrick mentioned that he won't be, he won't attend any of the meetings, some of the meetings. So I decided to mention as well that I will be off next week."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1257.236,
+        "end": 1261.643,
+        "text": "So yeah, nothing important, just, yeah, I'll be off for the next meeting."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1268.879,
+        "end": 1270.822,
+        "text": "Cool, thank you, Igor. Enjoy the time off."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1272.505,
+        "end": 1312.377,
+        "text": "I had a last point here, last minute, because I wanted, like last time we spoke, we were targeting to have captured the way that the diffs are rendered, calculated, that we do today on all of the areas that we have diffs today. I wanted to do a quick check on where we are about that. So essentially, these are the four categories, I think. I mean, there's still Gitly somewhere in there, but I'll include that as backend for now."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1313.138,
+        "end": 1331.286,
+        "text": "So I can say, I was supposed to do that work to convert Phil's Excalidraw thing to Mermaid, and I completely forgot. So that's not done, sorry. All right. So today is like a big catch up day. So I'm trying to, I'll probably get to that today."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1333.249,
+        "end": 1339.016,
+        "text": "Yes. And I have to remind you, like, we don't have to, we don't, we don't want it to be perfect."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1339.377,
+        "end": 1341.299,
+        "text": "You want it to be done essentially."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1341.52,
+        "end": 1351.433,
+        "text": "So it's called draw migration and started. I think if I'm, if I'm recalling correctly, I think Amy had started converting this to mermaid."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1351.693,
+        "end": 1369.93,
+        "text": "Hadn't she? He wanted to have it converted. I saw a, I don't know where it is, but I got to find it. I saw a collapse, like a details collapse. And inside of that is a bunch of mermaid stuff. And, uh, I think it's related to this. It's not done, but I'm pretty sure it is this."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1370.298,
+        "end": 1410.94,
+        "text": "Well, if it is, that's good luck for you. But if it's not, you have to do it anyway. But yeah, please take a look at it soon. Because what I want us to have as soon as we have, I know we'll check the other sections. As soon as we have these, we should all get a ping of saying, listen, Documentations is ready. Go take a look. And then we'll chat about it. Because we'll have to have a sync discussion about, or a sync or asynchronous discussion. about how we extract the patterns that match all things. But anyway, so that's the status of CodeReview front end. Thomas, thank you so much. Let's hope to have it done in the next couple of days. Who else wants to provide an update?"
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1413.062,
+        "end": 1451.993,
+        "text": "Yeah, I did start with the source code front end. I added the diagrams for compare branches and repository commit. They're pretty simple because they both Hamel based. Um, the only difference really is on the repository. We requested, um, the diffs asynchronously. That's really the only notable difference, uh, between them, but it's in the, it's in that issue. If you wanted to, anyone wants to take a look. I'm guessing that this is what you're talking about, Jack. That's the one. Yeah."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1453.34,
+        "end": 1465.277,
+        "text": "All right, cool. We'll definitely take a look at it. And if you have any questions or clarifications that we need, feel free to ping Jacques on this thread and we'll take it from there."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1465.678,
+        "end": 1466.459,
+        "text": "Right, more updates."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1475.072,
+        "end": 1509.848,
+        "text": "Yeah, I saw that Jacques did it to the front-end architecture. And, yeah, it looked to me. It seemed to me that it's it's enough but probably I should add more details here if we interested about Italy involvement into this, then. Yeah, I'll. and details or maybe either me or Sean will ask someone from the team to read the diagram. Yeah. And so I'll have the update yet today or tomorrow."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1509.868,
+        "end": 1567.65,
+        "text": "Yeah, I think it would still be useful, Igor, especially as we're like, especially when we're talking about front end architecture changes, we're not really clear about what that means for you all in the back end for Gitly. Like, for example, these partial things would that speed things up significantly or would still not make that much of a difference? So we just want to understand and I'll just make that a little bit more specific. When we're requesting the diffs, we could distinguish between the diffs that are visible now to the user and the ones that are not visible to the user. So we could cut some corners and render those much quicker, because then later on, we'll refresh them for the real thing later on, which means that the request to Gitly could be much lighter if we don't need all the information that we might need later. So a lot of these decisions are like full stack. They go from the beginning to the end."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1567.931,
+        "end": 1570.033,
+        "text": "So yeah, we're very useful."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1572.46,
+        "end": 1656.017,
+        "text": "Thanks. In the code review backend, as far as I understand, there's a couple of merge requests being merged. And there's still one in flight, again, Patrick absence. But from what I can see, several MRs are being merged slash reviewed into this page. Sorry. I shouldn't put the hash there. And that's what I think is the latest update from the backend for code review in this particular sense. The diagrams are the ones that are really tiny, but we probably want to take a look at that, try to understand everything that is over there so we could potentially understand that better. And yeah, I guess that was the flow section, but I pointed to the whole page. Cool. So let's, it feels like we're getting to, but once we have Thomas's migration of Bill's diagram, and once we have the backend from source code, it feels like we have a good spot to just overview everything together, first synchronous, and then have a synchronous discussion about it. So thanks everybody for that update."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1656.317,
+        "end": 1657.8,
+        "text": "Anybody has any other points?"
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1666.623,
+        "end": 1667.623,
+        "text": "Cool."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1669.772,
+        "end": 1729.502,
+        "text": "So I'll, I'm just taking a look about what we need to get done. I'll update the Thursday call, broadcast the change on Slack. Thomas will finish off. I'll start an MR to document the priorities in the MR in the markdown file. And Igor will complete or find someone to complete the backend details. And yeah, Thomas will update the migration of that. So I feel like we have a cool list of things to get done. And let's participate on the discussion of the definition of done, everybody, so we can get it in a place to get merged too. All right. A bit chaotic, but we got it through. Thank you so much for everybody's input. And yeah, I'll see you either Thursday or Tuesday, I guess. All right. Take care, everybody. See you. Thanks, everybody. Thank you."
+    }
+]
