@@ -1,308 +1,356 @@
 [
     {
-        "speaker": "SPEAKER_01",
-        "start": 4.3000000000000025,
-        "end": 20.68,
-        "text": "Hey everyone, this is the design pair session on March 30th and today we're going to work, walk through the glossary to discuss deployments. So I'll hand this off to Victor to give an intro and then we can jump into it after."
+        "speaker": "SPEAKER_04",
+        "start": 2.9,
+        "end": 18.82,
+        "text": "Hey, everyone. This is the design pair session on March 30th. And today, we're going to walk through the glossary to discuss deployments. So I'll hand this off to Victor to give an intro, and then we can jump into it after."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 18.84,
+        "end": 200.442,
+        "text": "Yeah. Hi. So yeah, Emily asked me to give an intro to what is the ad glossary to discuss deployments, what we're jealous about, and why we should focus on it. So today, when we speak about the delivery domain, there are some core concepts like environments, deployments, releases, artifacts, perhaps you can think anything around a secure software supply chain that's involved. And it's not obvious what we mean by all of these words, especially when we use them as nouns, versus when we use them as verbs. And the glossary aims to have a common vocabulary for us to discuss the topic itself. We started to work on this with Mikhail a long, long time ago. And I would even say that we got to a point where we wanted to merge it and we thought that this is good enough and pretty well describes how we imagine the best word that we could have within GitLab. But it was just so far away from what GitLab offers that we never got to the point to merge it. Because I was like, it would cause a lot of confusion, where would we put it, and so on. And what I would like to do is that I would like us to focus first on the glossary of how we imagine the best possible world, how we want to discuss that. and then describe as well what GitLab offers today and see how we can later on move the two together. So that's the plan and it will basically help us afterwards to discuss any of our topics. I will give you one very specific example, which is the releases within GitLab, the releases object within GitLab that I find really confusing. Because to me, a release is the final part of delivery when the software reaches the user. And if you think about open source product development and GitHub and the releases, then once a release appears on the GitHub release page, it's ready to use. You can download it and use. But if a release is about a software as a service product, then the release is more of a feature flag switch. It's different action that happens when you release something. So that, for example, is pretty confusing to me. It would be nice to have a common understanding of all these terms and how they relate to each other and how a code change reaches the user, basically. I think that's the intro. I don't know if you have any questions related to that."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 22.52,
-        "end": 202.3,
-        "text": "Yeah, hi. So, yeah, Emily asked me to give an insight into what is the ad glossary to discuss deployments, what you request about and why we should focus on it. So today, when we speak about the delivery domain, there are some core concepts like environments, deployments, releases, artifacts, perhaps. You can think anything around secure software supply chain that's involved. And it's not obvious what we mean by all of these words, especially when we use them as nouns, whereas we use them as verbs. And the glossary aims to have a common vocabulary for us to discuss the topic itself. We started to work on this with Mikhail a long, long time ago. And I would say that it's a very interesting topic. And I think it's a very interesting topic that you had lots of experience with yourself. Hope you don't electricissa bail on us. I would even say that we got to the point where we wanted to merge it and so that this is good enough. And we read describes how you imagine the best word that you could have within GitLab. But it was just so far away from what the lab offers that we never got to the point to merge it, because it's co wh Secondly, the but I could simply imagine you sort of deploy, you put this and so on, and what I would like to do is that I would like us to focus first on the glossary of how we imagine the best possible version, how we want to discuss that, and then describe as well what GitLab will do today and see how we can later on move the two together. So that's the plan and it will basically help us afterwards to discuss any of our topics. I will give you one very specific example which is the releases within GitLab, the releases object within GitLab that I find really confusing because to me a release is the final part of delivery when the software reaches the user. And if you think about open source development and GitHub and the releases, then the release is the final part of the delivery. So if you think about open source development and GitHub and the releases, then once a release appears on the GitHub release page, it's way to users. You can download it and use. But if a release is about a software service product, then the release is more of a feature flex which it's more like a different action that happens when you release something. So that's pretty confusing to me. It would be nice to have a common understanding of all these terms and how they relate to each other and how a code change reaches the user basically. I think that's the intro. I don't know if you have any questions related to that."
+        "start": 202.548,
+        "end": 209.697,
+        "text": "I have one, do we have any glossaries like this in GitLab so far in the other stage groups or anywhere else?"
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 204.02,
-        "end": 211.54,
-        "text": "I have one. Do we have any glossaries like this in GitLab so far in the other stage groups or anywhere else?"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 218.05999999999997,
-        "end": 247.96,
-        "text": "I don't know of any. Anything in this way? What? No, I don't know anything like that. I've heard about from Philly, I've heard that we have now a glossary template for documentation, but I don't know if it's used. But pretty sure it was for reasons to somebody wanted to use it. But I don't know any specific usage of it."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 250.04,
-        "end": 273.42,
-        "text": "And one other question. The IDEALit intended this is going to be in the docs right from what I can see in the MR and it'll be useful for both us and our customers. So it'll be kind of for both use cases for us to describe like discussing internal features as we're building them and then customers to review if they have confusion over our wordings for things."
+        "speaker": "SPEAKER_02",
+        "start": 214.764,
+        "end": 246.114,
+        "text": "I don't know of anything in this way. What, no, I don't know of anything like that. Uh, I've heard, I've heard about, uh, from Philly, I've heard that, uh, We have now a glossary template for documentation, but I don't know if it's used and but pretty sure it was introduced for reasons to somebody wanted to use it. But I don't know if any specific usage of it."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 274.28,
-        "end": 275.4,
+        "start": 248.579,
+        "end": 271.737,
+        "text": "And One other question, the ideal, like intended, this is going to be in the docs, right, from what I can see in the MR, and it'll be useful for both us and our customers. So it'll be kind of for both use cases for us to describe, like discussing internal features as we're building them and then customers to review if they have confusion over our wordings for things."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 273.299,
+        "end": 274.461,
         "text": "Yeah, exactly."
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 275.82,
-        "end": 297.54,
-        "text": "Awesome. Okay. And then as it was said, Compact is said, the end of the day, so you can fill in the rest of your Yeah, exactly. Awesome. And then the end of the day, so you can fill in the rest of your And then, sorry, one other question. There is a lot of work done on this. And I know you said that we kind of went in a direction and then stopped. Going forward, how do you expect us to kind of work through this? Is it something we want to take this as inspiration and work from scratch or work from this MR to fix it up?"
-    },
-    {
         "speaker": "SPEAKER_04",
-        "start": 299.24,
-        "end": 336.2,
-        "text": "I'm open to either approach. Whatever you think is the best to do. Personally, I think it's a pretty good start what we have. Like you guys said, Timo had a bunch of comments, I think back in January. And he could easily pick up and add his questions and topics there. Yeah. So I think it can be used as a starting point as well. But I'm open to any option."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 337.04,
-        "end": 350.86,
-        "text": "Okay. I also noticed you and Philip were in here yesterday too. So it seems like there's still work going on. So I think it makes sense if the comments don't make it too messy to continue from to just work from this one."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 352.06,
-        "end": 399.72,
-        "text": "Yeah, it was really always on my mind to merge it. Just like when we started, we were like, oh, we're going to do this. We're going to do this. And then I realized, I realized that a big part of the scope is outside of the domain that I was responsible for back then. And actually when I was the acting group manager from September, I asked Chris and I think together with Xenia to start working on this lottery. Because then the two really then configure groups on the whole domain. Basically time changed everything. We know that. Yeah. And then, but now the environment group own the domain and we can finally, it's a single hand, so to say, and we can finish the work, I think."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 400.14,
-        "end": 412.16,
-        "text": "Awesome. So I think we could probably put like a milestone on this just to actually get a date on finishing it. Because I feel like that's another thing that probably kept it going. That's a good idea. We didn't have any. We had"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 412.16,
-        "end": 414.72,
-        "text": "a milestone a long, long time ago. Yeah."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 414.96,
-        "end": 435.36,
-        "text": "So put like a due date into it. Yeah. And then I probably should have invited Philip to this one too, this design pairing session, just to discuss this. Because I feel like he'll be a big part of it. But yeah. Does anyone else have any questions? I know Xenia, you worked on this a little bit before as well, but."
+        "start": 274.481,
+        "end": 297.001,
+        "text": "Awesome. And then, sorry, one other question. There is a lot of work done on this. And I know you said that we kind of went in a direction and then stopped. Going forward, how do you expect us to kind of work through this? Is it something we want to take this as inspiration and work from scratch or work from this MR to fix it up? What's kind of..."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 437.96000000000004,
-        "end": 554.64,
-        "text": "I have a question. This guy just have a few points on this work, this module case. I guess that having this vocabularies, glossaries in our documentation would be good. But probably we want to put in a user doc side, not like a development doc side, because that's not surface for users. And then like, I think Victor pointed out, had a good point that this doc should have a, you know, a lot of things. It should be over the overview of release and configure stages. So it should be like it should contain more like overview stuff. For example, like this is documentation I was writing aside from that. This is a deployment patterns in Microsoft's architecture. architecture, so when this documentation intends to explain how deployment workflow works with these vocabularies, there's artifact, there's releases, there's application, these all vocabularies are defined nicely, but it's kind of hard to wrap up how these are connected, how these are going to be projected into GitLab project architectures, like how users should organize their GitLab projects, something like that. So I was wondering that we can expand, generalize this a bit more from overview perspective. Yeah, these points are basically like I had in my mind when I see this on request."
+        "start": 298.243,
+        "end": 334.48,
+        "text": "I'm open to either approach, whatever you think is the best to do? Personally, I think it's a pretty good start, what we have. Like you can see Timo had a bunch of comments, I think back in January. So, and he could easily pick up and add his questions and the topics there. So I think it can be used as a starting point as well, but I'm open to any option."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 335.489,
+        "end": 349.063,
+        "text": "OK, I also notice you and Filip were in here yesterday, too. So it seems like there's still work going on. So I think it makes sense if the comments don't make it too messy to continue from to just work from this one."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 350.564,
+        "end": 379.47,
+        "text": "Yeah, it was really always on my mind to merge it, just like when we started it. I very quickly realized that a big part of the scope is outside of the domain that I was responsible for back then. And actually, when I was the acting group product manager from September, I asked Chris, and I think together with Xenia to start working on this glossary, because then the two release and configure groups owned the whole domain."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 383.214,
+        "end": 397.804,
+        "text": "Basically, time changed everything, we know that, but now the environments own the domain and we can finally, it's in single hand, so to say, and we can finish the work, I think."
     },
     {
         "speaker": "SPEAKER_01",
-        "start": 557.24,
-        "end": 557.88,
-        "text": "Okay."
+        "start": 398.526,
+        "end": 398.866,
+        "text": "Awesome."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 558.02,
-        "end": 566.2,
-        "text": "I think... I tried to take a note of what you said. I'm not sure that I captured your ideas correctly, so please check in the docs."
+        "start": 399.828,
+        "end": 407.464,
+        "text": "I think we could probably put a milestone on this just to actually get a date on finishing it, because I feel like that's another thing that probably kept it going."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 567.02,
-        "end": 567.46,
-        "text": "Right."
+        "start": 407.484,
+        "end": 412.354,
+        "text": "That's a good idea. We didn't have any- We had a milestone a long, long time ago."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 568.38,
-        "end": 578.74,
-        "text": "I didn't took all the words for sure, but I tried to capture the ideas that you shared and I like them. I agree."
+        "start": 412.675,
+        "end": 433.163,
+        "text": "Yeah. So put a due date into it. And then I probably should have invited Philip to this one too, this design pairing session, just to discuss this. Because I feel like he'll be a big part of it. But yeah, does anyone else have any questions? I know, Xenia, you worked on this a little bit before as well."
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 583.26,
-        "end": 603.8,
-        "text": "I guess going forward with this. Yeah. What, what do you expect kind of the plan to be? I guess I can help push it forward. But how do we want to work on this and how do we want to get it done? Cause I think it's going to be like a team effort to get everything in there. Not just one person."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 605.6199999999999,
-        "end": 661.08,
-        "text": "I would like ask all of you and ask Mikko specifically to, to dedicate to, not dedicate, that's, that's, that means different, I think at GitLab than at other places. But anyway, dedicate two weeks to this MR, which means that all of us, the whole team knows that for those two weeks, this MR is in focus and we want to close it by the end of the second week. That would be my idea. And then we can work only async because we know that there is a lot of attention on the MR and it's, it's not that we are going to wait a week to get a response. What Sheena sometimes has to wait a week for my response. But in that case, so to have more urgency on it for a very well defined period of time. And that would be my idea to tackle it."
+        "speaker": "SPEAKER_03",
+        "start": 436.548,
+        "end": 553.078,
+        "text": "I have a question. This guy, I just have a few points on this work, this module, I guess, that having these vocabularies, glossaries in our documentation will be good, but probably we want to put in a user doc side, not like a development doc side, because that's not surfaced for users. And then like, I think it makes their, pointed out that, had a good point that this doc should have her overview of release and configure stages. So it should be like, it should contain more like overview stuff. For example, like this is a documentation I was writing aside from that. This is a deployment patterns in Microsoft's architecture. So when this documentation intends to explain how deployment workflow works with these vocabularies, there's artifact, there's releases, there's application, these all vocabularies are defined nicely. But it's kind of hard to wrap up how these are connected, how these are going to be projected into Github project architectures, like how users should organize their Github projects, something like that. So I was wondering that we can expand, generalize this bit more from overview perspective. Yeah, these points are basically like I had in my mind when I see this module request."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 662.6,
-        "end": 703.94,
-        "text": "All right. Just if we want to much quickly, I have one comment that can we drop some like very specific specifications? Like for example, Artify. FeaturedCrypt, it must contain it. Elements of cryptography signed, this is something like then like Artifact isn't a cryptography signed it's not Artifact, like this type of argument going to happen. So like I wonder if we can generalize a bit more so that we can, you know, move on like more details later. Does it make sense? I'm not"
+        "start": 556.248,
+        "end": 564.557,
+        "text": "I tried to take a note of what you said. I'm not sure that I captured your ideas correctly, so please check in the docs."
     },
     {
-        "speaker": "SPEAKER_04",
-        "start": 703.94,
-        "end": 722.9,
-        "text": "against that. Yeah. A bit this specific example that you gave. Yeah. I don't know about this. yes. I don't know what else we would find to make it smaller. And overall, I think merging a sloppy terminology is worse than not having a terminology."
+        "speaker": "SPEAKER_03",
+        "start": 565.578,
+        "end": 565.738,
+        "text": "Correct."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 724.88,
-        "end": 725.7,
+        "start": 566.9,
+        "end": 577.73,
+        "text": "I didn't take all the words for sure, but I tried to capture the ideas that you shared. And I like them. I agree."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 581.678,
+        "end": 602.011,
+        "text": "I guess going forward with this, what do you expect the plan to be? I guess I can help push it forward. But how do we want to work on this? And how do we want to get it done? Because I think it's going to be a team effort to get everything in there, not just one person."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 603.954,
+        "end": 659.273,
+        "text": "I would like. ask all of you and ask Mikko specifically to dedicate to, not dedicate, that means different, I think, at GitLab than at other places. But anyway, dedicate two weeks to this MR, which means that all of us, the whole team knows that for those two weeks, this MR is in focus, and we want to close it by the end of the second week. That would be my idea. And then we can work only async, because we know that there is a lot of attention on DMR, and it's not that we are going to wait a week to get a response. What she sometimes has to wait a week for my responses. But in that case, to have more urgency on it for a very well-defined period of time. And that would be my idea to tackle it."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 661.042,
+        "end": 697.676,
+        "text": "Just, if we want to merge quickly, I have one comment that can we drop some very specific specifications, like for example, artifact, it must contain cryptographically signed. This is something like, then like artifact is not cryptography signed, it's not artifact. Like this type of argument gonna happen. So like, I wonder if we can generalize a bit more so that we can, you know, move on like more details later."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 700.319,
+        "end": 721.162,
+        "text": "I'm not against that. Yeah. With this specific example that you gave, I think yes. I don't know what else we would find to make it smaller. And overall, I think merging a sloppy terminology is worse than not having a terminology."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 722.684,
+        "end": 724.326,
         "text": "I agree."
     },
     {
-        "speaker": "SPEAKER_04",
-        "start": 727.36,
-        "end": 760.24,
-        "text": "That's why, with the example you shared, I would agree that we can merge it even without that, because it doesn't affect the whole flow. On the other hand, if you are like, well, we have a discussion on what does a release mean, and it came out that it might not be even needed there, I wouldn't know what to merge at this point. And I think it would just cause confusion that we merged one wording and a week later we want to change it. But there are cases where likely we can simplify it."
+        "speaker": "SPEAKER_02",
+        "start": 725.027,
+        "end": 758.363,
+        "text": "So that's why, so with the example you shared, I would agree that we can merge it even without that, because it doesn't affect the whole flow. On the other hand, if you are like, What we have a discussion on what does a release mean and it came out that it might not be even needed there. I wouldn't know what to merge at this point and I think it would just cause confusion that we merged the one wording and a week later we want to change it. But there are cases where likely we can simplify it."
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 763.48,
-        "end": 771.6,
-        "text": "It's almost like we have to decide what we want to change. It's almost like we have to decide what we want to change. Vlad, do you want to voice your point? Because I think it's similar to what I was about to say."
+        "speaker": "SPEAKER_04",
+        "start": 761.92,
+        "end": 769.747,
+        "text": "It's almost like we have to decide which, like, Vlad, do you want to voice your point? Because I think it's similar to what I was about to say."
     },
     {
         "speaker": "SPEAKER_00",
-        "start": 772.6,
-        "end": 828.82,
-        "text": "Yeah. Can we try to iterate on it? Maybe split it in? For example, we can just merge empty page, which says, this is a glossary, this is the purpose of it, and don't merge any exact terms now. And then just open another, I don't know, five, 10 merge requests with specific stuff, which we can discuss, which will be much smaller. It can be merged within a few days. Because right now it looks way too big. And I don't know, two weeks timeline also feels to me, I don't know, we can do it even like we can give two days for like comments and addressing them and then just merge and then iterate. I just feel like this MR is way too big to be merged in a single piece. Because it will create way too many discussions."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 832.94,
-        "end": 860.54,
-        "text": "Yeah, it's almost like we have to break off certain terminologies and start with just certain ones, perfect those certain ones and then move on to others instead of trying to do them all in one. I'm not sure how we would break those off. But to Victor's point, we don't want to merge like sloppy terminology that is not fully agreed on by the team. But maybe we could break it up and not have a very specific, but very specific, but very specific, but very specific, but very specific, but very specific, but very specific, but very specific, but very specific, but very specific, some for the first iteration. But I don't know if that would be helpful or not."
+        "start": 771.008,
+        "end": 829.491,
+        "text": "Yeah. Can we try to iterate on it? Maybe split it in, like, for example, we can just merge empty page, which says, this is a glossary. This is the purpose of it. And don't merge any exact terms now. And then just open another, I don't know, 5, 10 merge requests. with specific stuff which we can discuss, which will be much smaller and can be merged within a few days. Because right now it looks way too big. And I don't know, two weeks timeline also feels to me too long. I don't know, we can do it even like we can give two days for like comments and addressing them and then just merge and then iterate. I just feel like this MR is way too big to be merged in a single piece because it will create way too many discussions."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 862.16,
-        "end": 897.8,
-        "text": "Oh, I like the idea, actually. I don't know how they would execute. But I like both the idea of starting with an empty page. I did the plus one there and as well, that nicely we can we can try to separate MR for not all the terms but like some terms like for example, for targeting just use it together within one. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. think about it. So kind of like bring it back to normally achieve that kind of examples, but like there's bigger terms and and that's okay. Two days on that three days on that and we can even move back when we figure out that something is not good. As you can follow. I like this."
-    },
-    {
-        "speaker": "SPEAKER_00",
-        "start": 902.9199999999998,
-        "end": 943.86,
-        "text": "Kind of changing the subject. How do we plan to address the difference between this ideal terminology and what we want to mean. and what we actually have in the product. I also read about the release also being cryptographically signed. Yeah, hard word to say. And we have none of this right now. Yeah. Especially if we use Shinya's suggestion and move this to the user docs instead of development, then users can just go to us and ask questions like, where is this? This is how you define it and there is nothing of the sort in the GitLab?"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 944.46,
-        "end": 1022.6,
-        "text": "Yeah, I think we should be very clear on plant features, perhaps having similar flags that we have for tiers on the page headers or some similar symbols that show that this is a plant thing and doesn't exist yet or something. That was one of the reasons why we didn't want to put it in the user doc actually. But why we needed something and all the other part of this February is because there was some sort ofんですitious gaze at nacho desejas. So that's what the problem was that we weren't able is shows us the North Star that we want to reach. And after that we can discuss if it's feasible at all to get there. And then the steps to get there and what falls on us and what was outside of us and all of that. But without knowing where we want to get, it's hard to get there."
-    },
-    {
-        "speaker": "SPEAKER_03",
-        "start": 1025.34,
-        "end": 1031.02,
-        "text": "Don't we have like a whole page and a handbook dedicated to North Stars and product directions and things like that?"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1031.4,
-        "end": 1048.7,
-        "text": "I mean, our direction pages are roughly that. So in the handbook, this would be a perfect fit. I think we can put anything in the handbook roughly. The user doc is the big question there, I think."
-    },
-    {
-        "speaker": "SPEAKER_03",
-        "start": 1048.9,
-        "end": 1072.48,
-        "text": "Yeah, I only mentioned this because I think the goal of user documentation is to document things as they are today, right? And so, okay, I didn't want to talk about this. So we can put kind of something on that. I like to write scripts, but you could probably"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1072.48,
-        "end": 1082.4,
-        "text": "see that. And then there would be hinters to folks like you once you're done, or I'm not sure if you go on LinkedIn or something like that you don't have toTIKочка sites to prevent one of your So I don't know what the friends in my world are doing, but there's no way to think about it. So you can probably see"
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 1082.4,
-        "end": 1112.48,
-        "text": "it there. Just capturing notes. Well, that makes sense. So what did we want the timeline to be on this? Did we want to start working on it ASAP? This milestone, next milestone, kind of. When should we make plans to do these like two day or two week? Not sprints, but periods of time where we want to focus on this effort."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1120.42,
-        "end": 1220.36,
-        "text": "I think it's pretty urgent actually. Because we are working in this domain and not having a vocabulary to discuss things that's a bit awkward to start with. At the same time, it's, it doesn't. It's not a critical issue or anything like that so. So, I think it's a critical issue. And I think it's a critical issue. And now I have two questions in my head that doesn't allow me to give a more specific answer to me to a question and one is this handbook or docs question. Because we can merge an empty page in any of these. Anytime. Basically, the handbook especially super easy. We don't even need special approvals and anything like that. And the other question is the breakdown that you mentioned, and you will be gone by next Monday. And I think it will be really helpful if once we merge the empty page. If you Emily or me could work together with one of you the engineers to quickly open. All these are Mars. How we think the first. The first split of the big Mr. So to say. Starting. At the same time, I don't want it to take a huge amount of. I don't. I should pay more on that. But if anyone has ideas how to approach it, or."
-    },
-    {
-        "speaker": "SPEAKER_00",
-        "start": 1221.78,
-        "end": 1269.7,
-        "text": "I will do it is, I would create an empty page inside the direction. I think that was a great idea from Andrew. And we can do it today. And then. I guess you Victor, you can. Find like five terms that you find the most important right now. Just copy existing. Texts, which you already have an open an MR wisdom. And we can discuss them. And then every week, every couple of weeks, we can create another merge requests. Moving more and more. Again, for this existing content and discussing. Instead of opening like. Then. MR simultaneously, I guess it will distract everybody. Way too much."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1271.96,
-        "end": 1274.96,
-        "text": "Okay. Thank you. Thank you."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 1277.8200000000002,
-        "end": 1296.86,
-        "text": "To. To Victor's point of having a plan out about the MRS. We could also just open an issue that has the list of what we think we want to open. And just have it collected. Somewhere. So it's not like busying up anywhere, but we do have it like down on paper that. We want to get all of these open in the next month or so."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1299.3400000000001,
-        "end": 1301.74,
-        "text": "I can do that. I can, I can open it. Sure."
-    },
-    {
-        "speaker": "SPEAKER_01",
-        "start": 1311.7,
-        "end": 1324.5,
-        "text": "Oh, well, I think that was. Pretty productive in. Getting a plan down to get this work done. So thanks everyone for your input on this. Does anyone else have any comments or questions? Overall,"
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1324.62,
-        "end": 1336.24,
-        "text": "there are eight. Terms defined in the MR. So the opening five. Like find five terms that almost describes everything."
+        "start": 831.412,
+        "end": 858.853,
+        "text": "Yeah, it's almost like we have to break off certain terminologies and start with just certain ones, perfect those certain ones, and then move on to others instead of trying to do them all in one. I'm not sure how we would break those off. But to Victor's point, we don't want to merge sloppy terminology that is not fully agreed on by the team. But maybe we could break it up and not have some for the first iteration. But I don't know if that would be helpful or not."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 1341.0400000000002,
-        "end": 1354.54,
-        "text": "Just quick question. When. For example, when do we use this doc? Like when we talking with customer or we talking with, I mean like. Give me one example."
+        "start": 860.605,
+        "end": 896.774,
+        "text": "Oh, I like the idea, actually. I'm not, I don't know how we would execute. But I like both the idea of starting with an empty page. I did the plus one there. And as well, that nicely, we can we can try to separate Mr for not all the terms, but like Some terms, like, for example, for target infrastructure, just use it together with environments, but like these bigger terms, and they'll say, okay, two days on that, two days on that, and we can even move back when we figure out that something is not good as we move forward. I like this."
     },
     {
-        "speaker": "SPEAKER_04",
-        "start": 1356.9,
-        "end": 1400.18,
-        "text": "We would use it. So we plan to run a design sprint for environment. And for example, there, this would be very likely super useful. We would use it for deployments like. I think. Yeah, you were on that issue that tiger. Created the example project on how to organize deployments. We could use it there as well because what to deploy is in a sense an artifact. And you could easily describe that that's not. But it's also a major separate branch. That's not. So there as well. What I would say that initially it would be internal, but as we build features, it becomes more and more user -facing."
+        "speaker": "SPEAKER_00",
+        "start": 901.601,
+        "end": 921.639,
+        "text": "Kind of changing the subject, how do we plan to address the difference between this ideal terminology and what we want to mean and what we actually have in the product. to what, like, I also read about the release also being cryptographically signed. Yeah, hard word to say."
     },
     {
         "speaker": "SPEAKER_02",
-        "start": 1401.16,
-        "end": 1409.88,
-        "text": "Okay. So. I think that's a good point. Yeah. I think that's a good point. I think we could. We could open refer. To the page in that issue description. When we talking about a feature spec. Okay. Thank"
+        "start": 922.48,
+        "end": 925.123,
+        "text": "And like, we have none of this right now."
     },
     {
-        "speaker": "SPEAKER_04",
-        "start": 1409.88,
-        "end": 1424.24,
-        "text": "you. Yes. That's a. Yeah. Okay. Yeah. Yeah. Yeah."
+        "speaker": "SPEAKER_00",
+        "start": 926.044,
+        "end": 942.081,
+        "text": "And if, especially if we use Shinya's suggestion and move this to the user docs instead of development, then users can just go to us and ask questions like, where is this? This is how you define it. And there is nothing of the sort in the GitLab."
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 1432.34,
-        "end": 1462.18,
-        "text": "Yeah. So just to summarize Victor, you'll open up the issue. With the planned. MRS. We'll open the first MR around the blank page today. And that'll kind of get us started on this. Okay."
-    },
-    {
-        "speaker": "SPEAKER_04",
-        "start": 1464.02,
-        "end": 1466.54,
-        "text": "Thank you. Thank you. Thank you."
+        "speaker": "SPEAKER_02",
+        "start": 942.871,
+        "end": 1020.75,
+        "text": "Yeah, I think we should be very clear on planned features, perhaps having similar flags that we have for tiers on the page headers or some similar symbol that shows that this is a planned thing and doesn't exist yet or something. That was one of the reasons why we didn't want to put it in the user note, actually. But why we need it somewhere is I don't know if in your culture you have something similar, but in Hungary, we often say that if you want to go to Paris, you have to know where Paris is, otherwise you will end up in Moscow. And Hungarians never wanted to end up in Moscow when our big poet went to Paris, actually. So that's why the glossary is... shows us the North Star that we want to reach. And after that, we can discuss if it's feasible at all to get there. And then the steps to get there and what falls on us and what was outside of us and all of that. But without knowing where we want to get, it's hard to get there."
     },
     {
         "speaker": "SPEAKER_01",
-        "start": 1468.2,
-        "end": 1508.36,
-        "text": "Thank you. Thank you. Thank you. Thank you. So I think that kind of ends our main topic. I just want to make sure, open it to, if we have any ongoing. Engineering work that kind of needs a design discussion. Not. I guess we can. And this early if no one else has anything. Okay. All right. So I think we're good. Sounds good. And I think I mentioned at the start, but I don't know if everyone is here. I just put a little async retro. In the agenda. If. There's a recommendations or feedback you have for how this meeting's going now that we're a month in. But otherwise, thanks for the discussion."
+        "start": 1024.334,
+        "end": 1030.54,
+        "text": "Don't we have like a whole page in the handbook dedicated to North Stars and product directions and things like that?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1030.874,
+        "end": 1040.931,
+        "text": "Our direction pages are roughly that. So in the handbook, this would be a perfect fit. I think you can put anything in the handbook roughly."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1044.617,
+        "end": 1046.84,
+        "text": "The user doc is the big question there, I think."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1047.401,
+        "end": 1063.771,
+        "text": "Yeah, I only mention this because I think the goal of user documentation is to document things as they are today, right? Whereas we have a whole section somewhere else dedicated to direction."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1070.037,
+        "end": 1074.241,
+        "text": "We could merge it under the direction page, actually. I need to rewrite it anyway, so."
     },
     {
         "speaker": "SPEAKER_04",
-        "start": 1509.68,
-        "end": 1510.3,
+        "start": 1086.633,
+        "end": 1110.898,
+        "text": "Just capturing notes. Well, that makes sense. So what did we want the timeline to be on this? Did we want to start working on it ASAP, this milestone, next milestone? When should we make plans to do these two-day or two-week, not sprints, but periods of time where we want to focus on this effort?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1118.995,
+        "end": 1129.23,
+        "text": "I think it's pretty urgent, actually, because we are working in this domain and not having the vocabulary to discuss things that's a bit awkward to start with."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1132.354,
+        "end": 1138.523,
+        "text": "At the same time, it's not a critical issue or anything like that."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1147.261,
+        "end": 1218.574,
+        "text": "And now I have two questions in my head that doesn't allow me to give a more specific answer to your question. And one is this handbook or docs question, because we can merge an empty page in any of these anytime, basically. The handbook especially, it's super easy. We don't even need special approvals or anything like that. And the other question is the breakdown that Vlad you mentioned, and you will be gone by next Monday. And I think it would be really helpful if once we merge the empty page, if you, Emily, or me could work together with one of you, the engineers, to quickly open all these MRs, how we think is the first, the first bit of the big MR, so to say. to start with. At the same time, I don't want it to take a huge amount of, I don't, I should think more on that. But if anyone has other ideas how to approach it or."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1219.034,
+        "end": 1267.824,
+        "text": "How I would do it is I would create an empty page inside the direction. I think that was a great idea from Andrew. And we can do it today. And then I guess you, Victor, you can find like five terms that you find the most important right now. Just copy existing texts, which you already have an open NMR with them, and we can discuss them. And then every week, every couple of weeks, we can create another merge request, moving more and more, again, of this existing content and discussing it. Instead of opening like 10, MR simultaneously I guess it will distract everybody way too much."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1270.511,
+        "end": 1272.496,
+        "text": "Okay. Thank you."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1272.797,
+        "end": 1273.977,
         "text": "Thank you."
     },
     {
-        "speaker": "SPEAKER_01",
-        "start": 1511.96,
-        "end": 1512.36,
+        "speaker": "SPEAKER_04",
+        "start": 1277.502,
+        "end": 1295.044,
+        "text": "To Victor's point of having a plan out about the MRs, we could also just open an issue that has the list of what we think we want to open and just have it collected somewhere. So it's not like busying up anywhere, but we do have it down on paper that we want to get all of these open in the next month or so."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1297.747,
+        "end": 1306.378,
+        "text": "I can do that. I can open the issue."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1310.29,
+        "end": 1322.305,
+        "text": "Well, I think that was pretty productive in getting a plan down to get this worked on. So thanks, everyone, for your input on this. Does anyone else have any comments or questions?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1322.325,
+        "end": 1334.661,
+        "text": "Overall, there are eight terms defined in the MR. So the opening five, like, find five terms that almost describes everything."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1339.535,
+        "end": 1352.774,
+        "text": "Just a quick question. When, for example, when do we use this doc? Like, when we're talking with customer or when we're talking with, I mean, like, give me one example."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1353.836,
+        "end": 1398.534,
+        "text": "We would use it. So we planned to run a design sprint for environment. And for example, there, this would be very likely super useful. we would use it for deployments. Like, um, I think you were on that issue that, uh, Tiger created the example project on how to organize deployments. We could use it there as well, because what to deploy is in a sense, an artifact. And they could easily describe that that's an artifact, but it's also a major separate branch. That's an artifact. Um, so there as well. The result, what I would say that initially, it would be internal, but as we build features, it becomes more and more user-facing."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 1399.516,
+        "end": 1407.933,
+        "text": "Ah, okay. So we could often refer to the page in the issue description when we're talking about the feature spec. Okay."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1407.953,
+        "end": 1409.316,
+        "text": "Thank you. Yes. That's it. Yeah."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1443.856,
+        "end": 1457.84,
+        "text": "So just to summarize, Victor, you'll open up the issue with the planned MRs. We'll open the first MR around the blank page today, and that'll kind of get us started on this."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1462.588,
+        "end": 1463.89,
+        "text": "Thank you."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1467.295,
+        "end": 1485.743,
+        "text": "So I think that kind of ends our main topic. I just want to make sure, open it to if we have any ongoing engineering work that kind of needs a design discussion. If not, I guess we can end this early if no one else has anything."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1490.768,
+        "end": 1506.629,
+        "text": "Sounds good. And I think I mentioned at the start, but I don't know if everyone is here. I just put a little async retro in the agenda. If there's recommendations or feedback you have for how this meeting's going now that we're a month in. But otherwise, thanks for the discussion."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1508.132,
+        "end": 1508.492,
+        "text": "Thank you."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1510.515,
+        "end": 1510.735,
         "text": "Bye."
     }
 ]
