@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Analysis — Design Pair Session · Mar 30, 2023</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #141720;
+    --surface2: #1c2030;
+    --border: #252a3a;
+    --text: #e8eaf0;
+    --muted: #6b7394;
+    --task:       #3b82f6;
+    --task-glow:  rgba(59,130,246,0.25);
+    --social:     #10b981;
+    --social-glow:rgba(16,185,129,0.25);
+    --procedural: #f59e0b;
+    --procedural-glow: rgba(245,158,11,0.25);
+    --action:     #a855f7;
+    --action-glow:rgba(168,85,247,0.25);
+    --row-h: 52px;
+    --row-gap: 12px;
+    --bar-h: 26px;
+    --header-h: 60px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* --- Page Header --- */
+  .page-header {
+    padding: 32px 40px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .page-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .page-heading {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .page-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* --- Stats Bar --- */
+  .stats-bar {
+    display: flex;
+    gap: 1px;
+    padding: 0 40px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  .stat-item {
+    background: var(--surface);
+    padding: 14px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .stat-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* --- Legend --- */
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 40px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .legend-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 8px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    padding: 4px 10px 4px 6px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+
+  .legend-item:hover {
+    border-color: var(--border);
+    background: var(--surface2);
+  }
+
+  .legend-item.inactive {
+    opacity: 0.3;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+
+  .legend-text {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .legend-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* --- Chart Container --- */
+  .chart-wrapper {
+    padding: 24px 0 24px 0;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+
+  .chart-inner {
+    min-width: 900px;
+    position: relative;
+  }
+
+  /* Row labels column */
+  .label-col {
+    position: absolute;
+    left: 0;
+    top: var(--header-h);
+    width: 160px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .speaker-label {
+    height: calc(var(--row-h) + var(--row-gap));
+    display: flex;
+    align-items: center;
+    padding-right: 16px;
+    justify-content: flex-end;
+  }
+
+  .speaker-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+    letter-spacing: 0.05em;
+  }
+
+  .speaker-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  /* Timeline area */
+  .timeline-area {
+    margin-left: 160px;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  /* Time axis */
+  .time-axis {
+    height: var(--header-h);
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+
+  .tick {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+  }
+
+  .tick-line {
+    width: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  .tick-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+    padding: 6px 0 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Grid rows */
+  .grid-rows {
+    position: relative;
+  }
+
+  .grid-row {
+    height: calc(var(--row-h) + var(--row-gap));
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .grid-row:last-child { height: var(--row-h); }
+
+  .grid-line {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0;
+    height: 1px;
+    background: var(--border);
+    opacity: 0.4;
+  }
+
+  /* Vertical grid lines (per minute) */
+  .v-grid-line {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  /* Bars */
+  .bar {
+    position: absolute;
+    height: var(--bar-h);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: filter 0.15s, transform 0.15s;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bar:hover {
+    filter: brightness(1.25);
+    transform: translateY(-50%) scaleY(1.1);
+    z-index: 10;
+  }
+
+  .bar.task       { background: var(--task);       box-shadow: 0 0 8px var(--task-glow); }
+  .bar.social     { background: var(--social);     box-shadow: 0 0 8px var(--social-glow); }
+  .bar.procedural { background: var(--procedural); box-shadow: 0 0 8px var(--procedural-glow); }
+  .bar.action     { background: var(--action);     box-shadow: 0 0 8px var(--action-glow); }
+
+  /* Playhead */
+  .playhead {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255,255,255,0.15);
+    pointer-events: none;
+    z-index: 20;
+    display: none;
+  }
+
+  .playhead-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: -4px;
+    left: -3px;
+  }
+
+  /* Tooltip */
+  #tooltip {
+    position: fixed;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 9999;
+    max-width: 280px;
+    display: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+
+  .tt-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .tt-label.task       { background: rgba(59,130,246,0.2);  color: var(--task); }
+  .tt-label.social     { background: rgba(16,185,129,0.2);  color: var(--social); }
+  .tt-label.procedural { background: rgba(245,158,11,0.2);  color: var(--procedural); }
+  .tt-label.action     { background: rgba(168,85,247,0.2);  color: var(--action); }
+
+  .tt-text {
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .tt-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* Distribution bar */
+  .dist-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 16px 40px;
+    background: var(--surface2);
+  }
+
+  .dist-segment {
+    height: 100%;
+    transition: all 0.3s;
+  }
+
+  /* Speaker filter pills */
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 40px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-right: 4px;
+  }
+
+  .pill {
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .pill:hover, .pill.active {
+    border-color: rgba(255,255,255,0.25);
+    color: var(--text);
+    background: var(--surface2);
+  }
+
+  .pill.active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+  }
+
+  /* scrollbar */
+  .chart-wrapper::-webkit-scrollbar { height: 4px; }
+  .chart-wrapper::-webkit-scrollbar-track { background: var(--bg); }
+  .chart-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* Zoom slider */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .controls label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--border);
+    outline: none;
+    width: 140px;
+    cursor: pointer;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--text);
+    cursor: pointer;
+  }
+
+  .zoom-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    width: 36px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <div class="page-title">Automated Meeting Analysis</div>
+    <div class="page-heading">Design Pair Session</div>
+    <div class="page-meta">March 30, 2023 &nbsp;·&nbsp; 5 Speakers &nbsp;·&nbsp; 218 Utterances &nbsp;·&nbsp; 25:10 Duration</div>
+  </div>
+</div>
+
+<div class="stats-bar" id="statsBar"></div>
+
+<div class="legend" id="legend">
+  <span class="legend-label">Filter by label:</span>
+</div>
+
+<div class="controls">
+  <label>Zoom</label>
+  <input type="range" id="zoomSlider" min="1" max="6" step="0.25" value="1">
+  <span class="zoom-val" id="zoomVal">1×</span>
+  <label style="margin-left:16px">Scroll →</label>
+</div>
+
+<div class="dist-bar" id="distBar"></div>
+
+<div class="chart-wrapper" id="chartWrapper">
+  <div class="chart-inner" id="chartInner">
+    <div class="label-col" id="labelCol"></div>
+    <div class="timeline-area" id="timelineArea">
+      <div class="time-axis" id="timeAxis"></div>
+      <div class="grid-rows" id="gridRows"></div>
+    </div>
+  </div>
+</div>
+
+<div class="filter-row" id="filterRow">
+  <span class="filter-label">Speakers:</span>
+</div>
+
+<div id="tooltip"></div>
+
+<script>
+const DATA = [{"id":1,"text":"Hey, everyone.","start":2.9,"end":3.621,"label":"social","speaker":"SPEAKER_04"},{"id":2,"text":"This is the design pair session on March 30th.","start":3.641,"end":6.645,"label":"social","speaker":"SPEAKER_04"},{"id":3,"text":"And today, we're going to walk through the glossary to discuss deployments.","start":7.005,"end":12.192,"label":"social","speaker":"SPEAKER_04"},{"id":4,"text":"So I'll hand this off to Victor to give an intro, and then we can jump into it after.","start":13.233,"end":18.82,"label":"procedural","speaker":"SPEAKER_04"},{"id":5,"text":"So yeah, Emily asked me to give an intro to what is the ad glossary to discuss deployments, what we're jealous about, and why we should focus on it.","start":22.184,"end":31.776,"label":"task","speaker":"SPEAKER_02"},{"id":6,"text":"So today, when we speak about the delivery domain, there are some core concepts like environments, deployments, releases, artifacts, perhaps you can think anything around a secure software supply chain that's involved.","start":32.684,"end":54.313,"label":"task","speaker":"SPEAKER_02"},{"id":7,"text":"And it's not obvious what we mean by all of these words, especially","start":55.194,"end":62.083,"label":"task","speaker":"SPEAKER_02"},{"id":8,"text":"when we use them as nouns, versus when we use them as verbs.","start":62.418,"end":65.521,"label":"task","speaker":"SPEAKER_02"},{"id":9,"text":"And the glossary aims to have a common vocabulary for us to discuss the topic itself.","start":66.642,"end":72.107,"label":"task","speaker":"SPEAKER_02"},{"id":10,"text":"We started to work on this with Mikhail a long, long time ago.","start":73.909,"end":76.852,"label":"task","speaker":"SPEAKER_02"},{"id":11,"text":"And I would even say that we got to a point where we wanted to merge it and we thought that this is good enough and pretty well describes how we imagine the best word that we could have within GitLab.","start":78.093,"end":89.944,"label":"task","speaker":"SPEAKER_02"},{"id":12,"text":"But it was just so far away from what GitLab offers that we never got to the point to merge it.","start":90.245,"end":97.659,"label":"task","speaker":"SPEAKER_02"},{"id":13,"text":"Because I was like, it would cause a lot of confusion, where would we put it, and so on.","start":97.679,"end":101.886,"label":"task","speaker":"SPEAKER_02"},{"id":14,"text":"And what I would like to do is that I would like us to focus first on the glossary of how we imagine the best possible world, how we want to discuss that.","start":102.608,"end":113.788,"label":"action","speaker":"SPEAKER_02"},{"id":15,"text":"and then describe as well what GitLab offers today and see how we can later on move the two together.","start":114.815,"end":120.644,"label":"action","speaker":"SPEAKER_02"},{"id":16,"text":"So that's the plan and it will basically help us afterwards to discuss any of our topics.","start":121.445,"end":130.699,"label":"task","speaker":"SPEAKER_02"},{"id":17,"text":"I will give you one very specific example, which is the releases within GitLab, the releases object within GitLab that I find really confusing.","start":131.059,"end":142.797,"label":"task","speaker":"SPEAKER_02"},{"id":18,"text":"Because to me, a release is the final part of delivery when the software reaches the user.","start":143.519,"end":152.408,"label":"task","speaker":"SPEAKER_02"},{"id":19,"text":"And if you think about open source product development and GitHub and the releases, then once a release appears on the GitHub release page, it's ready to use.","start":153.509,"end":163.959,"label":"task","speaker":"SPEAKER_02"},{"id":20,"text":"You can download it and use.","start":164.66,"end":165.941,"label":"task","speaker":"SPEAKER_02"},{"id":21,"text":"But if a release is about a software as a service product, then the release is more of a feature flag switch.","start":166.562,"end":173.509,"label":"task","speaker":"SPEAKER_02"},{"id":22,"text":"It's different action that happens when you release something.","start":173.59,"end":180.218,"label":"task","speaker":"SPEAKER_02"},{"id":23,"text":"So that, for example, is pretty confusing to me.","start":180.238,"end":181.98,"label":"social","speaker":"SPEAKER_02"},{"id":24,"text":"It would be nice to have a common understanding of all these terms and how they relate to each other and how a code change reaches the user, basically.","start":182,"end":196.057,"label":"task","speaker":"SPEAKER_02"},{"id":25,"text":"I think that's the intro.","start":196.077,"end":198.34,"label":"procedural","speaker":"SPEAKER_02"},{"id":26,"text":"I don't know if you have any questions related to that.","start":198.36,"end":200.442,"label":"procedural","speaker":"SPEAKER_02"},{"id":27,"text":"I have one, do we have any glossaries like this in GitLab so far in the other stage groups or anywhere else?","start":202.548,"end":209.697,"label":"task","speaker":"SPEAKER_04"},{"id":28,"text":"I don't know of anything in this way.","start":214.764,"end":221.272,"label":"task","speaker":"SPEAKER_02"},{"id":29,"text":"What, no, I don't know of anything like that.","start":221.792,"end":226.218,"label":"task","speaker":"SPEAKER_02"},{"id":30,"text":"Uh, I've heard, I've heard about, uh, from Philly, I've heard that, uh,","start":226.238,"end":230.884,"label":"task","speaker":"SPEAKER_02"},{"id":31,"text":"We have now a glossary template for documentation, but I don't know if it's used and but pretty sure it was introduced for reasons to somebody wanted to use it.","start":231.387,"end":241.746,"label":"task","speaker":"SPEAKER_02"},{"id":32,"text":"But I don't know if any specific usage of it.","start":242.928,"end":246.114,"label":"task","speaker":"SPEAKER_02"},{"id":33,"text":"One other question, the ideal, like intended, this is going to be in the docs, right, from what I can see in the MR, and it'll be useful for both us and our customers.","start":249.106,"end":259.18,"label":"task","speaker":"SPEAKER_04"},{"id":34,"text":"So it'll be kind of for both use cases for us to describe, like discussing internal features as we're building them and then customers to review if they have confusion over our wordings for things.","start":259.22,"end":271.737,"label":"task","speaker":"SPEAKER_04"},{"id":35,"text":"And then, sorry, one other question.","start":275.313,"end":278.297,"label":"procedural","speaker":"SPEAKER_04"},{"id":36,"text":"There is a lot of work done on this.","start":278.497,"end":280.44,"label":"social","speaker":"SPEAKER_04"},{"id":37,"text":"And I know you said that we kind of went in a direction and then stopped.","start":280.88,"end":284.625,"label":"task","speaker":"SPEAKER_04"},{"id":38,"text":"Going forward, how do you expect us to kind of work through this?","start":285.066,"end":288.53,"label":"action","speaker":"SPEAKER_04"},{"id":39,"text":"Is it something we want to take this as inspiration and work from scratch or work from this MR to fix it up?","start":288.61,"end":295.619,"label":"action","speaker":"SPEAKER_04"},{"id":40,"text":"What's kind of...","start":296.5,"end":297.001,"label":"social","speaker":"SPEAKER_04"},{"id":41,"text":"I'm open to either approach, whatever","start":298.243,"end":303.109,"label":"task","speaker":"SPEAKER_02"},{"id":42,"text":"you think is the best to do?","start":305.182,"end":307.906,"label":"task","speaker":"SPEAKER_02"},{"id":43,"text":"Personally, I think it's a pretty good start, what we have.","start":309.648,"end":311.65,"label":"task","speaker":"SPEAKER_02"},{"id":44,"text":"Like you can see Timo had a bunch of comments, I think back in January.","start":312.752,"end":316.497,"label":"task","speaker":"SPEAKER_02"},{"id":45,"text":"So, and he could easily pick up and add his questions and the topics there.","start":318.039,"end":325.108,"label":"task","speaker":"SPEAKER_02"},{"id":46,"text":"So I think it can be used as a starting point as well, but I'm open to any option.","start":326.69,"end":334.48,"label":"task","speaker":"SPEAKER_02"},{"id":47,"text":"OK, I also notice you and Filip were in here yesterday, too.","start":335.489,"end":339.994,"label":"social","speaker":"SPEAKER_04"},{"id":48,"text":"So it seems like there's still work going on.","start":340.054,"end":341.876,"label":"task","speaker":"SPEAKER_04"},{"id":49,"text":"So I think it makes sense if the comments don't make it too messy to continue from to just work from this one.","start":341.916,"end":349.063,"label":"task","speaker":"SPEAKER_04"},{"id":50,"text":"Yeah, it was really always on my mind to merge it, just like when we started it.","start":350.564,"end":356.03,"label":"task","speaker":"SPEAKER_02"},{"id":51,"text":"I very quickly realized that a big part of the scope is outside of the domain that I was responsible for back then.","start":357.251,"end":364.939,"label":"task","speaker":"SPEAKER_02"},{"id":52,"text":"And actually, when I was the acting group product manager from September, I asked Chris, and I think together with Xenia to start working on this glossary, because then the two release and configure groups owned the whole domain.","start":365.678,"end":379.47,"label":"task","speaker":"SPEAKER_02"},{"id":53,"text":"Basically, time changed everything, we know that, but now the environments own the domain and we can finally, it's in single hand, so to say, and we can","start":383.214,"end":395.685,"label":"task","speaker":"SPEAKER_02"},{"id":54,"text":"finish the work, I think.","start":396.762,"end":397.804,"label":"task","speaker":"SPEAKER_02"},{"id":55,"text":"I think we could probably put a milestone on this just to actually get a date on finishing it, because I feel like that's another thing that probably kept it going.","start":399.828,"end":407.464,"label":"action","speaker":"SPEAKER_04"},{"id":56,"text":"That's a good idea.","start":407.484,"end":408.085,"label":"social","speaker":"SPEAKER_02"},{"id":57,"text":"We didn't have any- We had a milestone a long, long time ago.","start":408.526,"end":412.354,"label":"task","speaker":"SPEAKER_02"},{"id":58,"text":"So put a due date into it.","start":413.333,"end":415.436,"label":"action","speaker":"SPEAKER_04"},{"id":59,"text":"And then I probably should have invited Philip to this one too, this design pairing session, just to discuss this.","start":415.657,"end":423.108,"label":"action","speaker":"SPEAKER_04"},{"id":60,"text":"Because I feel like he'll be a big part of it.","start":423.128,"end":426.112,"label":"task","speaker":"SPEAKER_04"},{"id":61,"text":"But yeah, does anyone else have any questions?","start":427.374,"end":429.037,"label":"social","speaker":"SPEAKER_04"},{"id":62,"text":"I know, Xenia, you worked on this a little bit before as well.","start":429.097,"end":433.163,"label":"social","speaker":"SPEAKER_04"},{"id":63,"text":"I have a question.","start":436.548,"end":437.89,"label":"social","speaker":"SPEAKER_03"},{"id":64,"text":"This guy, I just have a few points on this work, this module, I guess, that having these vocabularies, glossaries in our documentation will be good, but probably we want to put in a user doc side, not like a development doc side, because that's not surfaced for users.","start":439.844,"end":462.77,"label":"task","speaker":"SPEAKER_03"},{"id":65,"text":"And then like, I think it makes their,","start":463.391,"end":468.957,"label":"task","speaker":"SPEAKER_03"},{"id":66,"text":"pointed out that, had a good point that this doc should have her overview of release and configure stages.","start":469.477,"end":479.571,"label":"task","speaker":"SPEAKER_03"},{"id":67,"text":"So it should be like, it should contain more like overview stuff.","start":480.432,"end":485.9,"label":"task","speaker":"SPEAKER_03"},{"id":68,"text":"For example, like this is a documentation I was writing aside from that.","start":487.482,"end":496.294,"label":"task","speaker":"SPEAKER_03"},{"id":69,"text":"This is a deployment patterns in Microsoft's architecture.","start":496.915,"end":500.539,"label":"task","speaker":"SPEAKER_03"},{"id":70,"text":"So when this documentation intends to explain how deployment workflow works with these vocabularies, there's artifact, there's releases, there's application, these all vocabularies are defined nicely.","start":501.339,"end":519.678,"label":"task","speaker":"SPEAKER_03"},{"id":71,"text":"But it's kind of hard to wrap up how these are connected, how these are going to be projected into","start":520.278,"end":526.905,"label":"task","speaker":"SPEAKER_03"},{"id":72,"text":"Github project architectures, like how users should organize their Github projects, something like that.","start":526.885,"end":533.914,"label":"task","speaker":"SPEAKER_03"},{"id":73,"text":"So I was wondering that we can expand, generalize this bit more from overview perspective.","start":534.895,"end":543.967,"label":"task","speaker":"SPEAKER_03"},{"id":74,"text":"Yeah, these points are basically like I had in my mind when I see this module request.","start":545.689,"end":553.078,"label":"task","speaker":"SPEAKER_03"},{"id":75,"text":"I tried to take a note of what you said.","start":556.248,"end":558.17,"label":"procedural","speaker":"SPEAKER_02"},{"id":76,"text":"I'm not sure that I captured your ideas correctly, so please check in the docs.","start":559.331,"end":564.557,"label":"procedural","speaker":"SPEAKER_02"},{"id":77,"text":"Correct.","start":565.578,"end":565.738,"label":"social","speaker":"SPEAKER_03"},{"id":78,"text":"I didn't take all the words for sure, but I tried to capture the ideas that you shared.","start":566.9,"end":571.565,"label":"procedural","speaker":"SPEAKER_02"},{"id":79,"text":"And I like them.","start":572.526,"end":574.508,"label":"social","speaker":"SPEAKER_02"},{"id":80,"text":"I agree.","start":576.65,"end":577.73,"label":"social","speaker":"SPEAKER_02"},{"id":81,"text":"I guess going forward with this, what do you expect the plan to be?","start":581.678,"end":589.531,"label":"task","speaker":"SPEAKER_04"},{"id":82,"text":"I guess I can help push it forward.","start":589.631,"end":591.975,"label":"action","speaker":"SPEAKER_04"},{"id":83,"text":"But how do we want to work on this?","start":592.556,"end":594.018,"label":"procedural","speaker":"SPEAKER_04"},{"id":84,"text":"And how do we want to get it done?","start":594.138,"end":595.721,"label":"procedural","speaker":"SPEAKER_04"},{"id":85,"text":"Because I think it's going to be a team effort to get everything in there, not just one person.","start":595.741,"end":602.011,"label":"task","speaker":"SPEAKER_04"},{"id":86,"text":"I would like.","start":603.954,"end":605.577,"label":"social","speaker":"SPEAKER_02"},{"id":87,"text":"ask all of you and ask Mikko specifically to dedicate to, not dedicate, that means different, I think, at GitLab than at other places.","start":606.012,"end":615.948,"label":"task","speaker":"SPEAKER_02"},{"id":88,"text":"But anyway, dedicate two weeks to this MR, which means that all of us, the whole team knows that for those two weeks, this MR is in focus, and we want to close it by the end of the second week.","start":616.649,"end":630.13,"label":"action","speaker":"SPEAKER_02"},{"id":89,"text":"That would be my idea.","start":631.426,"end":632.447,"label":"task","speaker":"SPEAKER_02"},{"id":90,"text":"And then we can work only async, because we know that there is a lot of attention on DMR, and it's not that we are going to wait a week to get a response.","start":632.507,"end":642.577,"label":"task","speaker":"SPEAKER_02"},{"id":91,"text":"What she sometimes has to wait a week for my responses.","start":644.158,"end":646.901,"label":"social","speaker":"SPEAKER_02"},{"id":92,"text":"But in that case, to have more urgency on it for a very well-defined period of time.","start":648.763,"end":654.949,"label":"task","speaker":"SPEAKER_02"},{"id":93,"text":"And that would be my idea to tackle it.","start":656.19,"end":659.273,"label":"action","speaker":"SPEAKER_02"},{"id":94,"text":"Just, if we want to merge quickly, I have one comment that can we drop some very specific specifications, like for example, artifact, it must contain","start":661.042,"end":678.628,"label":"task","speaker":"SPEAKER_03"},{"id":95,"text":"cryptographically signed.","start":678.608,"end":683.275,"label":"task","speaker":"SPEAKER_03"},{"id":96,"text":"This is something like, then like artifact is not cryptography signed, it's not artifact.","start":684.076,"end":689.343,"label":"task","speaker":"SPEAKER_03"},{"id":97,"text":"Like this type of argument gonna happen.","start":689.364,"end":691.186,"label":"task","speaker":"SPEAKER_03"},{"id":98,"text":"So like, I wonder if we can generalize a bit more so that we can, you know, move on like more details later.","start":691.206,"end":697.676,"label":"task","speaker":"SPEAKER_03"},{"id":99,"text":"I'm not against that.","start":700.319,"end":702.683,"label":"social","speaker":"SPEAKER_02"},{"id":100,"text":"With this specific example that you gave, I think yes.","start":703.484,"end":707.029,"label":"social","speaker":"SPEAKER_02"},{"id":101,"text":"I don't know what else we would find to make it smaller.","start":707.785,"end":712.571,"label":"task","speaker":"SPEAKER_02"},{"id":102,"text":"And overall, I think merging a sloppy terminology is worse than not having a terminology.","start":712.932,"end":721.162,"label":"task","speaker":"SPEAKER_02"},{"id":103,"text":"I agree.","start":722.684,"end":724.326,"label":"social","speaker":"SPEAKER_03"},{"id":104,"text":"So that's why, so with the example you shared, I would agree that we can merge it even without that, because it doesn't affect the whole flow.","start":725.027,"end":733.118,"label":"task","speaker":"SPEAKER_02"},{"id":105,"text":"On the other hand, if you are like,","start":733.198,"end":734.299,"label":"task","speaker":"SPEAKER_02"},{"id":106,"text":"What we have a discussion on what does a release mean and it came out that it might not be even needed there.","start":736.068,"end":741.356,"label":"task","speaker":"SPEAKER_02"},{"id":107,"text":"I wouldn't know what to merge at this point and I think it would just cause confusion that we merged the one wording and a week later we want to change it.","start":742.999,"end":754.757,"label":"task","speaker":"SPEAKER_02"},{"id":108,"text":"But there are cases where likely we can simplify it.","start":755.539,"end":758.363,"label":"task","speaker":"SPEAKER_02"},{"id":109,"text":"It's almost like we have to decide which, like, Vlad, do you want to voice your point?","start":761.92,"end":767.505,"label":"procedural","speaker":"SPEAKER_04"},{"id":110,"text":"Because I think it's similar to what I was about to say.","start":767.525,"end":769.747,"label":"social","speaker":"SPEAKER_04"},{"id":111,"text":"Can we try to iterate on it?","start":772.129,"end":773.431,"label":"action","speaker":"SPEAKER_00"},{"id":112,"text":"Maybe split it in, like, for example, we can just merge empty page, which says, this is a glossary.","start":773.671,"end":779.636,"label":"action","speaker":"SPEAKER_00"},{"id":113,"text":"This is the purpose of it.","start":779.676,"end":781.097,"label":"task","speaker":"SPEAKER_00"},{"id":114,"text":"And don't merge any exact terms now.","start":781.978,"end":784.901,"label":"action","speaker":"SPEAKER_00"},{"id":115,"text":"And then just open another, I don't know, 5, 10 merge requests.","start":785.562,"end":789.345,"label":"action","speaker":"SPEAKER_00"},{"id":116,"text":"with specific stuff which we can discuss, which will be much smaller and can be merged within a few days.","start":789.528,"end":796.465,"label":"action","speaker":"SPEAKER_00"},{"id":117,"text":"Because right now it looks way too big.","start":797.769,"end":802.2,"label":"task","speaker":"SPEAKER_00"},{"id":118,"text":"And I don't know, two weeks timeline also feels to me too long.","start":802.22,"end":807.132,"label":"task","speaker":"SPEAKER_00"},{"id":119,"text":"I don't know, we can do it even like we can give two days for like comments and addressing them and then just merge and then iterate.","start":808.462,"end":816.934,"label":"action","speaker":"SPEAKER_00"},{"id":120,"text":"I just feel like this MR is way too big to be merged in a single piece because it will create way too many discussions.","start":817.795,"end":829.491,"label":"task","speaker":"SPEAKER_00"},{"id":121,"text":"Yeah, it's almost like we have to break off certain terminologies and start with just certain ones, perfect those certain ones, and then move on to others instead of trying to do them all in one.","start":831.412,"end":841.347,"label":"task","speaker":"SPEAKER_04"},{"id":122,"text":"I'm not sure how we would break those off.","start":841.387,"end":843.991,"label":"task","speaker":"SPEAKER_04"},{"id":123,"text":"But to Victor's point, we don't want to merge sloppy terminology that is not fully agreed on by the team.","start":845.353,"end":851.502,"label":"task","speaker":"SPEAKER_04"},{"id":124,"text":"But maybe we could break it up and not have some for the first iteration.","start":852.203,"end":855.408,"label":"task","speaker":"SPEAKER_04"},{"id":125,"text":"But I don't know if that would be helpful or not.","start":856.069,"end":858.853,"label":"task","speaker":"SPEAKER_04"},{"id":126,"text":"Oh, I like the idea, actually.","start":860.605,"end":862.249,"label":"social","speaker":"SPEAKER_02"},{"id":127,"text":"I'm not, I don't know how we would execute.","start":863.331,"end":866.298,"label":"task","speaker":"SPEAKER_02"},{"id":128,"text":"But I like both the idea of starting with an empty page.","start":866.318,"end":868.903,"label":"task","speaker":"SPEAKER_02"},{"id":129,"text":"I did the plus one there.","start":869.645,"end":870.607,"label":"social","speaker":"SPEAKER_02"},{"id":130,"text":"And as well, that nicely, we can we can try to separate Mr for not all the terms, but like","start":870.707,"end":878.665,"label":"task","speaker":"SPEAKER_02"},{"id":131,"text":"Some terms, like, for example, for target infrastructure, just use it together with environments, but like these bigger terms, and they'll say, okay, two days on that, two days on that, and we can even move back when we figure out that something is not good as we move forward.","start":879.775,"end":895.273,"label":"task","speaker":"SPEAKER_02"},{"id":132,"text":"I like this.","start":895.554,"end":896.774,"label":"social","speaker":"SPEAKER_02"},{"id":133,"text":"Kind of changing the subject, how do we plan to address the difference between","start":901.601,"end":906.947,"label":"procedural","speaker":"SPEAKER_00"},{"id":134,"text":"this ideal terminology and what we want to mean and what we actually have in the product.","start":907.282,"end":912.347,"label":"task","speaker":"SPEAKER_00"},{"id":135,"text":"to what, like, I also read about the release also being cryptographically signed.","start":912.749,"end":918.756,"label":"task","speaker":"SPEAKER_00"},{"id":136,"text":"Yeah, hard word to say.","start":920.017,"end":921.639,"label":"social","speaker":"SPEAKER_00"},{"id":137,"text":"And like, we have none of this right now.","start":922.48,"end":925.123,"label":"task","speaker":"SPEAKER_02"},{"id":138,"text":"And if, especially if we use Shinya's suggestion and move this to the user docs instead of development, then users can just go to us and ask questions like, where is this?","start":926.044,"end":938.477,"label":"task","speaker":"SPEAKER_00"},{"id":139,"text":"This is how you define it.","start":939.038,"end":940.159,"label":"task","speaker":"SPEAKER_00"},{"id":140,"text":"And there is nothing of the sort in the GitLab.","start":940.179,"end":942.081,"label":"task","speaker":"SPEAKER_00"},{"id":141,"text":"Yeah, I think we should be very clear on planned features, perhaps having similar flags that we have for tiers on the page headers or some similar symbol that shows that this is a planned thing and doesn't exist yet or something.","start":942.871,"end":959.973,"label":"task","speaker":"SPEAKER_02"},{"id":142,"text":"That was one of the reasons why we didn't want to put it in the user note, actually.","start":959.993,"end":963.778,"label":"task","speaker":"SPEAKER_02"},{"id":143,"text":"But why we need it somewhere is","start":963.798,"end":970.425,"label":"task","speaker":"SPEAKER_02"},{"id":144,"text":"I don't know if in your culture you have something similar, but in Hungary, we often say that if you want to go to Paris, you have to know where Paris is, otherwise you will end up in Moscow.","start":971.845,"end":986.16,"label":"social","speaker":"SPEAKER_02"},{"id":145,"text":"And Hungarians never wanted to end up in Moscow when our big poet went to Paris, actually.","start":986.18,"end":994.008,"label":"social","speaker":"SPEAKER_02"},{"id":146,"text":"So that's why the glossary is...","start":994.828,"end":999.392,"label":"task","speaker":"SPEAKER_02"},{"id":147,"text":"shows us the North Star that we want to reach.","start":1001.63,"end":1004.973,"label":"task","speaker":"SPEAKER_02"},{"id":148,"text":"And after that, we can discuss if it's feasible at all to get there.","start":1005.894,"end":1009.018,"label":"task","speaker":"SPEAKER_02"},{"id":149,"text":"And then the steps to get there and what falls on us and what was outside of us and all of that.","start":1011.6,"end":1017.767,"label":"task","speaker":"SPEAKER_02"},{"id":150,"text":"But without knowing where we want to get, it's hard to get there.","start":1018.287,"end":1020.75,"label":"task","speaker":"SPEAKER_02"},{"id":151,"text":"Don't we have like a whole page in the handbook dedicated to North Stars and product directions and things like that?","start":1024.334,"end":1030.54,"label":"task","speaker":"SPEAKER_01"},{"id":152,"text":"Our direction pages are roughly that.","start":1030.874,"end":1034.54,"label":"task","speaker":"SPEAKER_02"},{"id":153,"text":"So in the handbook, this would be a perfect fit.","start":1034.78,"end":1038.507,"label":"task","speaker":"SPEAKER_02"},{"id":154,"text":"I think you can put anything in the handbook roughly.","start":1038.907,"end":1040.931,"label":"task","speaker":"SPEAKER_02"},{"id":155,"text":"The user doc is the big question there, I think.","start":1044.617,"end":1046.84,"label":"task","speaker":"SPEAKER_02"},{"id":156,"text":"Yeah, I only mention this because I think the goal of user documentation is to document things as they are today, right?","start":1047.401,"end":1057.438,"label":"task","speaker":"SPEAKER_01"},{"id":157,"text":"Whereas we have a whole section somewhere else dedicated to direction.","start":1059.427,"end":1063.771,"label":"task","speaker":"SPEAKER_01"},{"id":158,"text":"We could merge it under the direction page, actually.","start":1070.037,"end":1072.419,"label":"action","speaker":"SPEAKER_02"},{"id":159,"text":"I need to rewrite it anyway, so.","start":1072.84,"end":1074.241,"label":"action","speaker":"SPEAKER_02"},{"id":160,"text":"Just capturing notes.","start":1086.633,"end":1088.995,"label":"procedural","speaker":"SPEAKER_04"},{"id":161,"text":"Well, that makes sense.","start":1090.966,"end":1091.767,"label":"social","speaker":"SPEAKER_04"},{"id":162,"text":"So what did we want the timeline to be on this?","start":1092.769,"end":1095.113,"label":"task","speaker":"SPEAKER_04"},{"id":163,"text":"Did we want to start working on it ASAP, this milestone, next milestone?","start":1095.133,"end":1099.44,"label":"task","speaker":"SPEAKER_04"},{"id":164,"text":"When should we make plans to do these two-day or two-week, not sprints, but periods of time where we want to focus on this effort?","start":1101.343,"end":1110.898,"label":"task","speaker":"SPEAKER_04"},{"id":165,"text":"I think it's pretty urgent, actually, because we are working in this domain and not having the vocabulary to discuss things that's a bit awkward to start with.","start":1118.995,"end":1129.23,"label":"task","speaker":"SPEAKER_02"},{"id":166,"text":"At the same time, it's not a critical issue or anything like that.","start":1132.354,"end":1138.523,"label":"task","speaker":"SPEAKER_02"},{"id":167,"text":"And now I have two questions in my head that doesn't allow me to give a more specific answer to your question.","start":1147.261,"end":1152.968,"label":"task","speaker":"SPEAKER_02"},{"id":168,"text":"And one is this handbook or docs question, because we can merge an empty page in any of these anytime, basically.","start":1152.988,"end":1164.984,"label":"task","speaker":"SPEAKER_02"},{"id":169,"text":"The handbook especially, it's super easy.","start":1166.666,"end":1168.188,"label":"task","speaker":"SPEAKER_02"},{"id":170,"text":"We don't even need special approvals or anything like that.","start":1168.649,"end":1173.555,"label":"task","speaker":"SPEAKER_02"},{"id":171,"text":"And the other question is the breakdown that Vlad you mentioned, and you will be gone by next Monday.","start":1174.008,"end":1179.933,"label":"task","speaker":"SPEAKER_02"},{"id":172,"text":"And I think it would be really helpful if once we merge the empty page, if you, Emily, or me could work together with one of you, the engineers, to quickly open all these MRs, how we think is the first, the first bit of the big MR, so to say.","start":1179.973,"end":1203.593,"label":"action","speaker":"SPEAKER_02"},{"id":173,"text":"to start with.","start":1206.222,"end":1206.783,"label":"social","speaker":"SPEAKER_02"},{"id":174,"text":"At the same time, I don't want it to take a huge amount of, I don't, I should think more on that.","start":1208.264,"end":1215.591,"label":"task","speaker":"SPEAKER_02"},{"id":175,"text":"But if anyone has other ideas how to approach it or.","start":1215.691,"end":1218.574,"label":"social","speaker":"SPEAKER_02"},{"id":176,"text":"How I would do it is I would create an empty page inside the direction.","start":1219.034,"end":1225.921,"label":"action","speaker":"SPEAKER_00"},{"id":177,"text":"I think that was a great idea from Andrew.","start":1227.342,"end":1229.764,"label":"social","speaker":"SPEAKER_00"},{"id":178,"text":"And we can do it today.","start":1231.186,"end":1232.567,"label":"action","speaker":"SPEAKER_00"},{"id":179,"text":"And then I guess you, Victor, you can find like five terms that you find the most important right now.","start":1233.205,"end":1241.993,"label":"action","speaker":"SPEAKER_00"},{"id":180,"text":"Just copy existing texts, which you already have an open NMR with them, and we can discuss them.","start":1242.754,"end":1249.5,"label":"action","speaker":"SPEAKER_00"},{"id":181,"text":"And then every week, every couple of weeks, we can create another merge request, moving more and more, again, of this existing content and discussing it.","start":1250,"end":1260.389,"label":"task","speaker":"SPEAKER_00"},{"id":182,"text":"Instead of opening like 10,","start":1260.409,"end":1263.212,"label":"task","speaker":"SPEAKER_00"},{"id":183,"text":"MR simultaneously I guess it will distract everybody way too much.","start":1263.192,"end":1267.824,"label":"task","speaker":"SPEAKER_00"},{"id":184,"text":"To Victor's point of having a plan out about the MRs, we could also just open an issue that has the list of what we think we want to open and just have it collected somewhere.","start":1277.502,"end":1288.075,"label":"task","speaker":"SPEAKER_04"},{"id":185,"text":"So it's not like busying up anywhere, but we do have it down on paper that we want to get all of these open in the next month or so.","start":1288.115,"end":1295.044,"label":"task","speaker":"SPEAKER_04"},{"id":186,"text":"I can do that.","start":1297.747,"end":1298.248,"label":"action","speaker":"SPEAKER_02"},{"id":187,"text":"I can open the issue.","start":1298.568,"end":1306.378,"label":"action","speaker":"SPEAKER_02"},{"id":188,"text":"Well, I think that was pretty productive in getting a plan down to get this worked on.","start":1310.29,"end":1315.336,"label":"social","speaker":"SPEAKER_04"},{"id":189,"text":"So thanks, everyone, for your input on this.","start":1315.417,"end":1318.24,"label":"social","speaker":"SPEAKER_04"},{"id":190,"text":"Does anyone else have any comments or questions?","start":1319.982,"end":1322.305,"label":"procedural","speaker":"SPEAKER_04"},{"id":191,"text":"Overall, there are eight terms defined in the MR.","start":1322.325,"end":1327.572,"label":"task","speaker":"SPEAKER_02"},{"id":192,"text":"So the opening five, like, find five terms that almost describes everything.","start":1329.294,"end":1334.661,"label":"task","speaker":"SPEAKER_02"},{"id":193,"text":"Just a quick question.","start":1339.535,"end":1340.637,"label":"procedural","speaker":"SPEAKER_03"},{"id":194,"text":"When, for example, when do we use this doc?","start":1341.097,"end":1343.961,"label":"task","speaker":"SPEAKER_03"},{"id":195,"text":"Like, when we're talking with customer or when we're talking with, I mean, like, give me one example.","start":1345.404,"end":1352.774,"label":"task","speaker":"SPEAKER_03"},{"id":196,"text":"We would use it.","start":1353.836,"end":1357.321,"label":"task","speaker":"SPEAKER_02"},{"id":197,"text":"So we planned to run a design sprint for environment.","start":1357.341,"end":1361.848,"label":"task","speaker":"SPEAKER_02"},{"id":198,"text":"And for example, there, this would be very likely super useful.","start":1362.969,"end":1366.234,"label":"task","speaker":"SPEAKER_02"},{"id":199,"text":"we would use it for deployments.","start":1367.716,"end":1369.9,"label":"task","speaker":"SPEAKER_02"},{"id":200,"text":"Like, um, I think you were on that issue that, uh, Tiger created the example project on how to organize deployments.","start":1370.24,"end":1378.574,"label":"task","speaker":"SPEAKER_02"},{"id":201,"text":"We could use it there as well, because what to deploy is in a sense, an artifact.","start":1379.276,"end":1384.264,"label":"task","speaker":"SPEAKER_02"},{"id":202,"text":"And they could easily describe that that's an artifact, but it's also a major separate branch.","start":1384.404,"end":1388.732,"label":"task","speaker":"SPEAKER_02"},{"id":203,"text":"That's an artifact.","start":1388.752,"end":1390.715,"label":"task","speaker":"SPEAKER_02"},{"id":204,"text":"Um, so there as well.","start":1390.735,"end":1391.817,"label":"task","speaker":"SPEAKER_02"},{"id":205,"text":"The result, what I would say that initially, it would be internal, but as we build features, it becomes more and more user-facing.","start":1392.421,"end":1398.534,"label":"task","speaker":"SPEAKER_02"},{"id":206,"text":"Ah, okay.","start":1399.516,"end":1399.876,"label":"social","speaker":"SPEAKER_03"},{"id":207,"text":"So we could often refer to the page in the issue description when we're talking about the feature spec.","start":1399.897,"end":1407.472,"label":"task","speaker":"SPEAKER_03"},{"id":208,"text":"Yes.","start":1408.214,"end":1408.314,"label":"social","speaker":"SPEAKER_02"},{"id":209,"text":"That's it.","start":1408.494,"end":1409.196,"label":"social","speaker":"SPEAKER_02"},{"id":210,"text":"So just to summarize, Victor, you'll open up the issue with the planned MRs. We'll open the first MR around the blank page today, and that'll kind of get us started on this.","start":1443.856,"end":1457.84,"label":"action","speaker":"SPEAKER_04"},{"id":211,"text":"So I think that kind of ends our main topic.","start":1467.295,"end":1470.72,"label":"procedural","speaker":"SPEAKER_04"},{"id":212,"text":"I just want to make sure, open it to if we have any ongoing engineering work that kind of needs a design discussion.","start":1471.021,"end":1478.993,"label":"procedural","speaker":"SPEAKER_04"},{"id":213,"text":"If not, I guess we can end this early if no one else has anything.","start":1479.554,"end":1485.743,"label":"procedural","speaker":"SPEAKER_04"},{"id":214,"text":"And I think I mentioned at the start, but I don't know if everyone is here.","start":1491.689,"end":1494.613,"label":"procedural","speaker":"SPEAKER_04"},{"id":215,"text":"I just put a little async retro in the agenda.","start":1494.713,"end":1497.577,"label":"procedural","speaker":"SPEAKER_04"},{"id":216,"text":"If there's recommendations or feedback you have for how this meeting's going now that we're a month in.","start":1497.717,"end":1503.545,"label":"task","speaker":"SPEAKER_04"},{"id":217,"text":"But otherwise, thanks for the discussion.","start":1504.386,"end":1506.629,"label":"social","speaker":"SPEAKER_04"},{"id":218,"text":"Bye.","start":1510.515,"end":1510.735,"label":"social","speaker":"SPEAKER_04"}];
+
+const COLORS = {
+  task:       '#3b82f6',
+  social:     '#10b981',
+  procedural: '#f59e0b',
+  action:     '#a855f7'
+};
+
+const LABEL_NAMES = {
+  task:       'Task-Oriented',
+  social:     'Socio-Emotional',
+  procedural: 'Procedural',
+  action:     'Action-Oriented'
+};
+
+const TOTAL_DUR = 1510.735;
+const SPEAKERS = ['SPEAKER_00','SPEAKER_01','SPEAKER_02','SPEAKER_03','SPEAKER_04'];
+const SPEAKER_NAMES = {
+  'SPEAKER_00': 'Vlad',
+  'SPEAKER_01': 'Andrew',
+  'SPEAKER_02': 'Victor',
+  'SPEAKER_03': 'Shinya (Xenia)',
+  'SPEAKER_04': 'Emily'
+};
+
+let activeLabels = new Set(Object.keys(COLORS));
+let activeSpeakers = new Set(SPEAKERS);
+let zoomLevel = 1;
+
+// Stats
+const statsBar = document.getElementById('statsBar');
+const totalSecs = Math.round(TOTAL_DUR);
+const mins = Math.floor(totalSecs/60), secs = totalSecs%60;
+const labelCounts = {};
+Object.keys(COLORS).forEach(l => labelCounts[l] = DATA.filter(d=>d.label===l).length);
+const speakerTotals = {};
+SPEAKERS.forEach(s => {
+  const rows = DATA.filter(d=>d.speaker===s);
+  speakerTotals[s] = rows.reduce((a,d)=>a+(d.end-d.start),0);
+});
+const topSpeaker = Object.entries(speakerTotals).sort((a,b)=>b[1]-a[1])[0];
+
+statsBar.innerHTML = `
+  <div class="stat-item"><div class="stat-value">${mins}:${String(secs).padStart(2,'0')}</div><div class="stat-label">Duration</div></div>
+  <div class="stat-item"><div class="stat-value">${DATA.length}</div><div class="stat-label">Utterances</div></div>
+  <div class="stat-item"><div class="stat-value">${SPEAKERS.length}</div><div class="stat-label">Speakers</div></div>
+  <div class="stat-item"><div class="stat-value">${labelCounts.task}</div><div class="stat-label">Task Segments</div></div>
+  <div class="stat-item"><div class="stat-value">${labelCounts.action}</div><div class="stat-label">Action Items</div></div>
+  <div class="stat-item"><div class="stat-value">${SPEAKER_NAMES[topSpeaker[0]]}</div><div class="stat-label">Top Speaker</div></div>
+`;
+
+// Legend
+const legend = document.getElementById('legend');
+Object.entries(COLORS).forEach(([label, color]) => {
+  const count = labelCounts[label];
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.dataset.label = label;
+  item.innerHTML = `
+    <div class="legend-dot" style="background:${color}"></div>
+    <span class="legend-text">${LABEL_NAMES[label]}</span>
+    <span class="legend-count">${count}</span>
+  `;
+  item.addEventListener('click', () => {
+    if (activeLabels.has(label)) {
+      activeLabels.delete(label);
+      item.classList.add('inactive');
+    } else {
+      activeLabels.add(label);
+      item.classList.remove('inactive');
+    }
+    renderBars();
+    updateDistBar();
+  });
+  legend.appendChild(item);
+});
+
+// Speaker filter pills
+const filterRow = document.getElementById('filterRow');
+SPEAKERS.forEach(s => {
+  const pill = document.createElement('div');
+  pill.className = 'pill active';
+  pill.dataset.speaker = s;
+  pill.textContent = SPEAKER_NAMES[s];
+  pill.addEventListener('click', () => {
+    if (activeSpeakers.has(s)) {
+      if (activeSpeakers.size > 1) {
+        activeSpeakers.delete(s);
+        pill.classList.remove('active');
+      }
+    } else {
+      activeSpeakers.add(s);
+      pill.classList.add('active');
+    }
+    renderRows();
+    renderBars();
+  });
+  filterRow.appendChild(pill);
+});
+
+// Zoom
+const zoomSlider = document.getElementById('zoomSlider');
+const zoomVal = document.getElementById('zoomVal');
+zoomSlider.addEventListener('input', () => {
+  zoomLevel = parseFloat(zoomSlider.value);
+  zoomVal.textContent = zoomLevel.toFixed(2).replace(/\.?0+$/, '') + '×';
+  buildChart();
+});
+
+// Distribution bar
+function updateDistBar() {
+  const distBar = document.getElementById('distBar');
+  const total = DATA.reduce((a,d)=>a+(d.end-d.start),0);
+  distBar.innerHTML = Object.entries(COLORS).map(([label, color]) => {
+    const dur = DATA.filter(d=>d.label===label).reduce((a,d)=>a+(d.end-d.start),0);
+    const pct = (dur/total*100).toFixed(1);
+    const opacity = activeLabels.has(label) ? 1 : 0.2;
+    return `<div class="dist-segment" style="width:${pct}%;background:${color};opacity:${opacity}" title="${LABEL_NAMES[label]}: ${pct}%"></div>`;
+  }).join('');
+}
+updateDistBar();
+
+function fmtTime(sec) {
+  const m = Math.floor(sec/60);
+  const s = Math.floor(sec%60);
+  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+
+let chartWidth = 0;
+
+function buildChart() {
+  const wrapper = document.getElementById('chartWrapper');
+  const availableWidth = wrapper.clientWidth - 200; // minus label col
+  chartWidth = Math.max(availableWidth, 700) * zoomLevel;
+
+  const visibleSpeakers = SPEAKERS.filter(s => activeSpeakers.has(s));
+  const rowH = 52, rowGap = 12, headerH = 60;
+  const totalH = headerH + visibleSpeakers.length * (rowH + rowGap);
+
+  const inner = document.getElementById('chartInner');
+  inner.style.width = (chartWidth + 200) + 'px';
+  inner.style.height = totalH + 'px';
+
+  // Label column
+  const labelCol = document.getElementById('labelCol');
+  labelCol.innerHTML = '';
+  visibleSpeakers.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'speaker-label';
+    const utterCount = DATA.filter(d=>d.speaker===s).length;
+    const talkSecs = Math.round(speakerTotals[s]);
+    el.innerHTML = `<div><div class="speaker-name">${SPEAKER_NAMES[s]}</div><div class="speaker-sub">${utterCount} segments · ${fmtTime(talkSecs)}</div></div>`;
+    labelCol.appendChild(el);
+  });
+
+  // Time axis ticks
+  const timeAxis = document.getElementById('timeAxis');
+  timeAxis.innerHTML = '';
+  timeAxis.style.position = 'relative';
+  const tickInterval = zoomLevel < 2 ? 120 : zoomLevel < 4 ? 60 : 30; // seconds
+  for (let t = 0; t <= TOTAL_DUR; t += tickInterval) {
+    const tick = document.createElement('div');
+    tick.className = 'tick';
+    tick.style.left = (t / TOTAL_DUR * chartWidth) + 'px';
+    tick.style.height = '100%';
+    tick.innerHTML = `<div class="tick-label">${fmtTime(t)}</div><div class="tick-line" style="flex:1"></div>`;
+    timeAxis.appendChild(tick);
+  }
+
+  // Grid rows + bars
+  renderRows();
+  renderBars();
+}
+
+function renderRows() {
+  const visibleSpeakers = SPEAKERS.filter(s => activeSpeakers.has(s));
+  const rowH = 52, rowGap = 12;
+
+  const gridRows = document.getElementById('gridRows');
+  gridRows.innerHTML = '';
+  gridRows.style.position = 'relative';
+  gridRows.style.height = (visibleSpeakers.length * (rowH + rowGap)) + 'px';
+
+  // Vertical grid lines
+  const tickInterval = 120;
+  for (let t = 0; t <= TOTAL_DUR; t += tickInterval) {
+    const vl = document.createElement('div');
+    vl.className = 'v-grid-line';
+    vl.style.left = (t / TOTAL_DUR * chartWidth) + 'px';
+    gridRows.appendChild(vl);
+  }
+
+  visibleSpeakers.forEach((s, i) => {
+    const row = document.createElement('div');
+    row.className = 'grid-row';
+    row.dataset.speaker = s;
+    row.style.position = 'absolute';
+    row.style.top = (i * (rowH + rowGap)) + 'px';
+    row.style.width = '100%';
+    row.style.height = rowH + 'px';
+    row.innerHTML = `<div class="grid-line"></div>`;
+    gridRows.appendChild(row);
+  });
+}
+
+function renderBars() {
+  const visibleSpeakers = SPEAKERS.filter(s => activeSpeakers.has(s));
+  const rowH = 52, rowGap = 12;
+
+  // Remove existing bars
+  document.querySelectorAll('.bar').forEach(b => b.remove());
+
+  const gridRows = document.getElementById('gridRows');
+
+  DATA.forEach(d => {
+    if (!activeLabels.has(d.label)) return;
+    if (!activeSpeakers.has(d.speaker)) return;
+    const sIdx = visibleSpeakers.indexOf(d.speaker);
+    if (sIdx < 0) return;
+
+    const x = (d.start / TOTAL_DUR) * chartWidth;
+    const w = Math.max(((d.end - d.start) / TOTAL_DUR) * chartWidth, 2);
+    const top = sIdx * (rowH + rowGap) + (rowH - 26) / 2;
+
+    const bar = document.createElement('div');
+    bar.className = `bar ${d.label}`;
+    bar.style.left = x + 'px';
+    bar.style.width = w + 'px';
+    bar.style.top = top + 'px';
+    bar.style.position = 'absolute';
+
+    bar.addEventListener('mouseenter', (e) => showTooltip(e, d));
+    bar.addEventListener('mouseleave', hideTooltip);
+    bar.addEventListener('mousemove', moveTooltip);
+
+    gridRows.appendChild(bar);
+  });
+}
+
+const tooltip = document.getElementById('tooltip');
+let currentEvt = null;
+
+function showTooltip(e, d) {
+  tooltip.style.display = 'block';
+  tooltip.innerHTML = `
+    <span class="tt-label ${d.label}">${LABEL_NAMES[d.label]}</span>
+    <div style="font-size:11px;color:#6b7394;margin-top:4px;font-family:'Space Mono',monospace">${SPEAKER_NAMES[d.speaker]}</div>
+    <div class="tt-text">"${d.text}"</div>
+    <div class="tt-time">${fmtTime(d.start)} → ${fmtTime(d.end)} &nbsp;(${(d.end-d.start).toFixed(1)}s)</div>
+  `;
+  moveTooltip(e);
+  currentEvt = e;
+}
+
+function moveTooltip(e) {
+  const x = e.clientX + 14;
+  const y = e.clientY - 10;
+  const tw = tooltip.offsetWidth;
+  const th = tooltip.offsetHeight;
+  tooltip.style.left = Math.min(x, window.innerWidth - tw - 10) + 'px';
+  tooltip.style.top = Math.min(y, window.innerHeight - th - 10) + 'px';
+}
+
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+
+document.querySelectorAll('.bar').forEach(b => b.addEventListener('mousemove', moveTooltip));
+
+// Init
+window.addEventListener('load', buildChart);
+window.addEventListener('resize', buildChart);
+</script>
+</body>
+</html>

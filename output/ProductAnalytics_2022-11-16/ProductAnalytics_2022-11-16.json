@@ -1,0 +1,344 @@
+[
+    {
+        "speaker": "SPEAKER_02",
+        "start": 0.031,
+        "end": 0.492,
+        "text": "Let's do it."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 4.48,
+        "end": 55.11,
+        "text": "All right. So I think for first general item, let's quickly talk over last week's action items and just make sure that we have everything covered. I'll quickly share my screen. So last week we had a few action items. The first here was one for me in which I said I'll create an issue to investigate how much effort it's going to be to add a template. I did create the issue for the onboarding to add this button. I have not gotten a chance yet to do the full investigation. on the template, although I suspect that it's going to be pretty simple, but I would like to just confirm that. Sam, yeah, you're the next one to create an issue for the abuse protections. I see you already created a issue for that."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 56.331,
+        "end": 66.943,
+        "text": "Yeah, so that's just a placeholder for now. We can get that likely scheduled for the first customer release, but probably not for just what we're doing for internal folks."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 68.881,
+        "end": 101.266,
+        "text": "And then one for both Rob and myself to update the MVC issue descriptions. This is something that's ongoing. We have made some new issues and updated the descriptions and like just earlier today we had a a thread and a call with Max also like discussing this. So this is something that's like ongoing, I feel like, and will continue to be ongoing. So I wonder if we shouldn't mark this as complete for now since we've, since it will be like an ongoing item."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 102.588,
+        "end": 132.91,
+        "text": "Yeah, all of the issue descriptions are up to date. The only thing that might deviate is just on the backend implementation. We might need to update the descriptions based off that conversation we're currently having with Max. And we'll see where that goes from that. Other than that, there's also only two issues left that don't have implementation plans, which are also relying on that back-end implementation process. So as soon as that's done, we'll have every issue marked out, weighted with implementation plans ready for scheduling."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 134.052,
+        "end": 155.657,
+        "text": "Cool. But yeah, in terms of the problems to solve and the designs, I feel like we're in a good, solid space there for our MVC issues. And we also have look at a way of designing a way of returning the instrumentation screen connection details. This is also, can I check this is done because I think you have that design, right?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 156.62,
+        "end": 181.316,
+        "text": "No. I added the API key and URL to top of the instrumentation screen, which is the ticked one above. Um, this is a separate design entirely where we talked about having some way of getting back to that instrumentation screen. If you remember last week, either with a button or a modal or some kind of way of showing that screen, even after they've got through this whole implementation process. So that still needs to be done."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 182.157,
+        "end": 186.722,
+        "text": "Cool. I did see you, you did bring it over as a gen item. Great."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 188.086,
+        "end": 261.433,
+        "text": "uh awesome um in that case rob you have the next general item thanks um i don't know if you need to continue sharing yeah i'm gonna find the button thanks um so just a general question around priority um on the ux stuff i guess more or less for now we're done with ux for the onboarding so this is less of a conversation now but We've got more UX design work that we need to start thinking about for future milestones, like, for instance, filtering on the dashboard, edit, how we're going to render editing, because that's the next big feature I'd assume that we sort of going to need to prioritize or start building, especially for Optimize, because that's the thing they really need to make it usable for them. So there's a conversation, there's a question around prioritizing front end over UX and I don't think we've got anything in the pipeline for UX at the minute. So we need to start looking at those issues and getting those lined up. And yeah, just general what's going on next, I guess is more my point."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 262.554,
+        "end": 380.015,
+        "text": "Yeah, sure. Let me see if I can find the issue I'm thinking about. Because we have an issue about dashboard customization with respect to editing, widget size, position, et cetera. I would think that would be next. Give me one moment to find out though. So we have it in the schema out there. All right, well, I'll find the issue later and link it back to the document. But how I see this next, what is going to be next is we need to get the dashboards to the point where you can do editing of what the widgets that are on them in terms of their position and the size, that's going to really be the next thing. Editing the actual content of the widget, that's going to be a lot more complicated to do with a graphical interface. So for that part, we will ask users to, hey, go update the YAML file that defines the widget. And they'll need to do that. We'll build a separate GUI experience on that later. What I see as next, though, would be that relocating and resizing widgets on the dashboard being the next thing for UX. Another area which probably comes after this is also funnels and other various types of charts. If we don't have them already, uh, that would be another, another set of UX priorities."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 381.938,
+        "end": 391.315,
+        "text": "Right. So we're starting to get into the territory of, um, needing to figure out that MR creation flow that I have been avoiding like the plague."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 393.607,
+        "end": 396.271,
+        "text": "For which part?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 396.291,
+        "end": 422.331,
+        "text": "Sorry. So to be able to resize and edit widgets, we're going to need to have a way of them doing that and then saving that, if that makes sense. So that we're going to need to have some kind of UI flow to have them go off to an MR to generate that. After the UI, obviously the UI is going to create it and it needs to send it off somewhere to actually create that MR for them. And yeah, that's the flow I'm most scared about doing."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 423.408,
+        "end": 446.884,
+        "text": "Yeah. Another thing I wanted to check in on after our conversation yesterday, we talked a little bit about the internal preview and having things be pre-configured and pre-set up for users. Do our current onboarding designs get us to that point or will we still need to iterate on top of those to get us to a, you turn it on, you have some dashboards?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 448.248,
+        "end": 485.646,
+        "text": "Young can correct me but if I recall that is the thing we spoke about last week in regards to having that button to create starting off with here's a link to documentation, then the link to a sort of. MTMR or you know creating the first dot GitLab forward slash whatever file structure for them and then having that template button which actually generates the dashboards for you. So the answer is we need to iterate towards it most likely using what Jan has suggested already around having that nice easy click one click button approach."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 487.803,
+        "end": 506.203,
+        "text": "Okay. Got it. Cause, uh, maybe I miss on miscommented on it last week a little bit, then what I would like us to have is essentially you go to it and it already has those dashboards preloaded without needing to do a merge request or click a button at all."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 506.984,
+        "end": 582.209,
+        "text": "Yeah. That's, that's what I wanted to, to, to mention now is like, because I wanted to bring up that discussion we had last week, you and I, Sam. And also it links to the agenda item we had in the product analytics weekly, where I think like this is a misalignment between the onboarding MVC and what we want for our internal preview. And also for our customer preview is that we want those, like the audience dashboard, for example, to always be there. Technically, I can see the fear in Rob's eyes for how we technically develop that, because does that mean that we create a MR from the start? How do we do that? I think for now, we can just keep it simple. And I don't want to get too technical on this call, because this is supposed to be the UX call. But I think we can keep it simple and keep it baked into the front end files like it currently is for now. I know that really isn't ideal, but I'm trying to, put my startup hats on here and say like, you know, the cheapest way for now is to, um, just keep it baked into the front end so that it's always shipped."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 583.431,
+        "end": 587.396,
+        "text": "Then we can figure out how we're going to allow users to, to, to customize that."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 587.436,
+        "end": 602.011,
+        "text": "And I think that's where the whole UX flow and investigation research then comes into figuring out like, and you know, how are we going to do this from a user perspective? And then also technically. But it is something that we need to align on here."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 602.672,
+        "end": 643.444,
+        "text": "So just to make that clear, I kind of like the idea. So we'll have the, one sec. We'll have, once someone gets through the tracking process, what you're suggesting, Jan, is they won't see this at all. that screen although we can build it they will see this where they have an audience and a behavior or whatever the other screen is called already pre-built hard-coded they won't be able to make changes to it or edit it in future or at least for now and it will have pre-configured all the pre-configured widgets is not stored in their code base at all is that correct?"
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 644.656,
+        "end": 646.618,
+        "text": "Yes. That's right."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 647.019,
+        "end": 668.763,
+        "text": "And to speak to the future, we do intend to allow them to edit or even remove these widgets in the future. So that you have no dashboard screen is, is still going to be needed, but it won't be what they'll, what they'll start with. They'll start with that set of pre-configured ones. If they love them, great. If they hate them, they'll be able to delete them in the future."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 670.965,
+        "end": 724.849,
+        "text": "Okay. So that does mean, yep. I know it's a US school, but technically in my head, I would just expect that if dashboard, if dashboard, if dashboard provided from backend equals audience, don't show inbuilt audience is pretty much the basic logic I'm thinking off the top of my head for future us. Okay. The idea of that idea fills me with far less dread. We are skipping the MR process entirely and just providing, I like that, um, and also in some ways pushes the whole button issue down the road too because to get to you won't see that empty for a while. I like that approach we just need to make sure that what we do in the front end schema stuff matches what we would get normally from the back end so we can inject those and make sure it all works which is fine that's a technical problem. Okay that I like that now means that we need to create issues an issue for that."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 725.116,
+        "end": 744.964,
+        "text": "yeah it is at at the end of the day it's good news because it's less work for now um to to to get this like first target hits it's less work so um technically i don't know how this is going to pass maintainer review but uh well uh"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 745.4,
+        "end": 776.326,
+        "text": "An idea I did have on an implementation approach, and feel free to ignore this, what if we had a central to GitLab instance folder which had central GitLab folder slash pre-configured dashboards? We'd look for any YAML files in that folder first for every project, load those, then look at any project-specific ones. That way, we wouldn't have to bake anything into the front end specifically. We would just look for an additional place in the back end."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 777.247,
+        "end": 804.886,
+        "text": "Yeah, that's pretty much what I had in mind for that button, is that it would use a template. I think what you're talking about is even a step further, where it would be like an MR with a group of files that we're adding at once, potentially. Because at the end of the day, it still needs to be managed. I don't know. My brain is going very deep."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 804.906,
+        "end": 848.745,
+        "text": "No, so I'm not saying anything about a merge request. I'm saying that we have a folder that our group pre-populates as part of the newest version of GitLab with these two dashboards or four widgets or whatever. As part of rendering their screen, we say, load any GitLab instance pre-configured dashboards, then load any project-specific dashboards. And maybe at some point we have a project setting to disable that behavior if they wanted to remove it. Just an implementation idea. Feel free to take it for what it is or ignore it. But wanted to throw it out. I'll leave the implementation up to you all."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 850.042,
+        "end": 875.425,
+        "text": "Yeah, I think what we've done front-end-wise works. For now, we can move it to the back end if you want. I just can't think of a place that you'd actually store a non-template, hard-coded YAML file like that in our current code base. I don't think we've... That'd be a question for Max, honestly, more than anything. But the concept is an interesting one, and I think we could probably capture that."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 883.488,
+        "end": 898.426,
+        "text": "Okay. Cool. Um, well, so how do we do next step on this? We need an issue. Uh, it sounds like, would you all like me to create that issue or is this going to be more about implementation steps? And one of you all would like to make it instead. What do you think?"
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 901.43,
+        "end": 942.715,
+        "text": "It sounds like what we need to do is also update the, um, the design flow or the onboarding steps, that design issue where the empty screen like shouldn't pretty much be there for the first iteration as an action step. typing this as I'm saying it. And then also update the issues accordingly so that our MVC issues align with what we just talked about, like what the onboarding flow should be. And yeah, that's something that we can, or I'm happy to do."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 945.699,
+        "end": 968.968,
+        "text": "Perfect. Thank you. Um, one thing on the onboarding flow issue, what would you all think about converting that to an Epic? Cause right now we have a single issue that relates to, what's that? Seven other issues. I wonder if this would be easier to track if we just bundled those together as an Epic for, um, organization. Yeah, I'm fine with that."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 970.529,
+        "end": 971.689,
+        "text": "Sounds good."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 972.551,
+        "end": 977.316,
+        "text": "I mean, are we far enough down the chain that you can't actually make it an Epic? Cause then there's a certain limit."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 979.675,
+        "end": 985.244,
+        "text": "All right, pending any technical limits, let's make an epic, otherwise not."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 995.401,
+        "end": 1001.852,
+        "text": "Hey, unless there's anything else, Sam, you have an engine item for the chart types?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1002.355,
+        "end": 1015.876,
+        "text": "Yeah, so I was going through and looking at a lot of the different issues we have created as part of the issue cleanup. Do we have specific issues made for other chart widget types, such as line charts, pie charts, bar charts, etc?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1017.318,
+        "end": 1040.378,
+        "text": "No, we do have the issues that Dennis has said he's going to make from the meeting yesterday regarding taking that MVC audience screenshot and making sub-issues for us creating the individual dashboard components that we need. But no, we don't have a list chart types that we want to start developing or, you know, designing. Okay, got it."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1041.067,
+        "end": 1067.879,
+        "text": "Um, yeah, cause I, I know there's several different chart types in that MVC, but I don't think that covers all of the different chart types that we'll want to have. Um, I'll go through, I'll check with Dennis on this to see which ones he's making and I'll, I'll make the rest of them. Um, cause line charts are great. Everyone loves a good line chart, but they're not appropriate for every, every sort of data visualization."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1067.899,
+        "end": 1090.48,
+        "text": "Um, no, and they're also good. if the one if we can get the map scoped out they're just good little things to pick up in situ you don't um you know we can just create them as and when you don't necessarily need to have them tied to any particular dashboard so it gives us lots of front end work to do if we get them scoped out from a design perspective"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1093.227,
+        "end": 1118.83,
+        "text": "It'll also help us get away from one of my pet peeves are line charts for non-continuous data series, which everyone does. And it, I think it bothers me more than the average person. So I'm really keen to get bar charts soon. So we can do non-continuous data series with non-continuous data visualization. Um, but that might be more of a personal thing for me. I don't know. As long as we can do stacked bar without labels."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1120.396,
+        "end": 1132.234,
+        "text": "What it sounds to me like, Sam, is that you're like, we should make you one of our personas, because it seems like you would be a good persona, like line charts."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1132.254,
+        "end": 1154.773,
+        "text": "Oh, I'm definitely one of the personas for this, for sure. Because as a PM, I've used what we've shipped from product intelligence, as well as Sisense for specifically the use cases we're doing. So. I'm really hoping we don't replicate some of the things I hate about size names. Count is accepted. No."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1160.842,
+        "end": 1165.91,
+        "text": "Yeah, they may have another item here for discussion about pre-configured dashboards to show."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1165.95,
+        "end": 1170.417,
+        "text": "Sorry, I wrote that down while we were discussing previously."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1172.438,
+        "end": 1216.79,
+        "text": "I did note down in the doc your implementation idea and the follow-up action items. But yeah, this was really good informative also for me to sync on. Because for me, one of the main things that I've been feeling a bit odd about is the difference between some of our epics and the onboarding flow. And it seems like now we're all three aligned on how that is actually going to look in terms of like what, what the user sees after a stack has been initialized. Um, because yeah, like Rob mentioned one day there was some contentious like threads and like a lot of confusion about it. And it seems like we're, we're all aligned now, which is fantastic."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1217.852,
+        "end": 1221.158,
+        "text": "Yeah. The last two days have been super helpful."
+    },
+    {
+        "speaker": "UNKNOWN",
+        "start": 1223.523,
+        "end": 1223.623,
+        "text": "Okay."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1224.312,
+        "end": 1249.324,
+        "text": "Yeah, because in my mind, that card wasn't contentious. It's just showing if we're on slightly different pages, that's OK. It's not OK if we stay on different pages, but it's always good for us to have a conversation. And I mean, certainly Dennis's help was huge in this, since he was doing a lot of these issue updates and reorganization as well. So shout out to him."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1250.148,
+        "end": 1270.941,
+        "text": "Yeah, I don't think I've seen a group with so many different epics and issues all in flight, all constantly changing. And I've only been here for like three or four weeks, and everything is like constantly changing. So the fact that we've only had like one misalignment thus far is pretty amazing, to be honest."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1271.702,
+        "end": 1274.687,
+        "text": "You should have been here before Sam turned up. It was worse."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1275.106,
+        "end": 1280.233,
+        "text": "I can only imagine, Sam definitely has a superpower in terms of for organization."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1281.695,
+        "end": 1282.695,
+        "text": "Thanks."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1283.377,
+        "end": 1284.518,
+        "text": "Captain organization."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1284.538,
+        "end": 1288.504,
+        "text": "I get uncomfortable if things are unorganized, so I have to organize them."
+    },
+    {
+        "speaker": "SPEAKER_00",
+        "start": 1290.126,
+        "end": 1298.076,
+        "text": "That's cool. Unless there's anything else, I think we have five minutes to save in our rest of our day."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1299.979,
+        "end": 1303.063,
+        "text": "Yeah, sounds good. Thanks, folks. We'll talk soon then."
+    },
+    {
+        "speaker": "UNKNOWN",
+        "start": 1304.505,
+        "end": 1304.725,
+        "text": "Cool."
+    }
+]

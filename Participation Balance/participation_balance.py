@@ -7,14 +7,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-# ---------- Utility functions ----------
-
 def compute_gini(values):
-    """
-    Compute Gini coefficient for a list of non-negative values.
-    0 = perfectly equal, 1 = perfectly unequal.
-    """
-    # Filter out negatives (if any) and handle edge cases
     values = [v for v in values if v >= 0]
     if not values:
         return 0.0
@@ -23,11 +16,9 @@ def compute_gini(values):
     if total == 0:
         return 0.0
 
-    # Sort ascending
     values_sorted = sorted(values)
     n = len(values_sorted)
 
-    # Gini formula: G = (2 * sum(i * x_i)) / (n * sum x) - (n + 1) / n
     cumulative = 0.0
     for i, x in enumerate(values_sorted, start=1):
         cumulative += i * x
@@ -37,14 +28,9 @@ def compute_gini(values):
 
 
 def compute_hhi(shares):
-    """
-    Compute Herfindahl-Hirschman Index (HHI) from shares that sum to 1.
-    For speaking time shares, higher = more concentrated (less balanced).
-    """
     return sum(s ** 2 for s in shares)
 
 
-# ---------- Core computation ----------
 
 def compute_participation_metrics(segments):
     """
@@ -72,15 +58,12 @@ def compute_participation_metrics(segments):
         durations[speaker] += duration
         turn_counts[speaker] += 1
 
-        # Basic word count (you can replace with a smarter tokenizer if needed)
         words = text.strip().split()
         word_counts[speaker] += len(words)
 
-    # Totals
     total_time = sum(durations.values())
-    total_words = sum(word_counts.values()) or 1  # avoid division by zero
+    total_words = sum(word_counts.values()) or 1 
 
-    # Build DataFrame
     data = []
     for speaker in sorted(durations.keys()):
         time_sec = durations[speaker]
@@ -103,10 +86,8 @@ def compute_participation_metrics(segments):
         })
 
     df = pd.DataFrame(data)
-    # Sort by speaking time descending for nicer display
     df = df.sort_values(by="time_sec", ascending=False).reset_index(drop=True)
 
-    # Global balance metrics (using *time* as primary indicator)
     time_values = [durations[s] for s in durations]
     time_shares = [
         (durations[s] / total_time) if total_time > 0 else 0.0
@@ -142,19 +123,11 @@ def plot_speaking_time_bar(df, title="Speaking time by participant"):
     plt.show()
 
 
-# ---------- Loading & main ----------
 
 def load_segments_from_json(path):
-    """
-    Loads your JSON file.
-    Assumes it's a list of turn dicts.
-    If your file structure is different, adjust this function.
-    """
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # If your JSON is directly a list of segments, just return it.
-    # Otherwise, you may need to access a field, e.g. data["segments"].
     if isinstance(data, list):
         return data
     elif isinstance(data, dict) and "segments" in data:
@@ -168,7 +141,7 @@ def main(json_path):
     df, global_metrics = compute_participation_metrics(segments)
 
     print("\n=== Participation metrics per speaker ===\n")
-    # Pretty print with rounded numbers
+    
     display_df = df.copy()
     for col in ["time_sec", "time_pct", "words_pct", "avg_words_per_turn"]:
         if col in display_df.columns:
@@ -182,7 +155,6 @@ def main(json_path):
     print(f"HHI (time):  {global_metrics['hhi_time']:.4f}")
     print("Note: higher Gini/HHI = more concentrated / less balanced participation")
 
-    # Plot bar chart
     plot_speaking_time_bar(df)
 
 
