@@ -1,0 +1,158 @@
+[
+    {
+        "speaker": "SPEAKER_01",
+        "start": 2.242,
+        "end": 84.527,
+        "text": "Okay, we're live. Hello, everyone. Welcome to the Editor Extensions group meeting. It's December 7th. The first part here is an announcement from my side. So I've been asked what I think about hosting an intern in our team next summer, intern or interns. I personally, when I was in IC, I really enjoyed mentoring interns back then. So I am excited by the idea, but in my experience, the big key to success for this is to make sure that there is like a clear and dedicated support for interns from like engineers on the team, like specifically like a engineer to one engineer to one intern kind of mapping. And that means that includes identifying the project to be done, training the intern on their tech skills, coaching, all of that stuff. So if you are interested in mentoring an intern, please reach out to me, ideally today, just so I can let Darva know if there is interest or not in the team. This would be next summer. Yeah, next summer, I said that. Yeah, and I think it's like a couple of months and there are the program ran last year. So there's a lot of structure. Actually, I put a few links here to, like, the different issues, like. Onboarding stuff, common concerns and how they're addressed and things like that. So there's. There's quite some, some stuff there as well. Um, yeah, there's some comments here. Aaron, do you want to do you want to verbalize?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 85.233,
+        "end": 121.558,
+        "text": "Yeah, for sure. In a previous role, I got to mentor like half the interns, sort of yearly, like all those sort of back end or front end interns that you get to sort of speak with. There's loads of UX interns and stuff in the previous role as well, and product management interns. I love that. So in the Belfast office, we sort of had like up to like 12 interns sort of initially, and then it was 12 to 15, then 20, and it increased from 20, even since I've left. Um, and that really felt that program was great. So it's really a, really a good way to, uh, get in a bunch of junior engineers that were sort of eager to learn and happy to jump on board and learn stuff."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 124.203,
+        "end": 191.076,
+        "text": "Nice. Awesome. Yeah, there was a time I remember at a job where I had, at some point I had three interns in parallel assigned to me and they were in. Hello. Hi. The other guy, and we, one of them was in second year, one in third year and one fourth year of college, and the one in second year was actually the most the most productive that kind of blew it out of the water, though that was kind of an interesting experience as well. Anyway. All right, sweet. So yeah, then I'll nominate at least Aaron, or I'll let Darwin know, Aaron, it sounds like you're interested. Other folks here, just like, yeah, John, you're saying you also have experience and enjoyed it. Let me know if you're actually interested to do it here. Yeah, okay. All right, awesome. And Dylan is also plus one for InStern and slight, slight recency bias here, obviously. Or similarity bias, I don't know. But both. Cool. Next up here, Aaron, you want to do the honors of the next announcement?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 191.292,
+        "end": 212.111,
+        "text": "Yeah, for sure. And so I've officially become a language server maintainer, I guess over the weekend and sort of with some of the push to code suggestions, there was sort of a lack of maintainers available. And because I was already in the area anyways, I got moved from a reviewer to maintainer. So yeah, if anybody needs reviews, I'm happy to help now. Awesome. Yes, very happy about this."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 212.171,
+        "end": 331.33,
+        "text": "Yeah, and the process for becoming a language server maintainer is extremely lean. So we were able to quick turnaround there as well. Yeah, nothing like the monoliths really. All right, sweet. Next one. Yeah, discussion. So yeah, I wanted to touch a little bit about, you know, talk a bit about the latency or I guess it's not really just latency at this point, but the whole kind of sprint crunch stuff that's been going on this week on code suggestions. So I think the main open extensions topics still are the language server cache. We have TreeSitter for VS Code as well. And then there's formatting on JetBrains that Ali had started as well. So I just wanted to mention, yeah, for anyone that doesn't have ongoing assignments related to any of this, please contribute. The one thing I'd like people to contribute most to is to test the cache in VS Code. Just try it out. Leave feedback on that issue. Also, if it just works, just leave feedback that it works. That will also kind of help gain confidence that things work. Yeah. So thank you for that. Another point is this has been a long and stressful week. For some folks, weeks, because some people did work over the weekend. So I want to remind everyone to take breaks and to reach out to me if you're feeling overwhelmed as well, because this is not normal circumstances. I had this morning off for an embassy appointment, which was something long planned, and I did it. It was nice to walk in the snow outside and breathe fresh air. So I encourage everyone to do that. walk wherever you are. Yeah. Aaron, you have the next point here. New of him. Also pulled in the latest language server version. Awesome. Thank you for that. Yeah. Yeah, I guess, John, it's also a thing. I don't know. I haven't kept this in check, but it's good to make sure that whatever the latest is in the language server still works with Visual Studio. That would be great as well. Yes."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 331.35,
+        "end": 337.517,
+        "text": "Just a quick thing, Bear. I have pulled in the latest language server version and have tested. So we're good on Visual Studio as well."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 337.7,
+        "end": 369.729,
+        "text": "Awesome. Cool. Yeah. And so yeah, John and I had a pretty productive discussion around like automation we could potentially do for Visual Studio as well. Because right now Visual Studio is pulling in the Windows binary. So I think if we add a package JSON so we can get renovate to automate the merge requests, that would be really quick. So that way John doesn't have to go and manually do all the steps. John can just sort of sign off after doing sort of some manual testing. And then eventually other team members, once we know what the sort of steps are to do that test in Visual Studio, we can jump on and do the same. I'm assuming we have Windows environments, which I don't."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 371.912,
+        "end": 377.559,
+        "text": "Aaron, I'll reach out to you. I'd love to have a little sync call real quick to make sure that we're on the same page."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 381.904,
+        "end": 390.555,
+        "text": "Yeah, sounds good. All right, awesome."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 392.138,
+        "end": 496.632,
+        "text": "Yeah. So again, thank you everyone who's been contributing to this so far. And it looks like we also made really good progress today on the cash. So kind of looking forward to this one as well. All right, the next point here, so, okay, the next point, I didn't write much here. I just wrote language server in JetBrains. Because with this week, basically, we've also kind of been adding, so I feel like this week has also stolen the thunder a bit about, you know, us getting the language server in VS code, because that happened like on Friday last week. And I was like, yes, finally, we have it, you know, it's great. And then now all of this, and like, we didn't really have the time to pause and really, you know, be like, Hooray, they did it, they got the language server in VS Code. But we did, and it's awesome. And I think everyone now is convinced that it is awesome, and there's more and more stuff going in there. And so I've been thinking more about this, and I think on the GenBurn side, there is still work to be done in terms of this week's efforts, but I feel like on Visual Studio, for example, there isn't too much. So I was wondering if I should, I don't know, ask John to just start spiking this real quick or something, or kind of look for options, dig a little bit more, because I feel like we could use this sooner rather than later. Yeah, so that's kind of like just want to put this out there basically similar approach to what we have in Visual Studio. Right. So do it ourselves kind of approach rather than rely on the on the ID provided support because we can't do that. It's behind the paid. It's for the paid editions of JetBrains only."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 503.142,
+        "end": 503.764,
+        "text": "So yeah, cool."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 504.327,
+        "end": 541.148,
+        "text": "Yeah. John sounds like you're happy to do that. I mean, we also have our one on one right after this. We can discuss a bit more. See what what what could be a reasonable first stab at this. Yeah. All right, so yeah, this is a little bit me, like, I feel like this, yeah, again, to be transparent, like this week has kind of thrown all the plans and priorities a little bit up in the air, and then they landed again somewhere else. So I'm like, if we're throwing priorities in the air, I might as well throw this one also a little bit and see where it lands. So this is kind of like guerrilla prioritization a little bit. Cool. Aaron, you have the next point?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 543.187,
+        "end": 658.243,
+        "text": "Yeah, for sure. So essentially, one of the things that came up this morning is we got through a review, we merged in changes for language server caching. And so after caching, we weren't doing telemetry quite yet. So we had disabled it, and then we enabled it with a new field for tracking. And that field that we added was a breaking change. And there's like a local copy of the schema file and so we, we, a contributor came in, added in the changes to, to that file which were the correct changes but it had to happen in an upstream repository and because it didn't. We, if we release the language server we would have been sending events that could have broke. So I've gone ahead and tested with the latest language server and everything. And I had this sort of MR to revert initially, like just the like breaking part of the event, but still keeping the costume stuff and I guess we have a lot of unit testing that that's pretty extensive and works well against the local version of the file, but we were not doing anything to make sure that that local version of the file was reflective of what was upstream in the igloo repository for snowplow. And so I've already started, I've made an MR, or I'll submit the MR after, but I've got the local changes right now to actually go and download the file in the MR pipeline. And so it'll download the file from the igloo registry. And then once it's done that, if there's any git difference between the file and what's there, it'll just spit out the diff saying, hey, there's a difference in the file, make sure that you update the local registry and commit the changes. And then after that, that will at least have our unit tests running against the correct schema. But I think we need to really move to using Snowplow Micro and CI, so that we're testing that we're actually able to push the metrics up. Because our unit testing just validates that our JSON parsing works, not that the server will accept the JSON that we send up."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 662.088,
+        "end": 686.728,
+        "text": "Yeah. So that was my question. I was like, I was actually surprised to learn that we have local copy. I didn't realize that was the case. And so it is the case then that we, there could be like, we don't have to have it. It's just, that's how it is right now, but we can, you mentioned using micro, which I don't know what that is, but it sounds like a snowplow thing. So we can sort of just pull. Uh, we could pull the latest, like we don't, we wouldn't have to version the file in the language server anymore. Is that right? Or yeah."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 686.911,
+        "end": 762.777,
+        "text": "Lana had a good point on a different thread that I've just thought of, where right now we're doing an import of the file and it's committed into Git. But instead of doing that, what we could do is we could keep the import the same way. And the import with esbundle, we can actually download the file during build time to pull in the JSON schema. And so that could pull it from the actual registry. And that way, it would be a build time failure. if the file didn't exist and then we'd be using the file exactly as it was in the registry at build time at least. So that's one way to go about it. But yeah, Snowplow Micro is running Snowplow locally. So whenever we're doing Snowplow tracking, we can send it to our local registry instead of the GitLab server for the telemetry. And so when you're sending it to that local Docker container in the service, you can test things in a way that, because the Snowplow Micro will also pull from the production registry to check that all the metrics are good and Snowplow will do additional validation that you can't get So Snowplow Michael will actually give a list of like bad, bad events that it received. And so we can literally end the job, run our whole suite of integration tests. And if there's any bad events, we can err on the build and say, hey, this bad event was received by Snowplow."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 769.744,
+        "end": 784.271,
+        "text": "I was thinking like, is there a way to notice there is new schema published because I mean, like we, we've done it manually, but we do not know do not know when some new schema is published in this like equal repository. I'm not sure how it's called."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 784.993,
+        "end": 813.375,
+        "text": "Yeah, so it's easy. So yeah, I guess we can improve the way we're doing the poll, but right now it was a manual process to the polling. I thought I'm going to add our job which will fail your Mr. If there's been a change since the last time it's been merged domain. But the yeah we need we need some way to push like if a new glue thing is there. Get like do something we can maybe do a nightly job even where we run the lens job nightly and if it fails on main then we got to like an email that would even that would be a small iteration be an improvement."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 815.313,
+        "end": 854.753,
+        "text": "Yeah, because like the thing we had now, like the schema was updated, but it didn't get the version changed. That's why we get this like difference, like where our local schema was the same version as the like Igloo schema, but it was like had different like... I don't know, defined. So ideally this wouldn't happen, shouldn't happen because the update of the schema would mean a new schema file, right? And like, this is probably something that we need rather to track that like schema was updated there. Yeah, but yeah, I agree. It's like this manual thing is not good."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 861.382,
+        "end": 864.826,
+        "text": "So, we need we need renovate for snowplow basically. Right."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 876.658,
+        "end": 917.048,
+        "text": "Well, maybe this is a moment also to broadcast the. By introducing the cash, the telemetry model has not changed, but we have. basically two different, we're introducing two different sources of suggestions. One source is the network, like the usual one, basically, like the AI gateway. And the other one is the cache. So as far as the clients are concerned, they request a suggestion, and then the language server decides whether it'll serve it from the cache or it'll serve it from fetching it in the server. But it should be transparent to clients, which is why we can actually reuse the current model, telemetry model, without making changes, which is Quite neat. Um, yeah."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 917.068,
+        "end": 930.747,
+        "text": "All right, there's some more activity in the dock now about."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 932.129,
+        "end": 935.254,
+        "text": "Oh, Aaron having an epiphany maybe."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 935.895,
+        "end": 990.381,
+        "text": "Yeah, you, you joked about having renovates for snowplow, but we could actually, that could literally solve the problem. Because what we would do is we just have, we just have a module that's available. And that module just build, we can have it where it like builds often or something like that, or even like as a fork of the existing snowplow project. And essentially, if, if there's an update there, it rebuilds a node module, which has the JSONs available. And if that node module is updated, then that actually would trigger the regular, uh, renovated process. I think that would go in really like that would fit really well with our existing, what we do for dependencies in general. I'd like math, uh, sort of match that model, which would be good. But yes, I'm super happy about telemetry in general. I'm glad to see that we've pushed and come to an agreement. It was a really active discussion. It's really good to see so many folks swarming around the sort of how do we get it to fit our existing model principle."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 990.761,
+        "end": 1036.969,
+        "text": "Yeah, because initially, it took me a while to find time to actually think this through. And then when I tried to think this through, I was like, I can't figure this out. I feel like we need to change the model. And then I talked with Shakur, and he was like, yeah, I think we need to change the model, or we need to just not have telemetry. Or we talked about a few options. And then Busty has basically kind of cracked it. He was like, wait, the model is fine. Don't change it. And for me, in my head, I was really like, yeah, requested, loaded. Like requested, for me, meant just like a network request. There was no other way. It doesn't have to mean that, though. But it was so, I don't know, branded in my head. I was just like, yeah, it doesn't work. When you introduce a cache, how could this work? But actually, it can work. It's fine. It's just requested from the language server, which is, yeah. So this is cool."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1038.957,
+        "end": 1039.358,
+        "text": "All right."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1041.482,
+        "end": 1059.48,
+        "text": "And I also felt like I felt like there must be a good solution to this but couldn't find it so I was happy that others were good yeah. All right. um yeah there's nothing else in the notes Doc any other topics that people want to bring up discuss."
+    }
+]

@@ -1,0 +1,14 @@
+FIXED DESCRIPTION
+This Gantt chart shows who spoke when and for how long during the meeting. It helps identify whether speaking turns were evenly distributed over time and among speakers, whether some participants dominated specific phases, and whether some phases showed higher or lower speaking activity.
+
+ADAPTIVE INTERPRETATION
+In this particular meeting, speaking time was unevenly distributed across meeting participants for the first quarter, second quarter, and third quarter, indicating that the meeting was led by one or few central speakers in these phases.
+
+CLASSIFICATION
+uneven_across_speakers
+
+QUARTER-WISE SUMMARY
+First Quarter: active_speakers=2/5, total_time=4m 21s, total_turns=5, dominant_speaker=SPEAKER_01, dominant_share=78.1%, second_speaker=SPEAKER_02, second_share=21.9%
+Second Quarter: active_speakers=4/5, total_time=4m 09s, total_turns=8, dominant_speaker=SPEAKER_01, dominant_share=78.7%, second_speaker=SPEAKER_02, second_share=12.9%
+Third Quarter: active_speakers=3/5, total_time=4m 11s, total_turns=6, dominant_speaker=SPEAKER_02, dominant_share=80.3%, second_speaker=SPEAKER_01, second_share=13.9%
+Fourth Quarter: active_speakers=4/5, total_time=3m 57s, total_turns=10, dominant_speaker=SPEAKER_01, dominant_share=45.4%, second_speaker=SPEAKER_02, second_share=30.6%

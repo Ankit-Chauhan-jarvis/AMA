@@ -1,0 +1,90 @@
+{
+  "fixed_description": "This Gantt chart shows who spoke when and for how long during the meeting. It helps identify whether speaking turns were evenly distributed over time and among speakers, whether some participants dominated specific phases, and whether some phases showed higher or lower speaking activity.",
+  "adaptive_interpretation": "In this particular meeting, speaking time was unevenly distributed across meeting participants for the first quarter, second quarter, and third quarter, indicating that the meeting was led by one or few central speakers in these phases.",
+  "classification": "uneven_across_speakers",
+  "meeting_total_seconds": 1057.238,
+  "meeting_total_label": "17m 37s",
+  "quarters": [
+    {
+      "quarter_index": 1,
+      "quarter_name": "first quarter",
+      "start_sec": 2.242,
+      "end_sec": 266.552,
+      "total_time_sec": 260.683,
+      "total_time_label": "4m 21s",
+      "total_turns": 5,
+      "active_speakers": [
+        "SPEAKER_01",
+        "SPEAKER_02"
+      ],
+      "active_ratio": 0.4,
+      "dominant_speaker": "SPEAKER_01",
+      "dominant_share": 0.7808,
+      "second_speaker": "SPEAKER_02",
+      "second_share": 0.2192,
+      "speaker_dominated": true
+    },
+    {
+      "quarter_index": 2,
+      "quarter_name": "second quarter",
+      "start_sec": 266.552,
+      "end_sec": 530.861,
+      "total_time_sec": 248.923,
+      "total_time_label": "4m 09s",
+      "total_turns": 8,
+      "active_speakers": [
+        "SPEAKER_01",
+        "SPEAKER_02",
+        "SPEAKER_03",
+        "SPEAKER_04"
+      ],
+      "active_ratio": 0.8,
+      "dominant_speaker": "SPEAKER_01",
+      "dominant_share": 0.7866,
+      "second_speaker": "SPEAKER_02",
+      "second_share": 0.1287,
+      "speaker_dominated": true
+    },
+    {
+      "quarter_index": 3,
+      "quarter_name": "third quarter",
+      "start_sec": 530.861,
+      "end_sec": 795.17,
+      "total_time_sec": 250.553,
+      "total_time_label": "4m 11s",
+      "total_turns": 6,
+      "active_speakers": [
+        "SPEAKER_01",
+        "SPEAKER_02",
+        "SPEAKER_05"
+      ],
+      "active_ratio": 0.6,
+      "dominant_speaker": "SPEAKER_02",
+      "dominant_share": 0.8026,
+      "second_speaker": "SPEAKER_01",
+      "second_share": 0.1394,
+      "speaker_dominated": true
+    },
+    {
+      "quarter_index": 4,
+      "quarter_name": "fourth quarter",
+      "start_sec": 795.17,
+      "end_sec": 1059.48,
+      "total_time_sec": 237.376,
+      "total_time_label": "3m 57s",
+      "total_turns": 10,
+      "active_speakers": [
+        "SPEAKER_01",
+        "SPEAKER_02",
+        "SPEAKER_04",
+        "SPEAKER_05"
+      ],
+      "active_ratio": 0.8,
+      "dominant_speaker": "SPEAKER_01",
+      "dominant_share": 0.4538,
+      "second_speaker": "SPEAKER_02",
+      "second_share": 0.3062,
+      "speaker_dominated": false
+    }
+  ]
+}
