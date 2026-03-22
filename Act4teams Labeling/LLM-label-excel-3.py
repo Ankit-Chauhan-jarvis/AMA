@@ -1,3 +1,32 @@
+"""
+LLM-label-excel-3.py
+Automated Meeting Analysis — Sentence-level ACT4Teams labeling via Groq.
+
+JSON format expected (WhisperX diarized output):
+    {
+      "segments": [
+        {
+          "start": 2.9,
+          "end":   6.6,
+          "text":  " This is the design pair session on March 30th.",
+          "speaker": "SPEAKER_04",
+          "words": [ {"word": "This", "start": 2.9, "end": 3.0, "score": 0.9,
+                      "speaker": "SPEAKER_04"}, ... ]
+        }, ...
+      ],
+      "word_segments": [...]
+    }
+
+WhisperX already produces sentence-level segments so each segment's "text"
+field is used directly as the labeling unit — no sentence splitting needed.
+
+Output columns: Id, text, start_time, end_time, label, speaker
+
+Usage:
+    python LLM-label-excel-3.py --transcript_json transcript_detailed.json
+    python LLM-label-excel-3.py --transcript_json transcript_detailed.json --out results.xlsx --batch_size 20
+"""
+
 import os
 import re
 import json
@@ -11,8 +40,17 @@ import pandas as pd
 from groq import Groq
 from dotenv import load_dotenv
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Label set
+# ─────────────────────────────────────────────────────────────────────────────
 LABEL_SET = ["task", "procedural", "social", "action", "counter"]
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ACT4Teams label guide  (embedded from act4teams_labels_description_en.docx)
+# Update this constant if the guide changes — no DOCX file needed at runtime.
+# ─────────────────────────────────────────────────────────────────────────────
 LABEL_GUIDE = """
 === ACT4Teams Labeling Guide ===
 
@@ -82,6 +120,9 @@ LABEL_GUIDE = """
 """
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# System prompt
+# ─────────────────────────────────────────────────────────────────────────────
 def build_system_prompt() -> str:
     return (
         "You are labeling meeting transcript sentences for the ACT4Teams research project.\n"
@@ -94,6 +135,9 @@ def build_system_prompt() -> str:
     )
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# LLM batching with resilient retry
+# ─────────────────────────────────────────────────────────────────────────────
 def _extract_json_array(text: str) -> List[Dict[str, Any]]:
     start = text.find("[")
     end   = text.rfind("]")
@@ -199,7 +243,10 @@ def label_batch(
     return [{"id": sid, "label": collected.get(sid, "social")} for sid in expected_ids]
 
 
-
+# ─────────────────────────────────────────────────────────────────────────────
+# Backchannel filter
+# Drops trivial filler utterances before sending to LLM to save tokens/cost.
+# ─────────────────────────────────────────────────────────────────────────────
 _ACK_TOKENS = {
     "ok", "okay", "alright", "right", "cool", "great", "nice",
     "yeah", "yep", "yup", "sure", "thanks", "thank", "perfect",
@@ -225,6 +272,12 @@ def _is_backchannel(text: str) -> bool:
     return False
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Transcript parser
+#
+# WhisperX produces sentence-level segments. Each segment's "text" is used
+# directly as the labeling unit — start/end/speaker come straight from the segment.
+# ─────────────────────────────────────────────────────────────────────────────
 def parse_transcript(json_path: str) -> List[Dict[str, Any]]:
     """
     Parses WhisperX JSON and returns sentence rows:
@@ -264,6 +317,9 @@ def parse_transcript(json_path: str) -> List[Dict[str, Any]]:
     return rows
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Entry point
+# ─────────────────────────────────────────────────────────────────────────────
 def main() -> None:
     parser = argparse.ArgumentParser(description="Sentence-level ACT4Teams labeling via Groq.")
     parser.add_argument("--transcript_json", required=True)

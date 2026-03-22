@@ -4,6 +4,7 @@
   "classification": "single_phase_speaker_dominance",
   "meeting_total_seconds": 1507.8349999999998,
   "meeting_total_label": "25m 08s",
+  "meeting_total_turns": 53,
   "quarters": [
     {
       "quarter_index": 1,
@@ -17,11 +18,19 @@
         "SPEAKER_01",
         "SPEAKER_02"
       ],
+      "active_speaker_count": 2,
       "active_ratio": 0.4,
+      "phase_share_of_meeting_time": 0.24,
+      "phase_share_of_total_turns": 0.1887,
       "dominant_speaker": "SPEAKER_02",
       "dominant_share": 0.7727,
       "second_speaker": "SPEAKER_01",
       "second_share": 0.2273,
+      "top2_concentration": 1.0,
+      "speaker_count_threshold_flag": true,
+      "dominance_strength": 0.5453,
+      "turn_density": 1.5917,
+      "speaker_entry_count": 2,
       "speaker_dominated": true
     },
     {
@@ -38,11 +47,19 @@
         "SPEAKER_03",
         "SPEAKER_04"
       ],
+      "active_speaker_count": 4,
       "active_ratio": 0.8,
+      "phase_share_of_meeting_time": 0.2342,
+      "phase_share_of_total_turns": 0.283,
       "dominant_speaker": "SPEAKER_04",
       "dominant_share": 0.4388,
       "second_speaker": "SPEAKER_02",
       "second_share": 0.4231,
+      "top2_concentration": 0.8619,
+      "speaker_count_threshold_flag": false,
+      "dominance_strength": 0.0157,
+      "turn_density": 2.3875,
+      "speaker_entry_count": 2,
       "speaker_dominated": false
     },
     {
@@ -59,11 +76,19 @@
         "SPEAKER_03",
         "SPEAKER_05"
       ],
+      "active_speaker_count": 4,
       "active_ratio": 0.8,
+      "phase_share_of_meeting_time": 0.2187,
+      "phase_share_of_total_turns": 0.283,
       "dominant_speaker": "SPEAKER_02",
       "dominant_share": 0.4646,
       "second_speaker": "SPEAKER_05",
       "second_share": 0.2863,
+      "top2_concentration": 0.751,
+      "speaker_count_threshold_flag": false,
+      "dominance_strength": 0.1783,
+      "turn_density": 2.3875,
+      "speaker_entry_count": 1,
       "speaker_dominated": false
     },
     {
@@ -80,11 +105,19 @@
         "SPEAKER_04",
         "SPEAKER_05"
       ],
+      "active_speaker_count": 4,
       "active_ratio": 0.8,
+      "phase_share_of_meeting_time": 0.2081,
+      "phase_share_of_total_turns": 0.3019,
       "dominant_speaker": "SPEAKER_02",
       "dominant_share": 0.4956,
       "second_speaker": "SPEAKER_01",
       "second_share": 0.2799,
+      "top2_concentration": 0.7754,
+      "speaker_count_threshold_flag": false,
+      "dominance_strength": 0.2157,
+      "turn_density": 2.5467,
+      "speaker_entry_count": 0,
       "speaker_dominated": false
     }
   ]

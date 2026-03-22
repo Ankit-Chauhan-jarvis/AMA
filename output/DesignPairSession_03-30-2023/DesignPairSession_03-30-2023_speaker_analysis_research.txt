@@ -1,0 +1,14 @@
+FIXED DESCRIPTION
+This Gantt chart shows who spoke when and for how long during the meeting. It helps identify whether speaking turns were evenly distributed over time and among speakers, whether some participants dominated specific phases, and whether some phases showed higher or lower speaking activity.
+
+ADAPTIVE INTERPRETATION
+In this particular meeting, speaking time was unevenly distributed across meeting participants for the first quarter, indicating that one speaker temporarily dominated this phase.
+
+CLASSIFICATION
+single_phase_speaker_dominance
+
+RESEARCH-FACING QUARTER-WISE SUMMARY
+First Quarter: active_speaker_count=2/5, phase_share_of_meeting_time=24.0%, phase_share_of_total_turns=18.9%, dominant_speaker=SPEAKER_02, dominant_share=77.3%, second_speaker=SPEAKER_01, second_share=22.7%, top2_concentration=100.0%, speaker_count_threshold_flag=True, dominance_strength=54.5%, turn_density=1.59 turns/min, speaker_entry_count=2
+Second Quarter: active_speaker_count=4/5, phase_share_of_meeting_time=23.4%, phase_share_of_total_turns=28.3%, dominant_speaker=SPEAKER_04, dominant_share=43.9%, second_speaker=SPEAKER_02, second_share=42.3%, top2_concentration=86.2%, speaker_count_threshold_flag=False, dominance_strength=1.6%, turn_density=2.39 turns/min, speaker_entry_count=2
+Third Quarter: active_speaker_count=4/5, phase_share_of_meeting_time=21.9%, phase_share_of_total_turns=28.3%, dominant_speaker=SPEAKER_02, dominant_share=46.5%, second_speaker=SPEAKER_05, second_share=28.6%, top2_concentration=75.1%, speaker_count_threshold_flag=False, dominance_strength=17.8%, turn_density=2.39 turns/min, speaker_entry_count=1
+Fourth Quarter: active_speaker_count=4/5, phase_share_of_meeting_time=20.8%, phase_share_of_total_turns=30.2%, dominant_speaker=SPEAKER_02, dominant_share=49.6%, second_speaker=SPEAKER_01, second_share=28.0%, top2_concentration=77.5%, speaker_count_threshold_flag=False, dominance_strength=21.6%, turn_density=2.55 turns/min, speaker_entry_count=0
