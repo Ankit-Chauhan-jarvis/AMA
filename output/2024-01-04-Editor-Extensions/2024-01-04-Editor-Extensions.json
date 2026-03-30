@@ -1,0 +1,296 @@
+[
+    {
+        "speaker": "SPEAKER_01",
+        "start": 2.917,
+        "end": 67.364,
+        "text": "All right, welcome, everyone, to 2024, new year, same team. Yeah, this is the first Editor Extensions group meeting for the year. Welcome back, everyone, who was out last week, which is most of us, I think. I put a million announcements in today's thing, so I'm going to start with that. And then we have a couple of things in the discussion as well. First announcement here is that there's the Create Team Day happening on February 2nd, so in a month from now. I put a few links here to an issue where you can contribute with ideas of what to do on the day. It's basically a social event where people play games or things like that. There's also a Slack announcement and a channel that you should make sure to follow. To join to have a look at that 2nd announcement here is that the summit registrations have opened. So you should have received an email for that. And if you haven't. Uh, let someone know, I don't know if it's me or some probably in the, in that, in the summit channel."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 67.905,
+        "end": 71.01,
+        "text": "Um, next 1."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 71.108,
+        "end": 178.868,
+        "text": "Yeah, reminder, you can bulk add public holidays in PTO by deal based on your region. I did this on Tuesday. I was just like, put in all the holidays for the rest of the year this way, very, very easily and quickly. You can also add all the family and friends. There's a list here. Luckily, it'll take less time than usual this time. This is manual, but there's only four this year. That sad emoji. Actually, there are five, because there's still one from the last fiscal year, which is this calendar year. But yeah, so feel free to add all this stuff this way, it's just done in one go. And that's just more convenient this way. Yeah, next one, a couple, some notes on talent assessment and compensation review timeline. So talent assessment is now finished as in the calibrations are done. So the next step is I'll be reaching out to everyone except John, because he joined too early to be part of this, but to share your talent assessment results and things like this. Um, that should be sometime in January, so probably next week or the week after. Um, and then, uh, compensation review is happening is changing a little bit this year. It used to be that the base salaries and. Equity refreshers were discussed separately and this year there'll be discussed in 1 go, which means. It's takes more time, but so this will be shared, like, the results of that will be shared in early March, but will be retroactively, um. You know, uh. will be, what's the word for this? Well, there will be like, you will get paid retroactively for February as well, but in March, essentially, with the raises, if that makes sense. And by the way, all of these things are things that usually we just share in one-on-ones, but I have so many one-on-ones now that I'm just using the team saying to do it instead. So sorry about that. Also, not that sorry. Cool. All right, Kai, you're up next here."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 180.03,
+        "end": 215.566,
+        "text": "Yeah, so this one is housekeeping, but This will be my last editor extensions team meeting so I have, I've had a lot of fun. It's been great to to work on all of them. we're going to let her go and see how it goes. I'll be around. I'm not leaving GitLab. So I'm always happy to chat or have coffee chats or come back. But just you can send everything to Dasha. And if she has something, she'll come track me down and find me. But yeah, best of luck, everyone."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 216.647,
+        "end": 217.948,
+        "text": "You don't get rid of me that easily."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 221.272,
+        "end": 222.193,
+        "text": "Thank you, Kai."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 224.907,
+        "end": 335.307,
+        "text": "Yeah, thanks a lot, Kai. It was really awesome to tour with you on this stuff all this time. And yeah, this is very timely because I was asking today if I should keep pinging you or not, or just Dasha. So I guess that works for everyone. Let's just ping Dasha from now on and issue some things like this. And we can always page Kai if we need to. I mean, I'm still paging Basti every now and then. He hasn't worked on this team since July or something. So there's always a little bit of a window of time where people still reach out to you for stuff. All right, I'm going to keep on. I still have a bunch of announcements here. Hiring updates. So some good news, we've opened a new C-sharp position on the team. So that's great because so far we only had John, which obviously John is amazing, but it's great to build some more resiliency in a team and not have just one person on a project. So this is very early days, so we're still just doing screening at this point. Um, for TypeScript, we're actually, we're further along. So we're actively interviewing candidates. Um, I had interviewed just yesterday, for example. So that's going well. I'll just let you know, you know, you know, as things progress. And we're also, I think we're, we're also going to open an additional TypeScript role soon. So the wider picture here is that in engineering, I don't know if you saw, I think there was a mention of this by Jörg in one of the AMAs maybe recently, but basically there's a lot of roles that are going to be open this year. I think about a hundred. Um. not all at once, but sort of, you know, for the whole fiscal year. And a lot of them that are being prioritized now are for AI efforts, actually. So that's why we have so many sort of open roles in our team. It's also the case in, you know, AI framework, do a chat, code creation, like there's just a lot of the, you know, a lot of roles being open these days. So a lot of hiring activity."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 337.548,
+        "end": 338.47,
+        "text": "All right."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 339.653,
+        "end": 410.549,
+        "text": "Yeah, moving on. Yeah. So, FYI, we're talking about Berlin and coldness because there is an AI leadership offsite happening in January, I think, 23rd to 25th or 24th. That's not correct. So that's in two, three weeks from now. So, on the Monday of that week, there's also a co-working day for everyone in development. So, you know, not just managers, because there are actually a lot of people that are living in Berlin who work at GitLab. If some of you are not that far from Berlin and want to come and join us, you can. And if you haven't spent the holiday budget yet, you can also use that to come along. But I think for most people on the team, it's probably too far of a trip, but just letting you know in case you want to collect all the Pokemons, like Thomas put it, because Ty will be there, Dasha, Tim, Darva, David, CPO David, the other David also, EM David, just everyone, obviously myself as well, since I'm here. So yeah, I'm looking forward to it. It's going to be fun. It's like a little AI summit kind of thing. Yeah, Kai, go ahead."
+    },
+    {
+        "speaker": "SPEAKER_03",
+        "start": 410.649,
+        "end": 420.099,
+        "text": "I was just going to say, I won't be at summit. So for those of you that are considering, if I'm a big enough draw, there you go."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 420.7,
+        "end": 430.33,
+        "text": "You can come to Berlin. I will also not be at summit. So I'm going to add to that gravitational pull, like people should all come to Berlin."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 430.985,
+        "end": 446.766,
+        "text": "For the competition here. All right, um."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 448.248,
+        "end": 449.811,
+        "text": "Yeah. Amy."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 450.633,
+        "end": 470.712,
+        "text": "Hey. Yeah. So, uh, at least 21 MRS in that little span between, Hey, we're in beta and we've got a field in the UI to hooray. It's GA day. There's probably more that I miss, but those were the ones I was involved in. So it was all busy week before Christmas."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 473.138,
+        "end": 518.483,
+        "text": "It's very busy before Christmas. Also, I feel like I should probably put that in the announcement. So we did go GA on the 21st. In case you missed it, you probably didn't. And it actually went smooth. No one, you know, there was no incident or anything like that that needed people to be paged or sort of work out, you know, during the vacation between 21st and now. So, you know, obviously, great job, everyone. There's been a lot of Big push to get to that, right? We did, especially in December, I think, you know, we did all the latency work, then the streaming. So all of that stuff and it all came together and all the documentation work as well. Like just so much all at once. So yeah, again, thanks everyone for, for, for all the work here. I'm really happy that we finally hit that, that goal, the whole GA thing that we've been talking about all this time."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 521.948,
+        "end": 522.248,
+        "text": "Cool."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 523.46,
+        "end": 527.747,
+        "text": "All right, so we can move on to the discussion. Thomas, you have the first point here."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 529.61,
+        "end": 617.958,
+        "text": "Yeah, I was doing some housekeeping or maybe finding issues that we can work on, on streaming and the VS Code extension on Anchorage Server. And I've used my weighing system that I've been using for the last... three and a half, four years. And then talking to Lena, I found out that it's not universally accepted meaning of the weight. So sometimes people just use story points and they don't assign, excuse me, and they don't assign the, the meaning, like a time meaning to the weights. So my weighing is usually when I use weight one, that's a trivial task that's going to take a day or two. When I use weight two, it means roughly a week. And weight three is a week and a half and everything else is So it's pretty much half weeks increments and everything above that should be a spike and should be split. It kind of worked for me. It's anyway, everything like a week worth of work is quite rough estimate anyway. So it tends to work out for me. I would like to propose using that or we can come up with any other estimates. But when we are adding weights on issues, it would be nice if we mean the same thing."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 625.547,
+        "end": 649.654,
+        "text": "Yeah, I agree. It's nice to be on the same page and like to add the weight center of the expectation. How long it's going to take or how difficult the issue is. My question would be, can we change the race? Start investigating, estimate it as one, and then, well, it didn't work out as one."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 654.106,
+        "end": 725.102,
+        "text": "I think we can, or at least I would suggest that we do. I think the weights in this proposal by Thomas, the weights represent, it's essentially a time estimate, right? So if your time estimate changes, if you're like, oh, actually, I thought this would take a week, but it's actually a day, or vice versa, I think it makes sense to update the weights. I think another classical use of weights is story points, which is more about complexity. like those tend to, at least in my experience, not change as much because it's, but they can also be changed, you know, in theory, if you did something you realize, actually, we thought this was not complex, but it is, I don't know. By the way, on that note, I do like the idea of standardizing for sure. I wouldn't push to wait everything, you know, just for the sake of waiting, but definitely for the ones that, you know, where epics that are higher visibility or we're actively working on this stuff, I think it's a good practice to start doing that more regularly. And I'm happy for us to use time estimates, to be honest. I hope Dasha doesn't hate me for this, but I'm not a big story point person. So I'm happy with just time estimates."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 729.554,
+        "end": 790.267,
+        "text": "Yeah, just to react on that Francois, if not weighing everything, I definitely agree that every issue doesn't have to be weighed. But the main motivation for me to add the weights was because I was creating a list for you and Dasha to kind of pick and choose what we could do. and I think that the weights are quite important for that decision to like know okay this looks like it's nice to have and it's trivial so let's do it or this is nice to have and it will take someone two weeks to do it so let's not do it that kind of so for that decision making I think it's good to have the weights so like any candidate that we are considering picking up as a team, I think would be good if we have some idea about the complexity, even if we just say it's a spike that we expect that takes, you know, half a week or a week and the result of it is going to be clear idea about what it takes."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 803.704,
+        "end": 805.326,
+        "text": "John, do you want to verbalize your next point here?"
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 807.247,
+        "end": 827.82,
+        "text": "Yeah, this is just my experience with story points that they end up doing the same thing that Thomas stranger with weights would they just end up being two story points is two days or whatever people they end up implicitly turning into a time box, you know, as opposed to complexity. It's, it's a greater abstraction. And I think people are usually, you know, we usually think in"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 833.048,
+        "end": 860.119,
+        "text": "Yeah. Um, yeah. And on the question about, uh, it was a question here about, do we have a document to document the stuff? And yes, we do. So is that the team page to always suggest, um, it sounds like people are on board with this. So I would suggest Thomas, if you could open an MR to the, to the, to the page that kind of, you know, describes this essentially. Um, and then if people have more comments on this, you can just comment in DMR as well. And, uh, and that's it. Yeah. Cool."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 864.706,
+        "end": 979.071,
+        "text": "Okay, so the next one is, we already have existing priority-based board. I'll link it as well. I have it somewhere here. Maybe I don't. Yeah, here it is. I'll link it later. But we have a, we have a board that's used for, I guess, planning the work and it's mainly structured, like the columns are representing, representing systems and not, uh where is the board i'll just put it as a right here it's the board i'll fix the formatting later but that's if you have a look at it it's like the the columns are systems and i'm used to the more of a kanban style board where I look at the board and I see what people are working on and so I would suggest that we also start using and for like ICs probably mainly start using the workflow based board where if you want to see what your colleagues are working on or you want to be transparent about what you are working on you move the card or the issue that you work on in a column. I would recommend using a subset as I did on the example workflow board, using a subset of the workflow labels. I think that something that's like to do, doing, done, maybe in review is enough. We don't need to use the ready for refinement, in refinement, ready for development, in review, staging. I don't know, second staging production. I'm just making things up now, but like, yeah, a limited number of workflow labels. So what do you think about that?"
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 988.535,
+        "end": 1013.074,
+        "text": "I mean, I like it a lot. Since I've been struggling to figure out more about how we're using the board, I think it's really clear. I like the limited number of columns because it does get a little crazy when you start adding in refinement, backlog, it's like in review. It's succinct enough and it works out. So huge fan, thank you."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1015.4,
+        "end": 1054.873,
+        "text": "I'm used to using this kind of word. My question is, and it doesn't always make sense for all the columns, but like for the issues that are ready for development, like do we want to sort them kind of in the priority? Like this is the most important issue ready for development, and that's like a little bit less important. Because after they move into development, it's kind of hard to say whose work is more important. But until they are in development, we can pick the issue that has higher priority."
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1058.245,
+        "end": 1085.019,
+        "text": "That's like usually, I think it's a great idea. It's usually when you have a team that can like pick up, anyone can pick up any issue that's like the perfect state. I think that we might have to figure out how to work around the fact that some of the people can't pick up the top or like work on different issue type of systems and they can't pick up the top priority issue, for example."
+    },
+    {
+        "speaker": "UNKNOWN",
+        "start": 1086.581,
+        "end": 1087.122,
+        "text": "horr"
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1087.405,
+        "end": 1105.45,
+        "text": "It's definitely like, for example, like with the work that we scheduled for this and next milestone for the language server and the VS Code extension, it would be great to have some direction on like, what would we like to do first? So sorting sounds good."
+    },
+    {
+        "speaker": "SPEAKER_05",
+        "start": 1107.173,
+        "end": 1122.728,
+        "text": "Yeah, we can like sort it on our, like have additional filtering labels for language server and VS Code, for example, stored on that board?"
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1123.149,
+        "end": 1168.189,
+        "text": "Yeah, I think those are, I wanted to ask, because in the priority board, it's called priority because we're trying at least to keep it so that the ones at the top for each of the systems does reflect the higher priority. So I'm not saying it's been always accurate, by the way, but I want this more like a GitLab question. If the priority board is in priority order, Does that relative order get reflected in other boards, such as the workflow one? Because if yes, then we're fine. Because you're right, Thomas, like, you know, if the one that comes up all the way at the top is like JetBrains or something. Yeah, you still need to know that. Well, I'm not going to pick that one up because I'm not going to work on JetBrains right now, but you can still kind of, you know, eventually still the first VS Code one on that list on the column will be the top priority one as well for VS Code, right?"
+    },
+    {
+        "speaker": "SPEAKER_07",
+        "start": 1168.642,
+        "end": 1214.091,
+        "text": "And it's perfect that yes, the priority or like the ordering is for some reason global to all the boards. So in this case, it will work in our favor that they are going to be at least within the one column on the priority board. I don't know whether they might go intertwined with like JetBrains work. But my best guess is that within the one system, they are gonna be sorted correctly, even though there might be some random other system issue in the middle. If I'm making any sense."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1216.254,
+        "end": 1240.4,
+        "text": "Yeah, you are for sure. What I'm... Yeah, I mean, I could go on for a long time, but what I would like boards to have as well, like, quick filters and like, I just like, you know, Japan or whatever. Um, but anyway, um, so it sounds like that, you know, um, I think that this is an improvement. I mean, I, for example, when I'm trying to think of, like, priorities, I often think about it in the system perspective. So that's why I'd like to keep the other board for that as well."
+    },
+    {
+        "speaker": "SPEAKER_02",
+        "start": 1241.3,
+        "end": 1243.102,
+        "text": "Um, because it's simpler to parse."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1243.803,
+        "end": 1246.506,
+        "text": "Um, but yeah, this, this makes, this makes sense to me."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1250.62,
+        "end": 1271.295,
+        "text": "Looks like another emerge request to the theme page. Correct. All right, Amy, you have the next point here."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1271.647,
+        "end": 1308.69,
+        "text": "Yeah, I'm going to be everybody's conscience and say, so we had trouble getting stuff merged in the week before Christmas. Um, we should get some more maintainers in these projects, because I, Dasha, thank you for merging things that merging what you were asked to merge. I know you weren't involved in any of the lead up, but you got us over the finish line, as did Matt Casa, who has nothing to do with this group, but that's who was here. And so let's be kinder to ourselves in the future."
+    },
+    {
+        "speaker": "SPEAKER_08",
+        "start": 1311.387,
+        "end": 1313.191,
+        "text": "Please, and thank you."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1313.271,
+        "end": 1324.133,
+        "text": "Sorry, just to clarify, because you, you know, you, do you mean, do you mean maintainers who are maintainers in a sense, like engineer contributing to the repository, or do you mean just maintainers as in people who, when asked, could be, you know, sort of like."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1324.153,
+        "end": 1331.809,
+        "text": "Can merge things to these repos. Okay. Nobody was here on GA day."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1332.802,
+        "end": 1340.268,
+        "text": "Gotcha. Okay. Yeah. It sounds like we, I think, I think there was an issue or something you created."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1341.409,
+        "end": 1341.489,
+        "text": "Yep."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1341.509,
+        "end": 1342.851,
+        "text": "Right. So yeah."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1342.971,
+        "end": 1346.614,
+        "text": "Site coming, trade to help."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1346.634,
+        "end": 1362.167,
+        "text": "Yeah. So yeah, I think we can, I don't think I've looked at the issue too much in details yet, but we can follow up there maybe on like from technical writer perspective at least, and then maybe we can, we can find out if there's other folks that we want to include there as well."
+    },
+    {
+        "speaker": "SPEAKER_04",
+        "start": 1362.35,
+        "end": 1363.272,
+        "text": "Excellent. Thank you."
+    },
+    {
+        "speaker": "SPEAKER_06",
+        "start": 1377.597,
+        "end": 1378.299,
+        "text": "All right."
+    },
+    {
+        "speaker": "SPEAKER_01",
+        "start": 1378.579,
+        "end": 1396.997,
+        "text": "Anything else in the agenda folks that you want to discuss? Or that you want to add to the agenda and then discuss? Oh, OK. I can't find the button anymore. OK, I'm going to stop recording."
+    }
+]
